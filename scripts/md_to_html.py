@@ -168,11 +168,13 @@ def main() -> None:
         rel_md = md.relative_to(ROOT).as_posix()
         rel_html = out.relative_to(ROOT).as_posix()
         for item in data.get("library", []):
-            if item.get("file") == rel_md:
+            file_norm = str(item.get("file") or "").replace("\\", "/")
+            if file_norm == rel_md or item.get("file") == rel_md:
+                item["file"] = rel_md
                 item["html"] = rel_html
                 item["source_md"] = rel_md
                 # Keep type readable; viewer uses html
-                if item.get("type") == "MD":
+                if item.get("type") in {"MD", "HTML", None, ""}:
                     item["type"] = "HTML"
 
     # Prefer sources.html in library if present as sources.md

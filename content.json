@@ -110,7 +110,7 @@
       "file": "notes/jev/cheatsheet.md",
       "type": "HTML",
       "note": "Standing quick reference.",
-      "html": "notes\\jev\\cheatsheet.html",
+      "html": "notes/jev/cheatsheet.html",
       "source_md": "notes/jev/cheatsheet.md"
     },
     {
@@ -118,7 +118,7 @@
       "file": "notes/jev/topic-guide.md",
       "type": "HTML",
       "note": "Study map without a clock.",
-      "html": "notes\\jev\\topic-guide.html",
+      "html": "notes/jev/topic-guide.html",
       "source_md": "notes/jev/topic-guide.md"
     },
     {
@@ -126,7 +126,7 @@
       "file": "notes/jev/mission.md",
       "type": "HTML",
       "note": "Goals and out of scope.",
-      "html": "notes\\jev\\mission.html",
+      "html": "notes/jev/mission.html",
       "source_md": "notes/jev/mission.md"
     },
     {
@@ -134,7 +134,7 @@
       "file": "notes/jev/glossary.md",
       "type": "HTML",
       "note": "Core vocabulary.",
-      "html": "notes\\jev\\glossary.html",
+      "html": "notes/jev/glossary.html",
       "source_md": "notes/jev/glossary.md"
     },
     {
@@ -142,7 +142,7 @@
       "file": "notes/jev/mindmap.md",
       "type": "HTML",
       "note": "Topic branches.",
-      "html": "notes\\jev\\mindmap.html",
+      "html": "notes/jev/mindmap.html",
       "source_md": "notes/jev/mindmap.md"
     },
     {
@@ -150,7 +150,7 @@
       "file": "notes/jev/source-ledger.md",
       "type": "HTML",
       "note": "Primary docs + videos.",
-      "html": "notes\\jev\\source-ledger.html",
+      "html": "notes/jev/source-ledger.html",
       "source_md": "notes/jev/source-ledger.md"
     },
     {
@@ -158,7 +158,7 @@
       "file": "notes/jev/resources.md",
       "type": "HTML",
       "note": "High-trust URLs.",
-      "html": "notes\\jev\\resources.html",
+      "html": "notes/jev/resources.html",
       "source_md": "notes/jev/resources.md"
     },
     {
@@ -166,7 +166,7 @@
       "file": "notes/jev/quiz-bank.md",
       "type": "HTML",
       "note": "Retrieval prompts.",
-      "html": "notes\\jev\\quiz-bank.html",
+      "html": "notes/jev/quiz-bank.html",
       "source_md": "notes/jev/quiz-bank.md"
     },
     {
@@ -186,7 +186,7 @@
       "file": "reports/jev/notebooklm/Catalog of Edge Cases and Traps for Jev (TypeSafe System One).md",
       "type": "HTML",
       "note": "From NotebookLM NEXUS export folder.",
-      "html": "reports\\jev\\notebooklm\\Catalog of Edge Cases and Traps for Jev (TypeSafe System One).html",
+      "html": "reports/jev/notebooklm/Catalog of Edge Cases and Traps for Jev (TypeSafe System One).html",
       "source_md": "reports/jev/notebooklm/Catalog of Edge Cases and Traps for Jev (TypeSafe System One).md"
     },
     {
@@ -194,7 +194,7 @@
       "file": "reports/jev/notebooklm/Executive Decision Packet_ Jev (TypeSafe System One) Implementation.md",
       "type": "HTML",
       "note": "From NotebookLM NEXUS export folder.",
-      "html": "reports\\jev\\notebooklm\\Executive Decision Packet_ Jev (TypeSafe System One) Implementation.html",
+      "html": "reports/jev/notebooklm/Executive Decision Packet_ Jev (TypeSafe System One) Implementation.html",
       "source_md": "reports/jev/notebooklm/Executive Decision Packet_ Jev (TypeSafe System One) Implementation.md"
     },
     {
@@ -202,7 +202,7 @@
       "file": "reports/jev/notebooklm/Jev (TypeSafe System One) Authoring and Practice Playbook.md",
       "type": "HTML",
       "note": "From NotebookLM NEXUS export folder.",
-      "html": "reports\\jev\\notebooklm\\Jev (TypeSafe System One) Authoring and Practice Playbook.html",
+      "html": "reports/jev/notebooklm/Jev (TypeSafe System One) Authoring and Practice Playbook.html",
       "source_md": "reports/jev/notebooklm/Jev (TypeSafe System One) Authoring and Practice Playbook.md"
     },
     {
@@ -210,7 +210,7 @@
       "file": "reports/jev/notebooklm/Jev (TypeSafe System One)_ A Technical Briefing.md",
       "type": "HTML",
       "note": "From NotebookLM NEXUS export folder.",
-      "html": "reports\\jev\\notebooklm\\Jev (TypeSafe System One)_ A Technical Briefing.html",
+      "html": "reports/jev/notebooklm/Jev (TypeSafe System One)_ A Technical Briefing.html",
       "source_md": "reports/jev/notebooklm/Jev (TypeSafe System One)_ A Technical Briefing.md"
     },
     {
@@ -218,7 +218,7 @@
       "file": "reports/jev/notebooklm/Jev (TypeSafe System One)_ Mental Models and Technical Distinctions.md",
       "type": "HTML",
       "note": "From NotebookLM NEXUS export folder.",
-      "html": "reports\\jev\\notebooklm\\Jev (TypeSafe System One)_ Mental Models and Technical Distinctions.html",
+      "html": "reports/jev/notebooklm/Jev (TypeSafe System One)_ Mental Models and Technical Distinctions.html",
       "source_md": "reports/jev/notebooklm/Jev (TypeSafe System One)_ Mental Models and Technical Distinctions.md"
     },
     {
@@ -232,7 +232,7 @@
       "file": "reports/jev/notebooklm/Study Guide_ Jev (TypeSafe System One).md",
       "type": "HTML",
       "note": "From NotebookLM NEXUS export folder.",
-      "html": "reports\\jev\\notebooklm\\Study Guide_ Jev (TypeSafe System One).html",
+      "html": "reports/jev/notebooklm/Study Guide_ Jev (TypeSafe System One).html",
       "source_md": "reports/jev/notebooklm/Study Guide_ Jev (TypeSafe System One).md"
     },
     {
@@ -240,7 +240,7 @@
       "file": "reports/jev/notebooklm/Technical Briefing_ Implementing Jev (TypeSafe System One) for Programmatic Deci.md",
       "type": "HTML",
       "note": "From NotebookLM NEXUS export folder.",
-      "html": "reports\\jev\\notebooklm\\Technical Briefing_ Implementing Jev (TypeSafe System One) for Programmatic Deci.html",
+      "html": "reports/jev/notebooklm/Technical Briefing_ Implementing Jev (TypeSafe System One) for Programmatic Deci.html",
       "source_md": "reports/jev/notebooklm/Technical Briefing_ Implementing Jev (TypeSafe System One) for Programmatic Deci.md"
     },
     {
@@ -254,7 +254,7 @@
       "file": "notes/jev/blocks/01-core-concepts.md",
       "type": "HTML",
       "note": "Untimed study-pack section.",
-      "html": "notes\\jev\\blocks\\01-core-concepts.html",
+      "html": "notes/jev/blocks/01-core-concepts.html",
       "source_md": "notes/jev/blocks/01-core-concepts.md"
     },
     {
@@ -262,7 +262,7 @@
       "file": "notes/jev/blocks/02-mental-models.md",
       "type": "HTML",
       "note": "Untimed study-pack section.",
-      "html": "notes\\jev\\blocks\\02-mental-models.html",
+      "html": "notes/jev/blocks/02-mental-models.html",
       "source_md": "notes/jev/blocks/02-mental-models.md"
     },
     {
@@ -270,7 +270,7 @@
       "file": "notes/jev/blocks/05-edge-cases.md",
       "type": "HTML",
       "note": "Untimed study-pack section.",
-      "html": "notes\\jev\\blocks\\05-edge-cases.html",
+      "html": "notes/jev/blocks/05-edge-cases.html",
       "source_md": "notes/jev/blocks/05-edge-cases.md"
     },
     {
@@ -278,7 +278,7 @@
       "file": "notes/jev/blocks/07-application.md",
       "type": "HTML",
       "note": "Untimed study-pack section.",
-      "html": "notes\\jev\\blocks\\07-application.html",
+      "html": "notes/jev/blocks/07-application.html",
       "source_md": "notes/jev/blocks/07-application.md"
     },
     {
@@ -286,7 +286,7 @@
       "file": "reports/almeida/AI Assistance vs. Automation_ A Practitioners Working Briefing (Almeida_RLHF).md",
       "type": "HTML",
       "note": "Related context.",
-      "html": "reports\\almeida\\AI Assistance vs. Automation_ A Practitioners Working Briefing (Almeida_RLHF).html",
+      "html": "reports/almeida/AI Assistance vs. Automation_ A Practitioners Working Briefing (Almeida_RLHF).html",
       "source_md": "reports/almeida/AI Assistance vs. Automation_ A Practitioners Working Briefing (Almeida_RLHF).md"
     },
     {
