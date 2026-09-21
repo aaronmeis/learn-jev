@@ -88,6 +88,186 @@
       "title": "Jev decision layer vs LLMs",
       "file": "visuals/jev-decision-layer-vs-llms.png",
       "caption": "NotebookLM infographic: decision-layer framing versus generative LLM workflows."
+    },
+    {
+      "id": "jev-slide-1",
+      "title": "Jev overview — slide 1",
+      "file": "visuals/slides/jev-overview/Slide1.PNG",
+      "caption": "From the Jev overview PPTX (PNG export)."
+    },
+    {
+      "id": "jev-slide-2",
+      "title": "Jev overview — slide 2",
+      "file": "visuals/slides/jev-overview/Slide2.PNG",
+      "caption": "From the Jev overview PPTX (PNG export)."
+    },
+    {
+      "id": "jev-slide-3",
+      "title": "Jev overview — slide 3",
+      "file": "visuals/slides/jev-overview/Slide3.PNG",
+      "caption": "From the Jev overview PPTX (PNG export)."
+    },
+    {
+      "id": "jev-slide-4",
+      "title": "Jev overview — slide 4",
+      "file": "visuals/slides/jev-overview/Slide4.PNG",
+      "caption": "From the Jev overview PPTX (PNG export)."
+    },
+    {
+      "id": "jev-slide-5",
+      "title": "Jev overview — slide 5",
+      "file": "visuals/slides/jev-overview/Slide5.PNG",
+      "caption": "From the Jev overview PPTX (PNG export)."
+    },
+    {
+      "id": "jev-slide-6",
+      "title": "Jev overview — slide 6",
+      "file": "visuals/slides/jev-overview/Slide6.PNG",
+      "caption": "From the Jev overview PPTX (PNG export)."
+    },
+    {
+      "id": "jev-slide-7",
+      "title": "Jev overview — slide 7",
+      "file": "visuals/slides/jev-overview/Slide7.PNG",
+      "caption": "From the Jev overview PPTX (PNG export)."
+    },
+    {
+      "id": "jev-slide-8",
+      "title": "Jev overview — slide 8",
+      "file": "visuals/slides/jev-overview/Slide8.PNG",
+      "caption": "From the Jev overview PPTX (PNG export)."
+    },
+    {
+      "id": "jev-slide-9",
+      "title": "Jev overview — slide 9",
+      "file": "visuals/slides/jev-overview/Slide9.PNG",
+      "caption": "From the Jev overview PPTX (PNG export)."
+    },
+    {
+      "id": "jev-slide-10",
+      "title": "Jev overview — slide 10",
+      "file": "visuals/slides/jev-overview/Slide10.PNG",
+      "caption": "From the Jev overview PPTX (PNG export)."
+    },
+    {
+      "id": "jev-slide-11",
+      "title": "Jev overview — slide 11",
+      "file": "visuals/slides/jev-overview/Slide11.PNG",
+      "caption": "From the Jev overview PPTX (PNG export)."
+    },
+    {
+      "id": "jev-slide-12",
+      "title": "Jev overview — slide 12",
+      "file": "visuals/slides/jev-overview/Slide12.PNG",
+      "caption": "From the Jev overview PPTX (PNG export)."
+    },
+    {
+      "id": "jev-slide-13",
+      "title": "Jev overview — slide 13",
+      "file": "visuals/slides/jev-overview/Slide13.PNG",
+      "caption": "From the Jev overview PPTX (PNG export)."
+    },
+    {
+      "id": "jev-slide-14",
+      "title": "Jev overview — slide 14",
+      "file": "visuals/slides/jev-overview/Slide14.PNG",
+      "caption": "From the Jev overview PPTX (PNG export)."
+    },
+    {
+      "id": "jev-slide-15",
+      "title": "Jev overview — slide 15",
+      "file": "visuals/slides/jev-overview/Slide15.PNG",
+      "caption": "From the Jev overview PPTX (PNG export)."
+    },
+    {
+      "id": "almeida-slide-1",
+      "title": "Assistance vs automation — slide 1",
+      "file": "visuals/slides/almeida-rlhf/Slide1.PNG",
+      "caption": "From the Almeida / RLHF PPTX (PNG export)."
+    },
+    {
+      "id": "almeida-slide-2",
+      "title": "Assistance vs automation — slide 2",
+      "file": "visuals/slides/almeida-rlhf/Slide2.PNG",
+      "caption": "From the Almeida / RLHF PPTX (PNG export)."
+    },
+    {
+      "id": "almeida-slide-3",
+      "title": "Assistance vs automation — slide 3",
+      "file": "visuals/slides/almeida-rlhf/Slide3.PNG",
+      "caption": "From the Almeida / RLHF PPTX (PNG export)."
+    },
+    {
+      "id": "almeida-slide-4",
+      "title": "Assistance vs automation — slide 4",
+      "file": "visuals/slides/almeida-rlhf/Slide4.PNG",
+      "caption": "From the Almeida / RLHF PPTX (PNG export)."
+    },
+    {
+      "id": "almeida-slide-5",
+      "title": "Assistance vs automation — slide 5",
+      "file": "visuals/slides/almeida-rlhf/Slide5.PNG",
+      "caption": "From the Almeida / RLHF PPTX (PNG export)."
+    },
+    {
+      "id": "almeida-slide-6",
+      "title": "Assistance vs automation — slide 6",
+      "file": "visuals/slides/almeida-rlhf/Slide6.PNG",
+      "caption": "From the Almeida / RLHF PPTX (PNG export)."
+    },
+    {
+      "id": "almeida-slide-7",
+      "title": "Assistance vs automation — slide 7",
+      "file": "visuals/slides/almeida-rlhf/Slide7.PNG",
+      "caption": "From the Almeida / RLHF PPTX (PNG export)."
+    },
+    {
+      "id": "almeida-slide-8",
+      "title": "Assistance vs automation — slide 8",
+      "file": "visuals/slides/almeida-rlhf/Slide8.PNG",
+      "caption": "From the Almeida / RLHF PPTX (PNG export)."
+    },
+    {
+      "id": "almeida-slide-9",
+      "title": "Assistance vs automation — slide 9",
+      "file": "visuals/slides/almeida-rlhf/Slide9.PNG",
+      "caption": "From the Almeida / RLHF PPTX (PNG export)."
+    },
+    {
+      "id": "almeida-slide-10",
+      "title": "Assistance vs automation — slide 10",
+      "file": "visuals/slides/almeida-rlhf/Slide10.PNG",
+      "caption": "From the Almeida / RLHF PPTX (PNG export)."
+    },
+    {
+      "id": "almeida-slide-11",
+      "title": "Assistance vs automation — slide 11",
+      "file": "visuals/slides/almeida-rlhf/Slide11.PNG",
+      "caption": "From the Almeida / RLHF PPTX (PNG export)."
+    },
+    {
+      "id": "almeida-slide-12",
+      "title": "Assistance vs automation — slide 12",
+      "file": "visuals/slides/almeida-rlhf/Slide12.PNG",
+      "caption": "From the Almeida / RLHF PPTX (PNG export)."
+    },
+    {
+      "id": "almeida-slide-13",
+      "title": "Assistance vs automation — slide 13",
+      "file": "visuals/slides/almeida-rlhf/Slide13.PNG",
+      "caption": "From the Almeida / RLHF PPTX (PNG export)."
+    },
+    {
+      "id": "almeida-slide-14",
+      "title": "Assistance vs automation — slide 14",
+      "file": "visuals/slides/almeida-rlhf/Slide14.PNG",
+      "caption": "From the Almeida / RLHF PPTX (PNG export)."
+    },
+    {
+      "id": "almeida-slide-15",
+      "title": "Assistance vs automation — slide 15",
+      "file": "visuals/slides/almeida-rlhf/Slide15.PNG",
+      "caption": "From the Almeida / RLHF PPTX (PNG export)."
     }
   ],
   "library": [
@@ -99,11 +279,10 @@
     },
     {
       "title": "Sources & references ledger",
-      "file": "sources.md",
+      "file": "sources.html",
       "type": "HTML",
-      "note": "Canonical source list for this hub.",
-      "html": "sources.html",
-      "source_md": "sources.md"
+      "note": "Canonical source list for this hub (HTML).",
+      "html": "sources.html"
     },
     {
       "title": "Jev — Cheatsheet",
@@ -368,7 +547,7 @@
       "title": "AI assistance vs automation (Almeida / RLHF)",
       "description": "Related TypeSafe founder thesis — bridge to System One / Jev.",
       "folder": "decks/almeida-rlhf",
-      "slide_pattern": "Slide{n}.JPG",
+      "slide_pattern": "Slide{n}.PNG",
       "slide_count": 15,
       "slides": [],
       "download": "reports/almeida-rlhf.pptx"
@@ -429,10 +608,9 @@
   "links": {
     "github": "https://github.com/aaronmeis/learn-jev",
     "zotero": "",
-    "notebooklm": "https://notebooklm.google.com/notebook/9af23a0e-eaa4-4b85-81aa-b98a8a544347",
     "typesafe_docs": "https://docs.typesafe.ai/concepts/system-one",
     "typesafe_launch": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
-    "sources_md": "sources.md"
+    "sources_md": "sources.html"
   },
   "sources_intro": "Primary TypeSafe docs, named third-party explainers, and packaged NotebookLM artifacts this hub is built from. Prefer primary docs over vendor speed/cost marketing claims.",
   "sources": [
@@ -519,13 +697,16 @@
       "title": "AI assistance vs automation (Almeida / RLHF)",
       "url": "#deck-almeida-rlhf",
       "note": "Conceptual bridge; not a Jev API tutorial. See also sources.md."
-    },
-    {
-      "group": "Related context",
-      "kind": "Notebook",
-      "title": "NotebookLM — odm-jev-system-one",
-      "url": "https://notebooklm.google.com/notebook/9af23a0e-eaa4-4b85-81aa-b98a8a544347",
-      "note": "Studio notebook used to generate deck/shorts/reports."
     }
-  ]
+  ],
+  "section_headers": {
+    "overview": "visuals/headers/overview.jpg",
+    "visuals": "visuals/headers/visuals.jpg",
+    "library": "visuals/headers/library.jpg",
+    "deck-jev-overview": "visuals/headers/deck-jev-overview.jpg",
+    "deck-almeida-rlhf": "visuals/headers/deck-almeida-rlhf.jpg",
+    "shorts": "visuals/headers/shorts.jpg",
+    "media": "visuals/headers/media.jpg",
+    "sources": "visuals/headers/sources.jpg"
+  }
 }

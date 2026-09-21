@@ -33,7 +33,6 @@ Canonical ledger for what this hub is built from. Prefer **primary TypeSafe docs
 | Audio overview | `media/Benchmarking and Defending Jev System One.m4a` |
 | Cheatsheet / topic guide / glossary | `notes/jev/` |
 
-NotebookLM notebook: https://notebooklm.google.com/notebook/9af23a0e-eaa4-4b85-81aa-b98a8a544347  
 
 Heavy downloads origin: `C:\output\obsidian\notebooklm\odm-jev-system-one\` (including the `NEXUS _ odm-jev-system-one _ …` folder).
 

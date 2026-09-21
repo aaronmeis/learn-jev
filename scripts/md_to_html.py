@@ -24,6 +24,8 @@ CSS = """
 html, body {
   margin: 0;
   padding: 0;
+  height: 100%;
+  overflow: auto;
   background: var(--bg);
   color: var(--text);
   font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;

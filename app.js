@@ -433,11 +433,7 @@
         return `<h3 style="margin:1.25rem 0 0.75rem">${escapeHtml(g)}</h3><div class="resource-grid">${rows}</div>`;
       })
       .join("");
-    const more = data.links?.sources_md
-      ? `<p class="section-desc" style="margin-top:1.25rem">Full ledger: <a href="${escapeHtml(
-          data.links.sources_md
-        )}" target="_blank" rel="noopener">sources.md</a></p>`
-      : `<p class="section-desc" style="margin-top:1.25rem">Full ledger: <a href="sources.md" target="_blank" rel="noopener">sources.md</a></p>`;
+    const more = `<p class="section-desc" style="margin-top:1.25rem">Full ledger: <a href="sources.html" target="_blank" rel="noopener">sources.html</a></p>`;
     return `
       <p class="section-desc">${escapeHtml(
         data.sources_intro ||
@@ -452,23 +448,26 @@
     if (data.links?.github) {
       links.push(`<a href="${escapeHtml(data.links.github)}" target="_blank" rel="noopener">GitHub</a>`);
     }
-    if (data.links?.notebooklm) {
-      links.push(
-        `<a href="${escapeHtml(data.links.notebooklm)}" target="_blank" rel="noopener">NotebookLM</a>`
-      );
-    }
     if (data.links?.zotero) {
       links.push(
         `<a href="${escapeHtml(data.links.zotero)}" target="_blank" rel="noopener">Zotero</a>`
       );
     }
-    links.push(`<a href="sources.md" target="_blank" rel="noopener">Sources</a>`);
+    links.push(`<a href="sources.html" target="_blank" rel="noopener">Sources</a>`);
     return `
       <p>${escapeHtml(data.disclaimer || "")}</p>
       <p style="margin-top:0.5rem">Researched as of <strong>${escapeHtml(
         data.researched_as_of || "—"
       )}</strong>
       ${links.length ? " · " + links.join(" · ") : ""}</p>`;
+  }
+
+  function sectionBanner(data, sectionId) {
+    const file = data.section_headers && data.section_headers[sectionId];
+    if (!file) return "";
+    return `<div class="section-banner"><img src="${escapeHtml(
+      file
+    )}" alt="" loading="lazy" /></div>`;
   }
 
   function mountPanels(data) {
@@ -478,18 +477,21 @@
     blocks.push(`
       <section class="panel active" id="overview">
         <h2 class="section-title">Overview</h2>
+        ${sectionBanner(data, "overview")}
         ${renderOverview(data)}
       </section>`);
 
     blocks.push(`
       <section class="panel" id="visuals">
         <h2 class="section-title">Strategic Visual Assets</h2>
+        ${sectionBanner(data, "visuals")}
         ${renderVisuals(data)}
       </section>`);
 
     blocks.push(`
       <section class="panel" id="library">
         <h2 class="section-title">Research Library</h2>
+        ${sectionBanner(data, "library")}
         ${renderLibrary(data)}
       </section>`);
 
@@ -498,9 +500,11 @@
         (Array.isArray(deck.slides) && deck.slides.length > 0) ||
         (Number(deck.slide_count) || 0) > 0;
       if (!hasSlides) return;
+      const sid = `deck-${deck.id}`;
       blocks.push(`
-        <section class="panel" id="deck-${escapeHtml(deck.id)}">
+        <section class="panel" id="${escapeHtml(sid)}">
           <h2 class="section-title">${escapeHtml(deck.title || deck.nav_label || deck.id)}</h2>
+          ${sectionBanner(data, sid)}
           ${renderDeck(deck)}
         </section>`);
     });
@@ -509,6 +513,7 @@
       blocks.push(`
         <section class="panel" id="shorts">
           <h2 class="section-title">Jev shorts (~30s)</h2>
+          ${sectionBanner(data, "shorts")}
           ${renderShorts(data)}
         </section>`);
     }
@@ -517,6 +522,7 @@
       blocks.push(`
         <section class="panel" id="media">
           <h2 class="section-title">Media</h2>
+          ${sectionBanner(data, "media")}
           ${renderMedia(data)}
         </section>`);
     }
@@ -525,6 +531,7 @@
       blocks.push(`
         <section class="panel" id="sources">
           <h2 class="section-title">Sources &amp; references</h2>
+          ${sectionBanner(data, "sources")}
           ${renderSources(data)}
         </section>`);
     }
