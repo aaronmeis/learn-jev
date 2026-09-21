@@ -117,7 +117,7 @@
     const topics = (data.overview?.topics || [])
       .map(
         (t) => `
-      <article class="card topic-card">
+      <article class="topic-card">
         <h3>${escapeHtml(t.title)}</h3>
         <p>${escapeHtml(t.body)}</p>
       </article>`

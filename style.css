@@ -344,13 +344,35 @@ h2.section-title {
   font-size: 0.9rem;
 }
 
+/* Focus areas: informational only — no click/hover affordance */
 .topic-card {
-  cursor: default;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
   border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  cursor: default;
+  pointer-events: none;
+  user-select: text;
 }
 
-.topic-card:hover {
-  cursor: default;
+.topic-card:hover,
+.topic-card:focus {
+  transform: none;
+  border-color: var(--border);
+  border-left-color: var(--accent);
+  box-shadow: none;
+}
+
+.topic-card h3 {
+  color: var(--accent);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.topic-card p {
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 
 /* Visuals */
