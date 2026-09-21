@@ -141,7 +141,7 @@ def convert_file(md_path: Path) -> Path:
 </head>
 <body>
   <main class="wrap">
-    <div class="meta">Learn Jev · rendered from {md_path.name}</div>
+    <div class="meta">Learn Jev</div>
     {html_body}
   </main>
 </body>
@@ -155,11 +155,19 @@ def main() -> None:
     data = json.loads(CONTENT.read_text(encoding="utf-8"))
     paths: set[Path] = set()
     for item in data.get("library", []):
-        f = item.get("file") or ""
-        if f.lower().endswith(".md"):
-            paths.add(ROOT / f)
-    # Always include sources.md
+        for key in ("file", "html"):
+            f = str(item.get(key) or "").replace("\\", "/")
+            if not f:
+                continue
+            if f.lower().endswith(".md"):
+                paths.add(ROOT / f)
+            elif f.lower().endswith(".html"):
+                sibling = (ROOT / f).with_suffix(".md")
+                if sibling.is_file():
+                    paths.add(sibling)
+    # Always include sources + disclaimer
     paths.add(ROOT / "sources.md")
+    paths.add(ROOT / "DISCLAIMER.md")
 
     converted = []
     for md in sorted(paths):
@@ -168,24 +176,29 @@ def main() -> None:
             continue
         out = convert_file(md)
         converted.append(out.relative_to(ROOT).as_posix())
-        # Point library entries at HTML for reading
         rel_md = md.relative_to(ROOT).as_posix()
         rel_html = out.relative_to(ROOT).as_posix()
         for item in data.get("library", []):
             file_norm = str(item.get("file") or "").replace("\\", "/")
-            if file_norm == rel_md or item.get("file") == rel_md:
-                item["file"] = rel_md
+            html_norm = str(item.get("html") or "").replace("\\", "/")
+            if file_norm in {rel_md, rel_html} or html_norm in {rel_md, rel_html}:
+                item["file"] = rel_html
                 item["html"] = rel_html
-                item["source_md"] = rel_md
-                # Keep type readable; viewer uses html
+                item.pop("source_md", None)
                 if item.get("type") in {"MD", "HTML", None, ""}:
                     item["type"] = "HTML"
 
-    # Prefer sources.html in library if present as sources.md
+    # Normalize sources / disclaimer entries; never expose .md in library
     for item in data.get("library", []):
-        if item.get("file") == "sources.md":
+        f = str(item.get("file") or "").replace("\\", "/")
+        item.pop("source_md", None)
+        if f.lower() in {"sources.md", "sources.html"}:
+            item["file"] = "sources.html"
             item["html"] = "sources.html"
-            item["source_md"] = "sources.md"
+            item["type"] = "HTML"
+        if f.lower() in {"disclaimer.md", "disclaimer.html"}:
+            item["file"] = "DISCLAIMER.html"
+            item["html"] = "DISCLAIMER.html"
             item["type"] = "HTML"
 
     CONTENT.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")

@@ -49,4 +49,4 @@ Conceptual bridge to why automation-native decisions matter. Packaged under `rep
 
 - Speed/cost multiples remain largely **vendor-reported** until measured on your workload.
 - “Zero hallucination” in product language refers to **schema-bound outputs**, not guaranteed truth.
-- This hub is **unofficial** personal learning packaging — not affiliated with TypeSafe AI. See `DISCLAIMER.md`.
+- This hub is **unofficial** personal learning packaging — not affiliated with TypeSafe AI. See the [Disclaimer](DISCLAIMER.html).

@@ -208,7 +208,8 @@
             .map((f, i) => {
               const view = libraryViewerUrl(f);
               const canView = !!view;
-              const openHref = f.source_md || f.file;
+              // Prefer HTML viewer URL; never expose .md targets in the library UI
+              const openHref = view || f.file;
               return `
             <li class="file-item${canView ? " is-readable" : ""}" data-library-index="${i}"${
                 canView ? ` data-view-url="${escapeHtml(view)}"` : ""
@@ -219,12 +220,9 @@
                 }>${escapeHtml(f.title)}</button>
                 ${f.note ? `<div class="meta">${escapeHtml(f.note)}</div>` : ""}
                 <div class="library-actions">
-                  <a href="${escapeHtml(openHref)}" target="_blank" rel="noopener">Open file</a>
-                  ${
-                    f.html && f.source_md
-                      ? `<a href="${escapeHtml(f.source_md)}" target="_blank" rel="noopener">Markdown</a>`
-                      : ""
-                  }
+                  <a href="${escapeHtml(openHref)}" target="_blank" rel="noopener">${
+                    canView ? "Open" : "Download"
+                  }</a>
                 </div>
               </div>
               <span class="badge">${escapeHtml(f.type || "FILE")}</span>
@@ -454,6 +452,7 @@
       );
     }
     links.push(`<a href="sources.html" target="_blank" rel="noopener">Sources</a>`);
+    links.push(`<a href="DISCLAIMER.html" target="_blank" rel="noopener">Disclaimer</a>`);
     return `
       <p>${escapeHtml(data.disclaimer || "")}</p>
       <p style="margin-top:0.5rem">Researched as of <strong>${escapeHtml(
