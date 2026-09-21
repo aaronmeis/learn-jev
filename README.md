@@ -4,7 +4,7 @@ Personal **GitHub Pages** learning hub for **Jev** (TypeSafe AI’s System One m
 
 **Live:** https://aaronmeis.github.io/learn-jev/
 
-**Not** a one-day-mastery product site. Study-pack notes are reframed as an untimed reference library (cheatsheet, topic guide, deep notes).
+**Not** a one-day-mastery product site. Study-pack notes are reframed as an untimed study library (cheatsheet, topic guide, NEXUS reports).
 
 Pattern: research-insight-hub-shell / [learn-aero-IP-law](https://aaronmeis.github.io/learn-aero-IP-law/) split-scene SPA.
 
@@ -38,7 +38,7 @@ Then adjust `content.json` if new decks/media appear, commit, and update `gh-pag
 
 | Path | Contents |
 |------|----------|
-| `notes/jev/` | Cheatsheet, topic guide, glossary, mind map, deep notes |
+| `notes/jev/` | Cheatsheet, topic guide, glossary, mind map |
 | `reports/jev/` | Decision Layer PDF + `notebooklm/` NEXUS docs |
 | `reports/jev-overview.pptx` | Slide deck PPTX |
 | `decks/jev-overview/` | PNG slides for clean in-browser presentation |

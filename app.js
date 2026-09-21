@@ -62,7 +62,7 @@
     const items = [
       { id: "overview", label: "Overview" },
       { id: "visuals", label: "Visual Assets" },
-      { id: "library", label: "Research Library" },
+      { id: "library", label: "Study Library" },
     ];
 
     (data.decks || []).forEach((d) => {
@@ -235,7 +235,7 @@
             <span id="library-reader-title">Select a document</span>
             <a id="library-reader-open" href="#" target="_blank" rel="noopener" hidden>Open in new tab</a>
           </div>
-          <iframe id="library-frame" title="Research library reader" src="${escapeHtml(
+          <iframe id="library-frame" title="Study library reader" src="${escapeHtml(
             firstView
           )}"></iframe>
           <div class="library-reader-empty" id="library-reader-empty"${
@@ -489,7 +489,7 @@
 
     blocks.push(`
       <section class="panel" id="library">
-        <h2 class="section-title">Research Library</h2>
+        <h2 class="section-title">Study Library</h2>
         ${sectionBanner(data, "library")}
         ${renderLibrary(data)}
       </section>`);

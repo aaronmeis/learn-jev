@@ -35,8 +35,8 @@
         "target": "visuals"
       },
       {
-        "title": "Reference library",
-        "body": "Cheatsheet, topic guide, full NEXUS NotebookLM export (reports, study guide, playbook, CSV, mind map, PDF, PPTX).",
+        "title": "Study library",
+        "body": "Cheatsheet, topic guide, full NEXUS NotebookLM export (reports, study guide, playbook, mind map, PDF, PPTX).",
         "target": "library"
       },
       {
@@ -400,34 +400,6 @@
       "type": "HTML",
       "note": "From NotebookLM NEXUS export folder.",
       "html": "reports/jev/notebooklm/Technical Briefing_ Implementing Jev (TypeSafe System One) for Programmatic Deci.html"
-    },
-    {
-      "title": "Deep note — Core concepts",
-      "file": "notes/jev/blocks/01-core-concepts.html",
-      "type": "HTML",
-      "note": "Untimed study-pack section.",
-      "html": "notes/jev/blocks/01-core-concepts.html"
-    },
-    {
-      "title": "Deep note — Mental models",
-      "file": "notes/jev/blocks/02-mental-models.html",
-      "type": "HTML",
-      "note": "Untimed study-pack section.",
-      "html": "notes/jev/blocks/02-mental-models.html"
-    },
-    {
-      "title": "Deep note — Edge cases",
-      "file": "notes/jev/blocks/05-edge-cases.html",
-      "type": "HTML",
-      "note": "Untimed study-pack section.",
-      "html": "notes/jev/blocks/05-edge-cases.html"
-    },
-    {
-      "title": "Deep note — Application sketch",
-      "file": "notes/jev/blocks/07-application.html",
-      "type": "HTML",
-      "note": "Untimed study-pack section.",
-      "html": "notes/jev/blocks/07-application.html"
     },
     {
       "title": "Almeida — Practitioner working briefing",
