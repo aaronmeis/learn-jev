@@ -7,6 +7,7 @@
     data: null,
     activeSection: "overview",
     deckIndex: {},
+    lightboxIndex: 0,
   };
 
   const $ = (sel, root = document) => root.querySelector(sel);
@@ -167,7 +168,7 @@
       return `<p class="section-desc">Add entries to <code>content.json → visuals</code> and drop PNGs under <code>visuals/</code>.</p>`;
     }
     return `
-      <p class="section-desc">Click any asset for a large lightbox view.</p>
+      <p class="section-desc">Click any asset for a large view. Use ← → arrow keys (or the side buttons) to browse the set.</p>
       <div class="asset-grid">
         ${items
           .map(
@@ -598,14 +599,42 @@
     $$(".dot", host).forEach((d, idx) => d.classList.toggle("active", idx === i));
   }
 
-  function openLightbox(visual) {
+  function visualsList() {
+    return (state.data && state.data.visuals) || [];
+  }
+
+  function showLightbox(index) {
+    const items = visualsList();
+    if (!items.length) return;
+    const n = items.length;
+    const i = ((Number(index) % n) + n) % n;
+    state.lightboxIndex = i;
+    const visual = items[i];
     const lb = $("#lightbox");
-    $("#lightbox-img").src = visual.file || "";
-    $("#lightbox-img").alt = visual.title || "";
+    const img = $("#lightbox-img");
+    img.src = visual.file || "";
+    img.alt = visual.title || "";
     $("#lightbox-title").textContent = visual.title || "";
     $("#lightbox-desc").textContent = visual.caption || "";
+    const counter = $("#lightbox-counter");
+    if (counter) counter.textContent = `${i + 1} / ${n}`;
     lb.classList.add("active");
     document.body.style.overflow = "hidden";
+  }
+
+  function openLightbox(visualOrIndex) {
+    const items = visualsList();
+    if (typeof visualOrIndex === "number") {
+      showLightbox(visualOrIndex);
+      return;
+    }
+    const idx = items.indexOf(visualOrIndex);
+    showLightbox(idx >= 0 ? idx : 0);
+  }
+
+  function stepLightbox(delta) {
+    if (!$("#lightbox").classList.contains("active")) return;
+    showLightbox(state.lightboxIndex + delta);
   }
 
   function closeLightbox() {
@@ -700,8 +729,13 @@
       const asset = e.target.closest("[data-visual-index]");
       if (asset) {
         const idx = Number(asset.getAttribute("data-visual-index"));
-        const visual = (data.visuals || [])[idx];
-        if (visual) openLightbox(visual);
+        if (Number.isFinite(idx)) openLightbox(idx);
+        return;
+      }
+
+      const lbNav = e.target.closest("[data-lightbox-delta]");
+      if (lbNav) {
+        stepLightbox(Number(lbNav.getAttribute("data-lightbox-delta")));
         return;
       }
 
@@ -730,13 +764,21 @@
         closeSidebar();
         return;
       }
-      if (!$("#lightbox").classList.contains("active")) {
-        const active = state.activeSection;
-        if (active.startsWith("deck-")) {
-          const deckId = active.replace(/^deck-/, "");
-          if (e.key === "ArrowLeft") showDeckSlide(deckId, (state.deckIndex[deckId] || 0) - 1);
-          if (e.key === "ArrowRight") showDeckSlide(deckId, (state.deckIndex[deckId] || 0) + 1);
+      if ($("#lightbox").classList.contains("active")) {
+        if (e.key === "ArrowLeft") {
+          e.preventDefault();
+          stepLightbox(-1);
+        } else if (e.key === "ArrowRight") {
+          e.preventDefault();
+          stepLightbox(1);
         }
+        return;
+      }
+      const active = state.activeSection;
+      if (active.startsWith("deck-")) {
+        const deckId = active.replace(/^deck-/, "");
+        if (e.key === "ArrowLeft") showDeckSlide(deckId, (state.deckIndex[deckId] || 0) - 1);
+        if (e.key === "ArrowRight") showDeckSlide(deckId, (state.deckIndex[deckId] || 0) + 1);
       }
     });
 

@@ -862,6 +862,7 @@ h2.section-title {
 
 .lightbox.active {
   display: flex;
+  gap: 0.65rem;
 }
 
 .lightbox-panel {
@@ -874,6 +875,43 @@ h2.section-title {
   overflow: hidden;
   position: relative;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-nav {
+  flex-shrink: 0;
+  align-self: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(15, 23, 42, 0.72);
+  color: #fff;
+  font-size: 1.75rem;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.lightbox-nav:hover {
+  background: rgba(37, 99, 235, 0.85);
+  border-color: rgba(147, 197, 253, 0.55);
+}
+
+.lightbox-counter {
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.55rem;
+}
+
+.lightbox-hint {
+  margin-top: 1rem;
+  color: #64748b;
+  font-size: 0.75rem;
 }
 
 .lightbox-img-wrap {
