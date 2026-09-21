@@ -12,9 +12,15 @@
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
+  function assetUrl(rel) {
+    // Resolve against the page URL so GitHub Pages project roots
+    // (…/learn-jev/ and …/learn-jev/index.html) both work.
+    return new URL(rel, window.location.href).toString();
+  }
+
   async function loadContent() {
-    const res = await fetch("content.json", { cache: "no-store" });
-    if (!res.ok) throw new Error("Could not load content.json");
+    const res = await fetch(assetUrl("content.json"), { cache: "no-store" });
+    if (!res.ok) throw new Error(`Could not load content.json (${res.status})`);
     return res.json();
   }
 
@@ -55,6 +61,10 @@
     ];
 
     (data.decks || []).forEach((d) => {
+      const hasSlides =
+        (Array.isArray(d.slides) && d.slides.length > 0) ||
+        (Number(d.slide_count) || 0) > 0;
+      if (!hasSlides) return; // hide pending empty decks from nav (law-site style)
       items.push({ id: `deck-${d.id}`, label: d.nav_label || d.title || d.id });
     });
 
@@ -346,6 +356,10 @@
       </section>`);
 
     (data.decks || []).forEach((deck) => {
+      const hasSlides =
+        (Array.isArray(deck.slides) && deck.slides.length > 0) ||
+        (Number(deck.slide_count) || 0) > 0;
+      if (!hasSlides) return;
       blocks.push(`
         <section class="panel" id="deck-${escapeHtml(deck.id)}">
           <h2 class="section-title">${escapeHtml(deck.title || deck.nav_label || deck.id)}</h2>
@@ -428,6 +442,18 @@
   }
 
   function bindEvents(data) {
+    const home = $("#sidebar-home");
+    if (home) {
+      const goHome = () => showSection("overview");
+      home.addEventListener("click", goHome);
+      home.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          goHome();
+        }
+      });
+    }
+
     $("#nav-links").addEventListener("click", (e) => {
       const item = e.target.closest(".nav-item");
       if (!item) return;

@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Learn Jev — TypeSafe System One typed decisions for software. Personal learning hub." />
+  <meta name="color-scheme" content="light dark" />
   <title>Learn Jev — typed decisions for software</title>
-  <link rel="stylesheet" href="style.css" />
+  <!-- Root landing for GitHub Pages project site: /learn-jev/ → index.html SPA -->
+  <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
   <div class="overlay" id="overlay" aria-hidden="true"></div>
 
   <aside class="sidebar" id="sidebar" aria-label="Hub navigation">
-    <div class="sidebar-header">
-      <div class="brand" id="brand-short">INSIGHT HUB</div>
-      <div class="sub" id="brand-sub">Research insight hub</div>
+    <div class="sidebar-header" id="sidebar-home" role="button" tabindex="0" title="Back to overview">
+      <div class="brand" id="brand-short">LEARN JEV</div>
+      <div class="sub" id="brand-sub">Personal learning hub</div>
     </div>
     <ul class="nav-links" id="nav-links" role="navigation"></ul>
   </aside>
@@ -27,9 +29,9 @@
     <nav class="breadcrumb" id="breadcrumb" aria-label="Breadcrumb"></nav>
     <main class="content">
       <div id="panels">
-        <section class="panel active">
+        <section class="panel active" id="overview">
           <h2 class="section-title">Loading…</h2>
-          <p class="section-desc">Reading content.json</p>
+          <p class="section-desc">Reading <code>content.json</code> for the Learn Jev SPA.</p>
         </section>
       </div>
       <footer class="site-footer" id="site-footer"></footer>
@@ -49,6 +51,13 @@
     </div>
   </div>
 
-  <script src="app.js"></script>
+  <noscript>
+    <div style="padding:2rem;font-family:system-ui,sans-serif;max-width:40rem;margin:2rem auto">
+      <h1>Learn Jev</h1>
+      <p>This hub is a JavaScript SPA (same pattern as the aerospace IP law research hub). Enable JavaScript, or open the markdown notes under <code>notes/jev/</code> and <code>reports/</code> on GitHub.</p>
+    </div>
+  </noscript>
+
+  <script src="./app.js" defer></script>
 </body>
 </html>
