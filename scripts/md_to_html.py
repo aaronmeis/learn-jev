@@ -24,8 +24,10 @@ CSS = """
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%;
-  overflow: auto;
+  height: auto;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
   background: var(--bg);
   color: var(--text);
   font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;

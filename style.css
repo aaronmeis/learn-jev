@@ -495,6 +495,8 @@ h2.section-title {
 }
 
 #library-frame {
+  position: relative;
+  z-index: 1;
   width: 100%;
   flex: 1 1 auto;
   border: 0;
@@ -512,6 +514,12 @@ h2.section-title {
   padding: 2rem;
   color: var(--muted);
   text-align: center;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.library-reader-empty[hidden] {
+  display: none !important;
 }
 
 .library-open {

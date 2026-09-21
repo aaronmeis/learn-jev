@@ -660,7 +660,11 @@
       const title = $("#library-reader-title");
       const open = $("#library-reader-open");
       if (frame) frame.src = url;
-      if (empty) empty.hidden = true;
+      if (empty) {
+        empty.hidden = true;
+        empty.setAttribute("hidden", "");
+        empty.style.display = "none";
+      }
       if (title) {
         const btn = itemEl.querySelector(".library-open");
         title.textContent = btn ? btn.textContent.trim() : "Document";
