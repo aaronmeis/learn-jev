@@ -1,0 +1,148 @@
+{
+  "name": "Jev (TypeSafe System One)",
+  "children": [
+    {
+      "name": "Product Overview",
+      "children": [
+        {
+          "name": "TypeSafe AI (typesafe.ai)"
+        },
+        {
+          "name": "System One Model Class"
+        },
+        {
+          "name": "Jev flagship model"
+        },
+        {
+          "name": "Optimized for automation"
+        }
+      ]
+    },
+    {
+      "name": "Core Primitives",
+      "children": [
+        {
+          "name": "Choice",
+          "children": [
+            {
+              "name": "Fixed option sets"
+            },
+            {
+              "name": "Max 255 options"
+            }
+          ]
+        },
+        {
+          "name": "Score",
+          "children": [
+            {
+              "name": "Ordered scales"
+            },
+            {
+              "name": "Defined levels"
+            }
+          ]
+        },
+        {
+          "name": "Noul",
+          "children": [
+            {
+              "name": "Boolean/Probability"
+            },
+            {
+              "name": "Yes/No truth values"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Key Differentiators",
+      "children": [
+        {
+          "name": "Parallel sampling"
+        },
+        {
+          "name": "Typed probabilistic output"
+        },
+        {
+          "name": "No chat or text generation"
+        },
+        {
+          "name": "Calibrated confidence scores"
+        },
+        {
+          "name": "70ms-500ms response time"
+        }
+      ]
+    },
+    {
+      "name": "Mental Models",
+      "children": [
+        {
+          "name": "Decision layer, not narrator"
+        },
+        {
+          "name": "Confidence-gated routing"
+        },
+        {
+          "name": "Schema is the product"
+        },
+        {
+          "name": "Calibration vs Correctness"
+        }
+      ]
+    },
+    {
+      "name": "Workflow Design",
+      "children": [
+        {
+          "name": "Decompose input state"
+        },
+        {
+          "name": "Atomic question decomposition"
+        },
+        {
+          "name": "Combine signals in code"
+        },
+        {
+          "name": "Escalate on low confidence"
+        }
+      ]
+    },
+    {
+      "name": "Technical Claims",
+      "children": [
+        {
+          "name": "193x faster than LLMs"
+        },
+        {
+          "name": "444x cheaper than LLMs"
+        },
+        {
+          "name": "Zero type errors"
+        },
+        {
+          "name": "Cannot hallucinate strings"
+        }
+      ]
+    },
+    {
+      "name": "Traps & Limits",
+      "children": [
+        {
+          "name": "Text-only input (no images)"
+        },
+        {
+          "name": "Garbage schema failure"
+        },
+        {
+          "name": "Over-trusting aggregate calibration"
+        },
+        {
+          "name": "Hosted API only"
+        }
+      ]
+    }
+  ]
+}

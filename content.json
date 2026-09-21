@@ -11,7 +11,7 @@
   "disclaimer": "Personal learning and research packaging only. Unofficial; not affiliated with, endorsed by, or sponsored by TypeSafe AI or any organization named here. Not legal, financial, or professional advice. Vendor speed/cost claims are reported as published — verify on your workload. See DISCLAIMER.md.",
   "audience": "Practitioners and architects who want a clean map of Jev / System One: concepts, sources, decks, and related Almeida (RLHF → automation) context.",
   "overview": {
-    "blurb": "Jev is TypeSafe AI's flagship System One model: program state in, typed probabilistic decisions out (Choice, Score, Noul) — no chat, no code, no explanations. This hub packages study notes, primary links, a related RLHF/automation deck, and media so you can navigate the topic quickly. Study-day pedagogy files are included as reference material only; the site itself is a lasting learning library, not a timed one-day mastery product.",
+    "blurb": "Jev is TypeSafe AI's flagship System One model: program state in, typed probabilistic decisions out (Choice, Score, Noul) — no chat, no code, no explanations. This hub is a lasting reference library: shorts, decks, cheatsheet, and NotebookLM reports. Material from the study pack is included without a day timer.",
     "hero_media": null,
     "cards": [
       {
@@ -20,24 +20,24 @@
         "target": "shorts"
       },
       {
+        "title": "Jev overview deck",
+        "body": "15-slide NotebookLM deck — decision layer story for practitioners.",
+        "target": "deck-jev-overview"
+      },
+      {
         "title": "Concept visuals",
-        "body": "Typed decisions, System One vs LLM, and the confidence gate — scannable diagrams for orientation.",
+        "body": "Typed decisions, System One vs LLM, confidence gate, plus NBLM decision-layer infographic.",
         "target": "visuals"
       },
       {
         "title": "Reference library",
-        "body": "Jev notes (glossary, mind map, source ledger, blocks) plus Almeida briefing/playbook markdown and the Calibration Blueprint PDF.",
+        "body": "Cheatsheet, topic guide, glossary, NotebookLM briefings/playbook/study guide, PPTX + PDF.",
         "target": "library"
       },
       {
-        "title": "Related deck — assistance vs automation",
-        "body": "Diogo Almeida / RLHF paradox deck: why preference-trained LLMs fit assistance better than unsupervised automation — the bridge to System One / Jev.",
+        "title": "Related — assistance vs automation",
+        "body": "Almeida / RLHF paradox deck — conceptual bridge to System One.",
         "target": "deck-almeida-rlhf"
-      },
-      {
-        "title": "Audio",
-        "body": "NotebookLM audio overview from the assistance-vs-automation pack (related context).",
-        "target": "media"
       }
     ],
     "topics": [
@@ -77,14 +77,32 @@
       "title": "Confidence gate",
       "file": "visuals/confidence-gate.jpg",
       "caption": "Act when probability clears a threshold; otherwise escalate to a human or an LLM. Calibration is aggregate, not a warranty on one call."
+    },
+    {
+      "id": "decision-layer-nblm",
+      "title": "Jev decision layer vs LLMs",
+      "file": "visuals/jev-decision-layer-vs-llms.png",
+      "caption": "NotebookLM infographic: decision-layer framing versus generative LLM workflows."
     }
   ],
   "library": [
     {
-      "title": "Jev — Mission / framing",
+      "title": "Jev — Cheatsheet",
+      "file": "notes/jev/cheatsheet.md",
+      "type": "MD",
+      "note": "Standing quick reference: primitives, gates, traps."
+    },
+    {
+      "title": "Jev — Topic guide (untimed)",
+      "file": "notes/jev/topic-guide.md",
+      "type": "MD",
+      "note": "Reframed study map without a clock."
+    },
+    {
+      "title": "Jev — Framing / mission",
       "file": "notes/jev/mission.md",
       "type": "MD",
-      "note": "Why this topic; success criteria; out of scope."
+      "note": "Goals and out of scope for this hub."
     },
     {
       "title": "Jev — Glossary",
@@ -96,7 +114,7 @@
       "title": "Jev — Mind map",
       "file": "notes/jev/mindmap.md",
       "type": "MD",
-      "note": "Topic map used to organize the reference pack."
+      "note": "Topic branches used to organize the pack."
     },
     {
       "title": "Jev — Source ledger",
@@ -111,28 +129,100 @@
       "note": "High-trust URL table and gaps."
     },
     {
-      "title": "Jev — Cheatsheet",
-      "file": "notes/jev/cheatsheet.md",
+      "title": "Jev — Quiz bank",
+      "file": "notes/jev/quiz-bank.md",
       "type": "MD",
-      "note": "Quick reference."
+      "note": "Retrieval prompts (use anytime)."
+    },
+    {
+      "title": "Deep note — Core concepts",
+      "file": "notes/jev/blocks/01-core-concepts.md",
+      "type": "MD",
+      "note": "Concepts drill (untimed)."
+    },
+    {
+      "title": "Deep note — Mental models",
+      "file": "notes/jev/blocks/02-mental-models.md",
+      "type": "MD",
+      "note": "Models drill (untimed)."
+    },
+    {
+      "title": "Deep note — Edge cases",
+      "file": "notes/jev/blocks/05-edge-cases.md",
+      "type": "MD",
+      "note": "Traps drill (untimed)."
+    },
+    {
+      "title": "Deep note — Application sketch",
+      "file": "notes/jev/blocks/07-application.md",
+      "type": "MD",
+      "note": "One-pager prompt (untimed)."
     },
     {
       "title": "Jev — Elicit light research",
       "file": "notes/jev/elicit-light-research.md",
       "type": "MD",
-      "note": "Calibration / selective classification literature (grounds confidence gates; does not validate RLCD)."
+      "note": "Calibration / selective classification literature."
     },
     {
-      "title": "Jev — Study day plan (reference)",
-      "file": "notes/jev/study-day-plan.md",
+      "title": "NBLM — Technical briefing",
+      "file": "reports/jev/notebooklm/Jev (TypeSafe System One)_ A Technical Briefing.md",
       "type": "MD",
-      "note": "Optional timed study path. Included for completeness; this hub is not an ODM product site."
+      "note": "NotebookLM report."
     },
     {
-      "title": "Jev — Staged NotebookLM sources (zip folder)",
-      "file": "reports/jev/00-mission.md",
+      "title": "NBLM — Mental models",
+      "file": "reports/jev/notebooklm/Jev (TypeSafe System One)_ Mental Models and Technical Distinctions.md",
       "type": "MD",
-      "note": "Entry into reports/jev/ staged source set (mission, blocks, ledger, prompts)."
+      "note": "NotebookLM report."
+    },
+    {
+      "title": "NBLM — Authoring / practice playbook",
+      "file": "reports/jev/notebooklm/Jev (TypeSafe System One) Authoring _ Practice Playbook.md",
+      "type": "MD",
+      "note": "NotebookLM playbook."
+    },
+    {
+      "title": "NBLM — Edge cases catalog",
+      "file": "reports/jev/notebooklm/Catalog of Edge Cases and Traps for Jev (TypeSafe System One).md",
+      "type": "MD",
+      "note": "Trap sheet."
+    },
+    {
+      "title": "NBLM — Executive decision packet",
+      "file": "reports/jev/notebooklm/Executive Decision Packet_ Jev (TypeSafe System One) Implementation.md",
+      "type": "MD",
+      "note": "Room-craft style packet."
+    },
+    {
+      "title": "NBLM — Study guide",
+      "file": "reports/jev/notebooklm/Study Guide_ Jev (TypeSafe System One).md",
+      "type": "MD",
+      "note": "Quiz-oriented study guide."
+    },
+    {
+      "title": "NBLM — Implementing Jev (programmatic decisions)",
+      "file": "reports/jev/notebooklm/Technical Briefing_ Implementing Jev (TypeSafe System One) for Programmatic Deci.md",
+      "type": "MD",
+      "note": "Implementation-oriented briefing."
+    },
+    {
+      "title": "Jev The Decision Layer (PDF)",
+      "file": "reports/jev/Jev The Decision Layer.pdf",
+      "type": "PDF",
+      "note": "Slide deck PDF export."
+    },
+    {
+      "title": "Jev overview deck (PowerPoint)",
+      "file": "reports/jev-overview.pptx",
+      "type": "PPTX",
+      "note": "Downloadable PPTX (~16MB)."
+    },
+    {
+      "title": "Claims / practice table (CSV)",
+      "file": "reports/jev/notebooklm/Major Claims and Practice Implications for Jev (TypeSafe System One).csv",
+      "type": "CSV",
+      "note": "NotebookLM data table."
     },
     {
       "title": "Almeida — Practitioner working briefing",
@@ -156,46 +246,40 @@
       "title": "The Calibration Blueprint (PDF)",
       "file": "reports/almeida/The Calibration Blueprint.pdf",
       "type": "PDF",
-      "note": "NotebookLM slide/PDF artifact from the related pack (~16MB)."
+      "note": "Related pack PDF."
     },
     {
       "title": "Almeida deck (PowerPoint)",
       "file": "reports/almeida-rlhf.pptx",
       "type": "PPTX",
-      "note": "Full related presentation download."
+      "note": "Related presentation download."
     }
   ],
   "decks": [
     {
+      "id": "jev-overview",
+      "nav_label": "Jev overview",
+      "title": "Jev overview (System One decision layer)",
+      "description": "NotebookLM detailed deck for Jev / TypeSafe System One. Download PPTX from the library.",
+      "folder": "decks/jev-overview",
+      "slide_pattern": "Slide{n}.JPG",
+      "slide_count": 15,
+      "slides": [],
+      "download": "reports/jev-overview.pptx"
+    },
+    {
       "id": "almeida-rlhf",
       "nav_label": "Assistance vs automation",
       "title": "AI assistance vs automation (Almeida / RLHF)",
-      "description": "Related TypeSafe founder thesis: RLHF-era models excel at human-in-the-loop assistance and struggle at unsupervised automation — the conceptual bridge to System One / Jev. Not a Jev product deck (Jev W8 slides pending full NotebookLM run).",
+      "description": "Related TypeSafe founder thesis: RLHF-era models excel at assistance and struggle at unsupervised automation — bridge to System One / Jev.",
       "folder": "decks/almeida-rlhf",
       "slide_pattern": "Slide{n}.JPG",
       "slide_count": 15,
       "slides": [],
       "download": "reports/almeida-rlhf.pptx"
-    },
-    {
-      "id": "jev-overview",
-      "nav_label": "Jev deck (pending)",
-      "title": "Jev overview deck",
-      "description": "Placeholder until odm-jev-system-one NotebookLM slides are generated and synced (run W8 resume, then scripts/sync-from-output.ps1).",
-      "folder": "decks/jev-overview",
-      "slide_pattern": "Slide{n}.JPG",
-      "slide_count": 0,
-      "slides": [],
-      "download": null
     }
   ],
   "media": {
-    "video": null,
-    "audio": {
-      "title": "Why RLHF Limits True AI Automation",
-      "file": "media/Why RLHF Limits True AI Automation.m4a",
-      "caption": "Audio overview from the related assistance-vs-automation NotebookLM pack. Complements the Almeida deck; not a Jev product walkthrough."
-    },
     "shorts_intro": "Six NotebookLM vertical shorts (~30s) from the Jev pack. Educational motion graphics — one job each.",
     "shorts": [
       {
@@ -234,7 +318,13 @@
         "file": "media/shorts/06-edge-or-next.mp4",
         "caption": "Schema guarantee vs truth. A 0.9 is aggregate calibration, not a single-call warranty."
       }
-    ]
+    ],
+    "video": null,
+    "audio": {
+      "title": "Benchmarking and Defending Jev System One",
+      "file": "media/Benchmarking and Defending Jev System One.m4a",
+      "caption": "NotebookLM audio overview for the Jev pack."
+    }
   },
   "links": {
     "github": "https://github.com/aaronmeis/learn-jev",

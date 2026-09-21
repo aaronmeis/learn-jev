@@ -1,12 +1,12 @@
-# Block 7: Application
+﻿# Block 7: Application
 
-**Time:** 60 minutes  
+**Context:** Untimed reference section (from study pack; ignore any minute targets).
 **Goal:** Ship a durable one-pager proving working fluency.  
-**Pack:** Jev (TypeSafe System One) (`jev-system-one`)
+**Hub:** Learn Jev reference
 
 ## Focus from mind map
 
-Ticket router **or** agent middleware decision map — state fields, three primitives, thresholds, escalate path, what stays on the LLM. Pattern-only mention of LangChain middleware (model router / tool guard) if useful — no full platform build.
+Ticket router **or** agent middleware decision map â€” state fields, three primitives, thresholds, escalate path, what stays on the LLM. Pattern-only mention of LangChain middleware (model router / tool guard) if useful â€” no full platform build.
 
 ## Sources
 
@@ -16,7 +16,7 @@ Ticket router **or** agent middleware decision map — state fields, three primi
 
 ## Actions
 
-1. Produce **`learning-records/2026-09-20 - Jev decision layer one-pager.md`** (or today’s date) with:
+1. Produce **`learning-records/2026-09-20 - Jev decision layer one-pager.md`** (or todayâ€™s date) with:
    - Problem statement (one concrete workflow)
    - State schema
    - Questions (Choice / Score / Noul) with labels
@@ -40,3 +40,4 @@ Ticket router **or** agent middleware decision map — state fields, three primi
 - [ ] Application artifact saved under learning-records/
 - [ ] Learning record written
 - [ ] Falsifier (System One vs LLM contrast) passes
+

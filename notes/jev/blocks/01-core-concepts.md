@@ -1,15 +1,15 @@
-# Block 1: Core concepts
+﻿# Block 1: Core concepts
 
-**Time:** 60 minutes  
+**Context:** Untimed reference section (from study pack; ignore any minute targets).
 **Goal:** Lock vocabulary so later blocks hang on a shared glossary.  
-**Pack:** Jev (TypeSafe System One) — typed decisions for software (`jev-system-one`)
+**Hub:** Learn Jev reference
 
 ## Focus from mind map
 
 - TypeSafe AI / System One model class / Jev (`jev-latest`)
-- State in → typed probabilistic decisions out (no chat, no code, no explanations)
+- State in â†’ typed probabilistic decisions out (no chat, no code, no explanations)
 - Three primitives: Choice, Score, Noul
-- Sibling context only: [[ai-assistance-vs-automation]] (Almeida / automation gap) — not today’s deep dive
+- Sibling context only: [[ai-assistance-vs-automation]] (Almeida / automation gap) â€” not todayâ€™s deep dive
 
 ## Sources
 
@@ -34,7 +34,7 @@
 
 ## Seed brief
 
-Jev is a frontier-intelligence **function call**: messy program state plus questions you define → answers your code can branch on. It is not a chatbot. “Zero hallucination” in marketing means **no free-text invention outside the schema**, not perfect truth.
+Jev is a frontier-intelligence **function call**: messy program state plus questions you define â†’ answers your code can branch on. It is not a chatbot. â€œZero hallucinationâ€ in marketing means **no free-text invention outside the schema**, not perfect truth.
 
 ## Retrieval check
 
@@ -50,3 +50,4 @@ Jev is a frontier-intelligence **function call**: messy program state plus quest
 - [ ] Concept list written
 - [ ] Contrast table drawn
 - [ ] Three weak terms marked
+
