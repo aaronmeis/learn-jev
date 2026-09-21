@@ -598,6 +598,8 @@
     try {
       const data = await loadContent();
       state.data = data;
+      // Debug handle for local verification
+      window.__LEARN_JEV_DATA__ = data;
       applyChrome(data);
       buildNav(data);
       mountPanels(data);
