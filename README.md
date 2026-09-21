@@ -40,16 +40,11 @@ Then update `content.json` `decks` / `media` if new files appear (e.g. set `jev-
 
 ## GitHub Pages
 
-```powershell
-cd C:\projects\learn-jev
-git init
-git add .
-git commit -m "Initial learn-jev hub (Jev reference + related Almeida pack)"
-gh repo create aaronmeis/learn-jev --public --source=. --remote=origin --push
-# Settings → Pages → Deploy from branch main / root
-```
+Landing URL serves **`index.html`** as the SPA (same idea as [learn-aero-IP-law](https://aaronmeis.github.io/learn-aero-IP-law/)): sidebar nav, overview, visuals, library, decks, media.
 
-Expected URL: `https://aaronmeis.github.io/learn-jev/`
+- Live: https://aaronmeis.github.io/learn-jev/
+- Deploy: `.github/workflows/pages.yml` (Actions → GitHub Pages). Root includes `.nojekyll`.
+- After push to `master`, the workflow publishes the repo root so `/learn-jev/` and `/learn-jev/index.html` both boot `content.json`.
 
 ## Disclaimer
 
