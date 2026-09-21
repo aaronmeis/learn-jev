@@ -596,6 +596,73 @@ h2.section-title {
   margin-top: 0.75rem;
 }
 
+/* Shorts (~30s vertical NotebookLM videos) */
+.shorts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.short-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.short-frame {
+  background: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 9 / 16;
+  max-height: 420px;
+}
+
+.short-frame video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  background: #000;
+}
+
+.short-body {
+  padding: 1rem 1.1rem 1.15rem;
+}
+
+.short-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-radius: 999px;
+  padding: 0.2rem 0.55rem;
+  margin-bottom: 0.45rem;
+}
+
+.short-body h3 {
+  font-size: 1rem;
+  margin-bottom: 0.35rem;
+}
+
+.short-body p {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+@media (max-width: 700px) {
+  .shorts-grid {
+    grid-template-columns: minmax(0, 320px);
+    justify-content: center;
+  }
+}
+
 /* Lightbox */
 .lightbox {
   position: fixed;

@@ -62,8 +62,17 @@ if (Test-Path $jevSlides) {
 }
 Copy-Safe (Join-Path $OutJev "odm-jev-system-one-presentation.pptx") (Join-Path $Root "reports\jev-overview.pptx") | Out-Null
 
-# Any mp4/shorts under Jev output
-Get-ChildItem $OutJev -Recurse -Include *.mp4,*.webm,*.m4a -ErrorAction SilentlyContinue | ForEach-Object {
+# Jev NotebookLM shorts (~30s vertical)
+$jevShorts = Join-Path $OutJev "shorts"
+if (Test-Path $jevShorts) {
+  New-Item -ItemType Directory -Force -Path (Join-Path $Root "media\shorts") | Out-Null
+  Copy-Item -Path (Join-Path $jevShorts "*.mp4") -Destination (Join-Path $Root "media\shorts") -Force
+  Copy-Safe (Join-Path $OutJev "shorts-manifest.json") (Join-Path $Root "media\shorts\shorts-manifest.json") | Out-Null
+  Write-Host "  ok media/shorts from NotebookLM downloads" -ForegroundColor Green
+}
+
+# Any other mp4/m4a under Jev output (non-shorts)
+Get-ChildItem $OutJev -File -Include *.mp4,*.webm,*.m4a -ErrorAction SilentlyContinue | ForEach-Object {
   Copy-Safe $_.FullName (Join-Path $Root ("media\" + $_.Name)) | Out-Null
 }
 

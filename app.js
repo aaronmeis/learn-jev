@@ -47,6 +47,7 @@
       reports: (data.library || []).length,
       media:
         (data.media?.video ? 1 : 0) +
+        (Array.isArray(data.media?.shorts) ? data.media.shorts.length : 0) +
         (data.media?.audio ? 1 : 0) +
         (data.overview?.hero_media ? 1 : 0),
     };
@@ -68,6 +69,9 @@
       items.push({ id: `deck-${d.id}`, label: d.nav_label || d.title || d.id });
     });
 
+    if (Array.isArray(data.media?.shorts) && data.media.shorts.length) {
+      items.push({ id: "shorts", label: "Shorts" });
+    }
     if (data.media?.video || data.media?.audio) {
       items.push({ id: "media", label: "Media" });
     }
@@ -284,6 +288,34 @@
       </div>`;
   }
 
+  function renderShorts(data) {
+    const shorts = Array.isArray(data.media?.shorts) ? data.media.shorts : [];
+    if (!shorts.length) {
+      return `<p class="section-desc">No shorts yet. Sync NotebookLM vertical videos into <code>media/shorts/</code>.</p>`;
+    }
+    const cards = shorts
+      .map(
+        (s, i) => `
+      <article class="short-card" data-short-index="${i}">
+        <div class="short-frame">
+          <video src="${escapeHtml(s.file)}" controls playsinline preload="metadata"></video>
+        </div>
+        <div class="short-body">
+          <span class="short-badge">~30s</span>
+          <h3>${escapeHtml(s.title || s.name || `Short ${i + 1}`)}</h3>
+          <p>${escapeHtml(s.caption || "")}</p>
+        </div>
+      </article>`
+      )
+      .join("");
+    return `
+      <p class="section-desc">${escapeHtml(
+        data.media?.shorts_intro ||
+          "NotebookLM vertical shorts (~30s). One job each — educational motion graphics, not cinematic B-roll."
+      )}</p>
+      <div class="shorts-grid">${cards}</div>`;
+  }
+
   function renderMedia(data) {
     const parts = [];
     if (data.media?.video) {
@@ -366,6 +398,14 @@
           ${renderDeck(deck)}
         </section>`);
     });
+
+    if (Array.isArray(data.media?.shorts) && data.media.shorts.length) {
+      blocks.push(`
+        <section class="panel" id="shorts">
+          <h2 class="section-title">Jev shorts (~30s)</h2>
+          ${renderShorts(data)}
+        </section>`);
+    }
 
     if (data.media?.video || data.media?.audio) {
       blocks.push(`

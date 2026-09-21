@@ -15,6 +15,11 @@
     "hero_media": null,
     "cards": [
       {
+        "title": "Jev shorts (~30s)",
+        "body": "Six vertical NotebookLM explainers: function-call framing, vs LLM, primitives, failure mode, confidence gate, calibration.",
+        "target": "shorts"
+      },
+      {
         "title": "Concept visuals",
         "body": "Typed decisions, System One vs LLM, and the confidence gate — scannable diagrams for orientation.",
         "target": "visuals"
@@ -190,7 +195,46 @@
       "title": "Why RLHF Limits True AI Automation",
       "file": "media/Why RLHF Limits True AI Automation.m4a",
       "caption": "Audio overview from the related assistance-vs-automation NotebookLM pack. Complements the Almeida deck; not a Jev product walkthrough."
-    }
+    },
+    "shorts_intro": "Six NotebookLM vertical shorts (~30s) from the Jev pack. Educational motion graphics — one job each.",
+    "shorts": [
+      {
+        "name": "01-core-claim",
+        "title": "Jev is a function call, not a chatbot",
+        "file": "media/shorts/01-core-claim.mp4",
+        "caption": "State + typed questions in; calibrated probabilities out. No chat, no prose."
+      },
+      {
+        "name": "02-key-distinction",
+        "title": "System One vs LLM agent",
+        "file": "media/shorts/02-key-distinction.mp4",
+        "caption": "LLM writes plans and replies; Jev answers closed Choice / Score / Noul questions for code."
+      },
+      {
+        "name": "03-mechanism",
+        "title": "Three primitives in one round trip",
+        "file": "media/shorts/03-mechanism.mp4",
+        "caption": "Choice, Score, and Noul share one state in a single parallel call."
+      },
+      {
+        "name": "04-failure-mode",
+        "title": "Treating Jev as the whole agent",
+        "file": "media/shorts/04-failure-mode.mp4",
+        "caption": "Jev cannot write. LLM narrates; Jev decides; escalate on low confidence."
+      },
+      {
+        "name": "05-practice-rule",
+        "title": "Confidence gate checklist",
+        "file": "media/shorts/05-practice-rule.mp4",
+        "caption": "Act only above threshold. Closed answer space? Good labels? What happens below tau?"
+      },
+      {
+        "name": "06-edge-or-next",
+        "title": "Calibration is not correctness",
+        "file": "media/shorts/06-edge-or-next.mp4",
+        "caption": "Schema guarantee vs truth. A 0.9 is aggregate calibration, not a single-call warranty."
+      }
+    ]
   },
   "links": {
     "github": "https://github.com/aaronmeis/learn-jev",

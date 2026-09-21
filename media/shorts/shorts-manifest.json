@@ -1,0 +1,44 @@
+﻿[
+    {
+        "name":  "01-core-claim",
+        "title":  "Jev is a function call, not a chatbot",
+        "artifact_id":  "fa62619d-1962-48f6-8035-8c1d5305481e",
+        "exit_code":  0,
+        "created":  "2026-09-20T15:56:06.9153271-05:00"
+    },
+    {
+        "name":  "02-key-distinction",
+        "title":  "System One vs LLM agent",
+        "artifact_id":  "af1d208d-f985-439f-b595-564ef10fa55e",
+        "exit_code":  0,
+        "created":  "2026-09-20T15:56:52.0649042-05:00"
+    },
+    {
+        "name":  "03-mechanism",
+        "title":  "Three primitives in one round trip",
+        "artifact_id":  "1d1ba395-ab1f-44b4-b342-669802034429",
+        "exit_code":  0,
+        "created":  "2026-09-20T15:57:36.4717432-05:00"
+    },
+    {
+        "name":  "04-failure-mode",
+        "title":  "Treating Jev as the whole agent",
+        "artifact_id":  "fd786262-c470-479b-b601-df73a99e3e6d",
+        "exit_code":  0,
+        "created":  "2026-09-20T15:58:20.6947730-05:00"
+    },
+    {
+        "name":  "05-practice-rule",
+        "title":  "Confidence gate checklist",
+        "artifact_id":  "d0d4af63-9c79-41df-8b74-270c857cc303",
+        "exit_code":  0,
+        "created":  "2026-09-20T15:59:05.1927664-05:00"
+    },
+    {
+        "name":  "06-edge-or-next",
+        "title":  "Calibration is not correctness",
+        "artifact_id":  "a9bb1b8e-6964-4575-b99d-a480b43692d9",
+        "exit_code":  0,
+        "created":  "2026-09-20T15:59:51.1425959-05:00"
+    }
+]

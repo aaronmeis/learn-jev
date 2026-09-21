@@ -1,0 +1,37 @@
+{
+  "title": "Jev (TypeSafe System One) — 6 shorts",
+  "format": "short",
+  "note": "No cinematic. Each short owns ONE job. Visual direction lives in focus (short format rejects --style). Prefer classic educational motion graphics over sci-fi or looping cinematic B-roll. Ground only in pack sources; mark silence.",
+  "items": [
+    {
+      "name": "01-core-claim",
+      "title": "Jev is a function call, not a chatbot",
+      "focus": "Vertical short, clean classic educational motion graphics. ONE JOB: Jev (TypeSafe System One) takes program state + typed questions and returns calibrated probabilities — no chat, no code, no explanations. One concrete ticket example. End with why software can branch on the number. Do not cover RLCD. No cinematic B-roll."
+    },
+    {
+      "name": "02-key-distinction",
+      "title": "System One vs LLM agent",
+      "focus": "Vertical short, clean classic educational motion graphics. ONE JOB: two-column contrast — LLM generates plans/replies/tool prose vs Jev returns Choice/Score/Noul for code. One worked example of a decision that should not burn an LLM call. No cinematic footage."
+    },
+    {
+      "name": "03-mechanism",
+      "title": "Three primitives in one round trip",
+      "focus": "Vertical short, clean classic educational motion graphics / simple flowchart. ONE JOB: Choice, Score, and Noul — what each asks, what comes back, and that many questions share one state in one call. Three steps max. Mark silence if sources lack API field detail. No cinematic."
+    },
+    {
+      "name": "04-failure-mode",
+      "title": "Treating Jev as the whole agent",
+      "focus": "Vertical short, clean classic educational motion graphics. ONE JOB: the failure mode of using Jev as the sole agent brain (it cannot write). Tell: silent agent / forced tiny Choice sets for open work. Mitigation: LLM narrates, Jev decides, escalate on low confidence. No cinematic loops."
+    },
+    {
+      "name": "05-practice-rule",
+      "title": "Confidence gate checklist",
+      "focus": "Vertical short, clean classic educational motion graphics. ONE JOB: one rule — act only above threshold τ, else human/LLM. Checklist of three questions: Is the answer space closed? Is the schema labelled well? What happens below τ? Skip vendor 193x pitches. No cinematic."
+    },
+    {
+      "name": "06-edge-or-next",
+      "title": "Calibration is not correctness",
+      "focus": "Vertical short, clean classic educational motion graphics. ONE JOB: rewrite 'zero hallucination' and a 0.9 score accurately — schema guarantee vs truth; calibration is aggregate. Steelman: maybe JSON-mode LLMs are enough. Label TypeSafe speed/cost claims as vendor-reported. No cinematic narrative."
+    }
+  ]
+}
