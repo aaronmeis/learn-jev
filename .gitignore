@@ -4,3 +4,7 @@ Thumbs.db
 .vscode/
 .env
 .env.*
+
+__pycache__/
+*.pyc
+
