@@ -61,12 +61,6 @@ if (Test-Path $jevSlides) {
   Write-Host "  ok decks/jev-overview slides" -ForegroundColor Green
 }
 Copy-Safe (Join-Path $OutJev "odm-jev-system-one-presentation.pptx") (Join-Path $Root "reports\jev-overview.pptx") | Out-Null
-$jevSlidesDir = Join-Path $OutJev "odm-jev-system-one-presentation"
-if (Test-Path $jevSlidesDir) {
-  New-Item -ItemType Directory -Force -Path (Join-Path $Root "decks\jev-overview") | Out-Null
-  Copy-Item -Path (Join-Path $jevSlidesDir "Slide*") -Destination (Join-Path $Root "decks\jev-overview") -Force
-  Write-Host "  ok decks/jev-overview slides" -ForegroundColor Green
-}
 
 # Jev NotebookLM shorts (~30s vertical)
 $jevShorts = Join-Path $OutJev "shorts"

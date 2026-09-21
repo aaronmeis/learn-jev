@@ -11,32 +11,32 @@
   "disclaimer": "Personal learning and research packaging only. Unofficial; not affiliated with, endorsed by, or sponsored by TypeSafe AI or any organization named here. Not legal, financial, or professional advice. Vendor speed/cost claims are reported as published — verify on your workload. See DISCLAIMER.md.",
   "audience": "Practitioners and architects who want a clean map of Jev / System One: concepts, sources, decks, and related Almeida (RLHF → automation) context.",
   "overview": {
-    "blurb": "Jev is TypeSafe AI's flagship System One model: program state in, typed probabilistic decisions out (Choice, Score, Noul) — no chat, no code, no explanations. This hub is a lasting reference library: shorts, decks, cheatsheet, and NotebookLM reports. Material from the study pack is included without a day timer.",
+    "blurb": "Jev is TypeSafe AI's flagship System One model: program state in, typed probabilistic decisions out (Choice, Score, Noul). This hub packages the NotebookLM suite — PNG slide deck, PPTX/PDF, ~30s shorts, audio, reports — plus reframed study notes without a day timer.",
     "hero_media": null,
     "cards": [
       {
-        "title": "Jev shorts (~30s)",
-        "body": "Six vertical NotebookLM explainers: function-call framing, vs LLM, primitives, failure mode, confidence gate, calibration.",
-        "target": "shorts"
-      },
-      {
-        "title": "Jev overview deck",
-        "body": "15-slide NotebookLM deck — decision layer story for practitioners.",
+        "title": "Jev overview deck (PNG)",
+        "body": "15-slide NotebookLM deck exported to PNG for a clean in-browser presentation. PPTX download in the library.",
         "target": "deck-jev-overview"
       },
       {
+        "title": "Jev shorts (~30s)",
+        "body": "Six vertical NotebookLM explainers (stable filenames + original NBLM titles available under media).",
+        "target": "shorts"
+      },
+      {
         "title": "Concept visuals",
-        "body": "Typed decisions, System One vs LLM, confidence gate, plus NBLM decision-layer infographic.",
+        "body": "Decision-layer diagrams and the NBLM infographic.",
         "target": "visuals"
       },
       {
         "title": "Reference library",
-        "body": "Cheatsheet, topic guide, glossary, NotebookLM briefings/playbook/study guide, PPTX + PDF.",
+        "body": "Cheatsheet, topic guide, full NEXUS NotebookLM export (reports, study guide, playbook, CSV, mind map, PDF, PPTX).",
         "target": "library"
       },
       {
         "title": "Related — assistance vs automation",
-        "body": "Almeida / RLHF paradox deck — conceptual bridge to System One.",
+        "body": "Almeida / RLHF deck — conceptual bridge to System One.",
         "target": "deck-almeida-rlhf"
       }
     ],
@@ -90,157 +90,151 @@
       "title": "Jev — Cheatsheet",
       "file": "notes/jev/cheatsheet.md",
       "type": "MD",
-      "note": "Standing quick reference: primitives, gates, traps."
+      "note": "Standing quick reference."
     },
     {
       "title": "Jev — Topic guide (untimed)",
       "file": "notes/jev/topic-guide.md",
       "type": "MD",
-      "note": "Reframed study map without a clock."
+      "note": "Study map without a clock."
     },
     {
       "title": "Jev — Framing / mission",
       "file": "notes/jev/mission.md",
       "type": "MD",
-      "note": "Goals and out of scope for this hub."
+      "note": "Goals and out of scope."
     },
     {
       "title": "Jev — Glossary",
       "file": "notes/jev/glossary.md",
       "type": "MD",
-      "note": "System One, Jev, Choice / Score / Noul, calibration, RLCD."
+      "note": "Core vocabulary."
     },
     {
       "title": "Jev — Mind map",
       "file": "notes/jev/mindmap.md",
       "type": "MD",
-      "note": "Topic branches used to organize the pack."
+      "note": "Topic branches."
     },
     {
       "title": "Jev — Source ledger",
       "file": "notes/jev/source-ledger.md",
       "type": "MD",
-      "note": "Primary docs + named YouTube explainers."
+      "note": "Primary docs + videos."
     },
     {
       "title": "Jev — Resources",
       "file": "notes/jev/resources.md",
       "type": "MD",
-      "note": "High-trust URL table and gaps."
+      "note": "High-trust URLs."
     },
     {
       "title": "Jev — Quiz bank",
       "file": "notes/jev/quiz-bank.md",
       "type": "MD",
-      "note": "Retrieval prompts (use anytime)."
+      "note": "Retrieval prompts."
     },
     {
-      "title": "Deep note — Core concepts",
-      "file": "notes/jev/blocks/01-core-concepts.md",
-      "type": "MD",
-      "note": "Concepts drill (untimed)."
-    },
-    {
-      "title": "Deep note — Mental models",
-      "file": "notes/jev/blocks/02-mental-models.md",
-      "type": "MD",
-      "note": "Models drill (untimed)."
-    },
-    {
-      "title": "Deep note — Edge cases",
-      "file": "notes/jev/blocks/05-edge-cases.md",
-      "type": "MD",
-      "note": "Traps drill (untimed)."
-    },
-    {
-      "title": "Deep note — Application sketch",
-      "file": "notes/jev/blocks/07-application.md",
-      "type": "MD",
-      "note": "One-pager prompt (untimed)."
-    },
-    {
-      "title": "Jev — Elicit light research",
-      "file": "notes/jev/elicit-light-research.md",
-      "type": "MD",
-      "note": "Calibration / selective classification literature."
-    },
-    {
-      "title": "NBLM — Technical briefing",
-      "file": "reports/jev/notebooklm/Jev (TypeSafe System One)_ A Technical Briefing.md",
-      "type": "MD",
-      "note": "NotebookLM report."
-    },
-    {
-      "title": "NBLM — Mental models",
-      "file": "reports/jev/notebooklm/Jev (TypeSafe System One)_ Mental Models and Technical Distinctions.md",
-      "type": "MD",
-      "note": "NotebookLM report."
-    },
-    {
-      "title": "NBLM — Authoring / practice playbook",
-      "file": "reports/jev/notebooklm/Jev (TypeSafe System One) Authoring _ Practice Playbook.md",
-      "type": "MD",
-      "note": "NotebookLM playbook."
-    },
-    {
-      "title": "NBLM — Edge cases catalog",
-      "file": "reports/jev/notebooklm/Catalog of Edge Cases and Traps for Jev (TypeSafe System One).md",
-      "type": "MD",
-      "note": "Trap sheet."
-    },
-    {
-      "title": "NBLM — Executive decision packet",
-      "file": "reports/jev/notebooklm/Executive Decision Packet_ Jev (TypeSafe System One) Implementation.md",
-      "type": "MD",
-      "note": "Room-craft style packet."
-    },
-    {
-      "title": "NBLM — Study guide",
-      "file": "reports/jev/notebooklm/Study Guide_ Jev (TypeSafe System One).md",
-      "type": "MD",
-      "note": "Quiz-oriented study guide."
-    },
-    {
-      "title": "NBLM — Implementing Jev (programmatic decisions)",
-      "file": "reports/jev/notebooklm/Technical Briefing_ Implementing Jev (TypeSafe System One) for Programmatic Deci.md",
-      "type": "MD",
-      "note": "Implementation-oriented briefing."
+      "title": "Jev overview (PowerPoint)",
+      "file": "reports/jev-overview.pptx",
+      "type": "PPTX",
+      "note": "Source PPTX used for the PNG deck (~16MB)."
     },
     {
       "title": "Jev The Decision Layer (PDF)",
       "file": "reports/jev/Jev The Decision Layer.pdf",
       "type": "PDF",
-      "note": "Slide deck PDF export."
+      "note": "From NEXUS NotebookLM export."
     },
     {
-      "title": "Jev overview deck (PowerPoint)",
-      "file": "reports/jev-overview.pptx",
-      "type": "PPTX",
-      "note": "Downloadable PPTX (~16MB)."
+      "title": "NEXUS — Catalog of Edge Cases and Traps for Jev (TypeSafe System One)",
+      "file": "reports/jev/notebooklm/Catalog of Edge Cases and Traps for Jev (TypeSafe System One).md",
+      "type": "MD",
+      "note": "From NotebookLM NEXUS export folder."
     },
     {
-      "title": "Claims / practice table (CSV)",
+      "title": "NEXUS — Executive Decision Packet_ Jev (TypeSafe System One) Implementation",
+      "file": "reports/jev/notebooklm/Executive Decision Packet_ Jev (TypeSafe System One) Implementation.md",
+      "type": "MD",
+      "note": "From NotebookLM NEXUS export folder."
+    },
+    {
+      "title": "NEXUS — Jev (TypeSafe System One) Authoring and Practice Playbook",
+      "file": "reports/jev/notebooklm/Jev (TypeSafe System One) Authoring and Practice Playbook.md",
+      "type": "MD",
+      "note": "From NotebookLM NEXUS export folder."
+    },
+    {
+      "title": "NEXUS — Jev (TypeSafe System One)_ A Technical Briefing",
+      "file": "reports/jev/notebooklm/Jev (TypeSafe System One)_ A Technical Briefing.md",
+      "type": "MD",
+      "note": "From NotebookLM NEXUS export folder."
+    },
+    {
+      "title": "NEXUS — Jev (TypeSafe System One)_ Mental Models and Technical Distinctions",
+      "file": "reports/jev/notebooklm/Jev (TypeSafe System One)_ Mental Models and Technical Distinctions.md",
+      "type": "MD",
+      "note": "From NotebookLM NEXUS export folder."
+    },
+    {
+      "title": "NEXUS — Major Claims and Practice Implications for Jev (TypeSafe System One)",
       "file": "reports/jev/notebooklm/Major Claims and Practice Implications for Jev (TypeSafe System One).csv",
       "type": "CSV",
-      "note": "NotebookLM data table."
+      "note": "From NotebookLM NEXUS export folder."
+    },
+    {
+      "title": "NEXUS — Study Guide_ Jev (TypeSafe System One)",
+      "file": "reports/jev/notebooklm/Study Guide_ Jev (TypeSafe System One).md",
+      "type": "MD",
+      "note": "From NotebookLM NEXUS export folder."
+    },
+    {
+      "title": "NEXUS — Technical Briefing_ Implementing Jev (TypeSafe System One) for Programmatic Deci",
+      "file": "reports/jev/notebooklm/Technical Briefing_ Implementing Jev (TypeSafe System One) for Programmatic Deci.md",
+      "type": "MD",
+      "note": "From NotebookLM NEXUS export folder."
+    },
+    {
+      "title": "NEXUS — TypeSafe System One",
+      "file": "reports/jev/notebooklm/TypeSafe System One.json",
+      "type": "JSON",
+      "note": "From NotebookLM NEXUS export folder."
+    },
+    {
+      "title": "Deep note — Core concepts",
+      "file": "notes/jev/blocks/01-core-concepts.md",
+      "type": "MD",
+      "note": "Untimed study-pack section."
+    },
+    {
+      "title": "Deep note — Mental models",
+      "file": "notes/jev/blocks/02-mental-models.md",
+      "type": "MD",
+      "note": "Untimed study-pack section."
+    },
+    {
+      "title": "Deep note — Edge cases",
+      "file": "notes/jev/blocks/05-edge-cases.md",
+      "type": "MD",
+      "note": "Untimed study-pack section."
+    },
+    {
+      "title": "Deep note — Application sketch",
+      "file": "notes/jev/blocks/07-application.md",
+      "type": "MD",
+      "note": "Untimed study-pack section."
     },
     {
       "title": "Almeida — Practitioner working briefing",
       "file": "reports/almeida/AI Assistance vs. Automation_ A Practitioners Working Briefing (Almeida_RLHF).md",
       "type": "MD",
-      "note": "Related context: assistance vs automation."
+      "note": "Related context."
     },
     {
-      "title": "Almeida — Playbook",
-      "file": "reports/almeida/Playbook_ Navigating AI Assistance vs. Automation (Almeida - RLHF).md",
-      "type": "MD",
-      "note": "Practice-oriented companion."
-    },
-    {
-      "title": "Almeida — Edge cases catalog",
-      "file": "reports/almeida/Catalog of Edge Cases and Traps_ AI Assistance vs. Automation (Almeida_RLHF).md",
-      "type": "MD",
-      "note": "Trap sheet from the related pack."
+      "title": "Almeida deck (PowerPoint)",
+      "file": "reports/almeida-rlhf.pptx",
+      "type": "PPTX",
+      "note": "Related presentation."
     },
     {
       "title": "The Calibration Blueprint (PDF)",
@@ -249,10 +243,52 @@
       "note": "Related pack PDF."
     },
     {
-      "title": "Almeida deck (PowerPoint)",
-      "file": "reports/almeida-rlhf.pptx",
-      "type": "PPTX",
-      "note": "Related presentation download."
+      "title": "NEXUS — Benchmarking and Defending Jev System One (audio)",
+      "file": "media/Benchmarking and Defending Jev System One.m4a",
+      "type": "M4A",
+      "note": "NEXUS audio overview."
+    },
+    {
+      "title": "NEXUS — JEV Decision Layer vs LLMs (PNG)",
+      "file": "visuals/jev-decision-layer-vs-llms.png",
+      "type": "PNG",
+      "note": "NEXUS infographic."
+    },
+    {
+      "title": "NEXUS short — How Jev turns text into typed decisions",
+      "file": "media/shorts-nblm/How Jev Turns Text Into Typed Decisions.mp4",
+      "type": "MP4",
+      "note": "NEXUS vertical short (~30s)."
+    },
+    {
+      "title": "NEXUS short — How System One models replace LLMs in code",
+      "file": "media/shorts-nblm/How System One Models Replace LLMs in Code.mp4",
+      "type": "MP4",
+      "note": "NEXUS vertical short (~30s)."
+    },
+    {
+      "title": "NEXUS short — How System One primitives output math",
+      "file": "media/shorts-nblm/How System One Primitives Output Math.mp4",
+      "type": "MP4",
+      "note": "NEXUS vertical short (~30s)."
+    },
+    {
+      "title": "NEXUS short — Why Jev fails as a solo agent brain",
+      "file": "media/shorts-nblm/Why Jev Fails as a Solo Agent Brain.mp4",
+      "type": "MP4",
+      "note": "NEXUS vertical short (~30s)."
+    },
+    {
+      "title": "NEXUS short — How the confidence gate automates decisions",
+      "file": "media/shorts-nblm/How the Confidence Gate Automates Decisions.mp4",
+      "type": "MP4",
+      "note": "NEXUS vertical short (~30s)."
+    },
+    {
+      "title": "NEXUS short — How System One replaces LLM JSON hacks",
+      "file": "media/shorts-nblm/How System One Replaces LLM JSON Hacks.mp4",
+      "type": "MP4",
+      "note": "NEXUS vertical short (~30s)."
     }
   ],
   "decks": [
@@ -260,9 +296,9 @@
       "id": "jev-overview",
       "nav_label": "Jev overview",
       "title": "Jev overview (System One decision layer)",
-      "description": "NotebookLM detailed deck for Jev / TypeSafe System One. Download PPTX from the library.",
+      "description": "NotebookLM deck exported to PNG for a clean slideshow. Download the PPTX from the library for offline editing.",
       "folder": "decks/jev-overview",
-      "slide_pattern": "Slide{n}.JPG",
+      "slide_pattern": "Slide{n}.PNG",
       "slide_count": 15,
       "slides": [],
       "download": "reports/jev-overview.pptx"
@@ -271,7 +307,7 @@
       "id": "almeida-rlhf",
       "nav_label": "Assistance vs automation",
       "title": "AI assistance vs automation (Almeida / RLHF)",
-      "description": "Related TypeSafe founder thesis: RLHF-era models excel at assistance and struggle at unsupervised automation — bridge to System One / Jev.",
+      "description": "Related TypeSafe founder thesis — bridge to System One / Jev.",
       "folder": "decks/almeida-rlhf",
       "slide_pattern": "Slide{n}.JPG",
       "slide_count": 15,
@@ -280,50 +316,50 @@
     }
   ],
   "media": {
-    "shorts_intro": "Six NotebookLM vertical shorts (~30s) from the Jev pack. Educational motion graphics — one job each.",
+    "shorts_intro": "Six NotebookLM vertical shorts from the Jev NEXUS export (~30s each).",
     "shorts": [
       {
-        "name": "01-core-claim",
-        "title": "Jev is a function call, not a chatbot",
-        "file": "media/shorts/01-core-claim.mp4",
-        "caption": "State + typed questions in; calibrated probabilities out. No chat, no prose."
+        "name": "01",
+        "title": "How Jev turns text into typed decisions",
+        "file": "media/shorts-nblm/How Jev Turns Text Into Typed Decisions.mp4",
+        "caption": "NotebookLM vertical short (~30s)."
       },
       {
-        "name": "02-key-distinction",
-        "title": "System One vs LLM agent",
-        "file": "media/shorts/02-key-distinction.mp4",
-        "caption": "LLM writes plans and replies; Jev answers closed Choice / Score / Noul questions for code."
+        "name": "02",
+        "title": "How System One models replace LLMs in code",
+        "file": "media/shorts-nblm/How System One Models Replace LLMs in Code.mp4",
+        "caption": "NotebookLM vertical short (~30s)."
       },
       {
-        "name": "03-mechanism",
-        "title": "Three primitives in one round trip",
-        "file": "media/shorts/03-mechanism.mp4",
-        "caption": "Choice, Score, and Noul share one state in a single parallel call."
+        "name": "03",
+        "title": "How System One primitives output math",
+        "file": "media/shorts-nblm/How System One Primitives Output Math.mp4",
+        "caption": "NotebookLM vertical short (~30s)."
       },
       {
-        "name": "04-failure-mode",
-        "title": "Treating Jev as the whole agent",
-        "file": "media/shorts/04-failure-mode.mp4",
-        "caption": "Jev cannot write. LLM narrates; Jev decides; escalate on low confidence."
+        "name": "04",
+        "title": "Why Jev fails as a solo agent brain",
+        "file": "media/shorts-nblm/Why Jev Fails as a Solo Agent Brain.mp4",
+        "caption": "NotebookLM vertical short (~30s)."
       },
       {
-        "name": "05-practice-rule",
-        "title": "Confidence gate checklist",
-        "file": "media/shorts/05-practice-rule.mp4",
-        "caption": "Act only above threshold. Closed answer space? Good labels? What happens below tau?"
+        "name": "05",
+        "title": "How the confidence gate automates decisions",
+        "file": "media/shorts-nblm/How the Confidence Gate Automates Decisions.mp4",
+        "caption": "NotebookLM vertical short (~30s)."
       },
       {
-        "name": "06-edge-or-next",
-        "title": "Calibration is not correctness",
-        "file": "media/shorts/06-edge-or-next.mp4",
-        "caption": "Schema guarantee vs truth. A 0.9 is aggregate calibration, not a single-call warranty."
+        "name": "06",
+        "title": "How System One replaces LLM JSON hacks",
+        "file": "media/shorts-nblm/How System One Replaces LLM JSON Hacks.mp4",
+        "caption": "NotebookLM vertical short (~30s)."
       }
     ],
     "video": null,
     "audio": {
       "title": "Benchmarking and Defending Jev System One",
       "file": "media/Benchmarking and Defending Jev System One.m4a",
-      "caption": "NotebookLM audio overview for the Jev pack."
+      "caption": "NotebookLM audio overview from the NEXUS export."
     }
   },
   "links": {
