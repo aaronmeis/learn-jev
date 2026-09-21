@@ -53,14 +53,16 @@ if (Test-Path $jevSrc) {
   Write-Host "  ok reports/jev from staged sources" -ForegroundColor Green
 }
 
-# Jev presentation / shorts when present
-$jevSlides = Join-Path $OutJev "odm-jev-system-one-presentation"
-if (Test-Path $jevSlides) {
-  New-Item -ItemType Directory -Force -Path (Join-Path $Root "decks\jev-overview") | Out-Null
-  Copy-Item -Path (Join-Path $jevSlides "Slide*") -Destination (Join-Path $Root "decks\jev-overview") -Force
-  Write-Host "  ok decks/jev-overview slides" -ForegroundColor Green
-}
+# Jev PPTX + PNG slide export (prefer *-presentation-png, else JPG folder)
 Copy-Safe (Join-Path $OutJev "odm-jev-system-one-presentation.pptx") (Join-Path $Root "reports\jev-overview.pptx") | Out-Null
+$jevPng = Join-Path $OutJev "odm-jev-system-one-presentation-png"
+$jevJpg = Join-Path $OutJev "odm-jev-system-one-presentation"
+$jevSlideSrc = if (Test-Path $jevPng) { $jevPng } elseif (Test-Path $jevJpg) { $jevJpg } else { $null }
+if ($jevSlideSrc) {
+  New-Item -ItemType Directory -Force -Path (Join-Path $Root "decks\jev-overview") | Out-Null
+  Copy-Item -Path (Join-Path $jevSlideSrc "Slide*") -Destination (Join-Path $Root "decks\jev-overview") -Force
+  Write-Host "  ok decks/jev-overview from $jevSlideSrc" -ForegroundColor Green
+}
 
 # Jev NotebookLM shorts (~30s vertical)
 $jevShorts = Join-Path $OutJev "shorts"
@@ -71,9 +73,27 @@ if (Test-Path $jevShorts) {
   Write-Host "  ok media/shorts from NotebookLM downloads" -ForegroundColor Green
 }
 
-# Any other mp4/m4a under Jev output (non-shorts)
-Get-ChildItem $OutJev -File -Include *.mp4,*.webm,*.m4a -ErrorAction SilentlyContinue | ForEach-Object {
-  Copy-Safe $_.FullName (Join-Path $Root ("media\" + $_.Name)) | Out-Null
+# Full NEXUS export folder (docs + media mirrors)
+$jevNexus = Join-Path $OutJev "NEXUS _ odm-jev-system-one _ 2026-09-20 _ one-day-mastery"
+if (Test-Path $jevNexus) {
+  New-Item -ItemType Directory -Force -Path (Join-Path $Root "reports\jev\notebooklm") | Out-Null
+  New-Item -ItemType Directory -Force -Path (Join-Path $Root "media\shorts-nblm") | Out-Null
+  Get-ChildItem -LiteralPath $jevNexus -File | ForEach-Object {
+    $ext = $_.Extension.ToLowerInvariant()
+    if ($ext -in @(".md", ".csv", ".json", ".pdf")) {
+      Copy-Safe $_.FullName (Join-Path $Root ("reports\jev\notebooklm\" + $_.Name)) | Out-Null
+      if ($ext -eq ".pdf") {
+        Copy-Safe $_.FullName (Join-Path $Root ("reports\jev\" + $_.Name)) | Out-Null
+      }
+    } elseif ($ext -eq ".mp4") {
+      Copy-Safe $_.FullName (Join-Path $Root ("media\shorts-nblm\" + $_.Name)) | Out-Null
+    } elseif ($ext -in @(".m4a", ".mp3")) {
+      Copy-Safe $_.FullName (Join-Path $Root ("media\" + $_.Name)) | Out-Null
+    } elseif ($ext -eq ".png") {
+      Copy-Safe $_.FullName (Join-Path $Root ("visuals\" + $_.Name)) | Out-Null
+    }
+  }
+  Write-Host "  ok NEXUS export mirrored" -ForegroundColor Green
 }
 
 # --- Almeida related (TypeSafe founder / RLHF -> automation gap) ---
