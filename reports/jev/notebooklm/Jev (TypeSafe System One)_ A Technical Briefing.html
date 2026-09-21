@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jev (TypeSafe System One): A Technical Briefing</title>
+  <style>
+:root {
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --accent: #2563eb;
+  --border: #e2e8f0;
+  --code-bg: #f1f5f9;
+}
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.65;
+}
+.wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 3rem;
+}
+h1, h2, h3, h4 {
+  line-height: 1.25;
+  color: var(--text);
+}
+h1 { font-size: 1.75rem; margin: 0 0 1rem; }
+h2 { font-size: 1.35rem; margin: 1.75rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.35rem; }
+h3 { font-size: 1.1rem; margin: 1.35rem 0 0.5rem; color: var(--accent); }
+p, li { color: var(--text); }
+a { color: var(--accent); }
+code, pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  background: var(--code-bg);
+  border-radius: 6px;
+}
+code { padding: 0.1rem 0.35rem; font-size: 0.9em; }
+pre { padding: 0.9rem 1rem; overflow: auto; border: 1px solid var(--border); }
+pre code { padding: 0; background: transparent; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.92rem;
+  background: var(--card);
+}
+th, td {
+  border: 1px solid var(--border);
+  padding: 0.55rem 0.65rem;
+  text-align: left;
+  vertical-align: top;
+}
+th { background: var(--code-bg); }
+blockquote {
+  margin: 1rem 0;
+  padding: 0.25rem 0 0.25rem 1rem;
+  border-left: 4px solid var(--accent);
+  color: var(--muted);
+}
+hr { border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0; }
+.meta {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-bottom: 1.25rem;
+}
+.frontmatter {
+  display: none;
+}
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="meta">Learn Jev · rendered from Jev (TypeSafe System One)_ A Technical Briefing.md</div>
+    <h1 id="jev-typesafe-system-one-a-technical-briefing">Jev (TypeSafe System One): A Technical Briefing</h1>
+<h2 id="executive-summary">Executive Summary</h2>
+<p>Jev is the flagship <strong>System One</strong> model released by TypeSafe AI, designed specifically for fast, structured decision-making within software environments rather than human-facing chat. Developed by founder Diogo Almeida (formerly of OpenAI), Jev represents a new class of frontier models optimized for automation rather than prose generation.</p>
+<p>Unlike Large Language Models (LLMs) that generate autoregressive text, Jev processes unstructured input (&ldquo;state&rdquo;) and returns <strong>typed probabilistic decisions</strong> through a parallel sampling architecture. This approach allows Jev to achieve speeds of 70ms to 500ms and costs significantly lower than traditional LLMs ($42 per billion input tokens, with free output). The model is built on <strong>Reinforcement Learning for Calibrated Decisions (RLCD)</strong>, ensuring that uncertainty is communicated through epistemically honest probabilities rather than overconfident hallucinations.</p>
+<h2 id="detailed-analysis-of-key-themes">Detailed Analysis of Key Themes</h2>
+<h3 id="1-the-system-one-paradigm-decisions-vs-narrative">1. The System One Paradigm: Decisions vs. Narrative</h3>
+<p>The fundamental distinction of Jev is its role as a <strong>decision layer, not a narrator</strong>. While LLMs are &ldquo;System Two&rdquo; thinkers—slow, deliberate, and capable of complex reasoning and prose—Jev is modeled after Daniel Kahneman’s &ldquo;System 1&rdquo; concept: fast, intuitive, and focused.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Feature</th>
+<th style="text-align: left;">Existing LLMs (System Two-ish)</th>
+<th style="text-align: left;">System One (Jev)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Output Type</strong></td>
+<td style="text-align: left;">Strings / Generated Text</td>
+<td style="text-align: left;">Type-safe Structured Values</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Optimized For</strong></td>
+<td style="text-align: left;">Human Preference (RLHF)</td>
+<td style="text-align: left;">Calibrated Decisions (RLCD)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Sampling</strong></td>
+<td style="text-align: left;">Sequential (Token-by-token)</td>
+<td style="text-align: left;">Parallel (Single query)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Response Time</strong></td>
+<td style="text-align: left;">3 to 300+ seconds</td>
+<td style="text-align: left;">70ms to 500ms</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Hallucination</strong></td>
+<td style="text-align: left;">Risk of &ldquo;going off the rails&rdquo;</td>
+<td style="text-align: left;">Impossible to invent options outside schema</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-core-primitives-and-logic">2. Core Primitives and Logic</h3>
+<p>Jev operates through three primary AI primitives. These allow developers to embed &ldquo;programmable common sense&rdquo; into deterministic code:</p>
+<ul>
+<li><strong>Choice:</strong> Selecting one option from a defined set (up to 255 options). It returns the selected option, a probability distribution across all options, and a confidence score.</li>
+<li><strong>Score:</strong> Placing an input on an ordered scale with described levels (e.g., 0–10 severity).</li>
+<li><strong>Noul:</strong> A probabilistic &ldquo;Yes/No&rdquo; or statement truth evaluation, returning a value in the [0,1] range.</li>
+</ul>
+<h3 id="3-architecture-and-efficiency-the-pareto-frontier">3. Architecture and Efficiency (The Pareto Frontier)</h3>
+<p>Jev claims to be &ldquo;off the Pareto curve,&rdquo; delivering frontier intelligence at a 100x improvement in the intelligence-to-speed-and-cost ratio.
+*   <strong>Parallel Sampling:</strong> Unlike LLMs that condition each token on the last, Jev generates all outputs in a single query, making it highly hardware-aware and efficient.
+*   <strong>Economics:</strong> Pricing is set at $0.042 per million tokens ($42 per billion). Output tokens are free because they are &ldquo;too cheap to meter.&rdquo;
+*   <strong>No Type Errors:</strong> Because Jev returns data that must conform to a predefined JSON schema, it is mathematically impossible for the model to produce a type error or a hallucinated tool call that doesn&rsquo;t match the allowed options.</p>
+<h3 id="4-workflow-design-code-in-control">4. Workflow Design: &ldquo;Code in Control&rdquo;</h3>
+<p>TypeSafe advocates for an architecture where code owns the control flow and System One is used only for narrow, structured judgments. </p>
+<p><strong>Recommended Workflow Design:</strong>
+1.  <strong>Use Code for Determinism:</strong> Keep simple rules (e.g., <code>if days_overdue &gt; 30</code>) in standard code.
+2.  <strong>Decompose State:</strong> Send only the context relevant to the specific questions to avoid &ldquo;context rot.&rdquo;
+3.  <strong>Atomic Questions:</strong> Instead of one broad question like &ldquo;Is this spam?&rdquo;, ask multiple narrow questions (e.g., &ldquo;Does it request credentials?&rdquo;, &ldquo;Does it create time pressure?&rdquo;).
+4.  <strong>Parallel Execution:</strong> Ask all questions in a single round-trip to maximize speed.</p>
+<h2 id="important-quotes-with-context">Important Quotes with Context</h2>
+<blockquote>
+<p><strong>&ldquo;Think of Jev as a frontier-intelligence function call: unstructured state in, typed probabilistic decisions out.&rdquo;</strong>
+*   <em>Context:</em> Diogo Almeida, founder of TypeSafe, defining the model&rsquo;s core identity in the official launch announcement.</p>
+<p><strong>&ldquo;Jev achieves similar levels of intelligence on System One tasks compared to existing LLMs, while being two orders of magnitude faster and more efficient.&rdquo;</strong>
+*   <em>Context:</em> Technical claim from TypeSafe&rsquo;s blog regarding the performance trade-off of &ldquo;giving up&rdquo; string generation.</p>
+<p><strong>&ldquo;A 0.9 is a calibrated frequency claim across many trials, not a warranty on this ticket.&rdquo;</strong>
+*   <em>Context:</em> An essential mental model from the learning materials, emphasizing that &ldquo;calibration&rdquo; means the model&rsquo;s probabilities match real-world outcomes over the long run, even if an individual high-confidence answer is incorrect.</p>
+<p><strong>&ldquo;If a model can do a task 95% of the time but doesn&rsquo;t say when it&rsquo;s in the 5%, it can&rsquo;t automate that task.&rdquo;</strong>
+*   <em>Context:</em> TypeSafe’s argument for why calibrated confidence is the &ldquo;missing piece&rdquo; for true business automation.</p>
+</blockquote>
+<h2 id="actionable-insights-for-implementation">Actionable Insights for Implementation</h2>
+<h3 id="threshold-based-routing">Threshold-Based Routing</h3>
+<p>Developers should implement &ldquo;confidence gates&rdquo; to handle model uncertainty.
+*   <strong>High Confidence:</strong> Automate the action immediately.
+*   <strong>Low Confidence:</strong> Escalate to a human reviewer or a more expensive &ldquo;System Two&rdquo; reasoning model (like Claude or GPT).
+*   <strong>Example Rule:</strong> <code>if confidence &lt; 0.8: route_to_human_review(ticket)</code>.</p>
+<h3 id="schema-as-the-product">Schema as the Product</h3>
+<p>The quality of Jev’s decisions is heavily dependent on the clarity of the schema.
+*   <strong>Structured Criteria:</strong> If the model confuses two options (e.g., &ldquo;Return Policy&rdquo; vs. &ldquo;Return Status&rdquo;), use objects to define what each option covers, what it <em>doesn&rsquo;t</em> cover, and provide example inputs.
+*   <strong>The &ldquo;Other&rdquo; Option:</strong> Always include an &ldquo;other&rdquo; or &ldquo;none of the above&rdquo; label to prevent the model from being forced into a false choice when the input doesn&rsquo;t fit the schema.</p>
+<h3 id="strategic-composability">Strategic Composability</h3>
+<p>Instead of using an LLM to &ldquo;plan and act,&rdquo; split the brain:
+*   Use Jev to handle the <strong>reflexes</strong>: Which element should I click? Is this input safe?
+*   Use an LLM for <strong>narrative tasks</strong>: Writing the email, generating the code, or explaining a complex error.</p>
+<h3 id="monitoring-and-falsification">Monitoring and Falsification</h3>
+<ul>
+<li><strong>Performance Measurement:</strong> Treat the &ldquo;193x faster&rdquo; claim as vendor-reported until measured against specific production workflows.</li>
+<li><strong>Independent Questions:</strong> Ensure questions are independent so that the result of one primitive does not become &ldquo;hidden context&rdquo; that skews another.</li>
+</ul>
+<h2 id="trap-sheet-common-implementation-errors">Trap Sheet: Common Implementation Errors</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Symptom</th>
+<th style="text-align: left;">Root Cause</th>
+<th style="text-align: left;">Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Over-trusting a single 90% score</td>
+<td style="text-align: left;">Confusing calibration with absolute truth.</td>
+<td style="text-align: left;">Build fallbacks for high-stakes decisions regardless of score.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Model returns &ldquo;garbage&rdquo; answers</td>
+<td style="text-align: left;">Poorly defined or overlapping option labels.</td>
+<td style="text-align: left;">Use structured criteria with &ldquo;not_for&rdquo; and &ldquo;examples.&rdquo;</td>
+</tr>
+<tr>
+<td style="text-align: left;">Latency spikes in workflows</td>
+<td style="text-align: left;">Making serial requests for multiple questions.</td>
+<td style="text-align: left;">Bundle all questions into one <code>system_one</code> call.</td>
+</tr>
+<tr>
+<td style="text-align: left;">System feels &ldquo;dumb&rdquo; or limited</td>
+<td style="text-align: left;">Attempting to use Jev for open-ended prose.</td>
+<td style="text-align: left;">Hand prose generation back to a standard LLM.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Confusion with branding</td>
+<td style="text-align: left;">Mixing up &ldquo;TypeSafe&rdquo; with &ldquo;Typeface&rdquo; or &ldquo;typescript.ai.&rdquo;</td>
+<td style="text-align: left;">Use the correct domain: <strong>typesafe.ai</strong>.</td>
+</tr>
+</tbody>
+</table>
+  </main>
+</body>
+</html>

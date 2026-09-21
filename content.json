@@ -100,56 +100,74 @@
     {
       "title": "Sources & references ledger",
       "file": "sources.md",
-      "type": "MD",
-      "note": "Canonical source list for this hub."
+      "type": "HTML",
+      "note": "Canonical source list for this hub.",
+      "html": "sources.html",
+      "source_md": "sources.md"
     },
     {
       "title": "Jev — Cheatsheet",
       "file": "notes/jev/cheatsheet.md",
-      "type": "MD",
-      "note": "Standing quick reference."
+      "type": "HTML",
+      "note": "Standing quick reference.",
+      "html": "notes\\jev\\cheatsheet.html",
+      "source_md": "notes/jev/cheatsheet.md"
     },
     {
       "title": "Jev — Topic guide (untimed)",
       "file": "notes/jev/topic-guide.md",
-      "type": "MD",
-      "note": "Study map without a clock."
+      "type": "HTML",
+      "note": "Study map without a clock.",
+      "html": "notes\\jev\\topic-guide.html",
+      "source_md": "notes/jev/topic-guide.md"
     },
     {
       "title": "Jev — Framing / mission",
       "file": "notes/jev/mission.md",
-      "type": "MD",
-      "note": "Goals and out of scope."
+      "type": "HTML",
+      "note": "Goals and out of scope.",
+      "html": "notes\\jev\\mission.html",
+      "source_md": "notes/jev/mission.md"
     },
     {
       "title": "Jev — Glossary",
       "file": "notes/jev/glossary.md",
-      "type": "MD",
-      "note": "Core vocabulary."
+      "type": "HTML",
+      "note": "Core vocabulary.",
+      "html": "notes\\jev\\glossary.html",
+      "source_md": "notes/jev/glossary.md"
     },
     {
       "title": "Jev — Mind map",
       "file": "notes/jev/mindmap.md",
-      "type": "MD",
-      "note": "Topic branches."
+      "type": "HTML",
+      "note": "Topic branches.",
+      "html": "notes\\jev\\mindmap.html",
+      "source_md": "notes/jev/mindmap.md"
     },
     {
       "title": "Jev — Source ledger",
       "file": "notes/jev/source-ledger.md",
-      "type": "MD",
-      "note": "Primary docs + videos."
+      "type": "HTML",
+      "note": "Primary docs + videos.",
+      "html": "notes\\jev\\source-ledger.html",
+      "source_md": "notes/jev/source-ledger.md"
     },
     {
       "title": "Jev — Resources",
       "file": "notes/jev/resources.md",
-      "type": "MD",
-      "note": "High-trust URLs."
+      "type": "HTML",
+      "note": "High-trust URLs.",
+      "html": "notes\\jev\\resources.html",
+      "source_md": "notes/jev/resources.md"
     },
     {
       "title": "Jev — Quiz bank",
       "file": "notes/jev/quiz-bank.md",
-      "type": "MD",
-      "note": "Retrieval prompts."
+      "type": "HTML",
+      "note": "Retrieval prompts.",
+      "html": "notes\\jev\\quiz-bank.html",
+      "source_md": "notes/jev/quiz-bank.md"
     },
     {
       "title": "Jev overview (PowerPoint)",
@@ -166,32 +184,42 @@
     {
       "title": "NEXUS — Catalog of Edge Cases and Traps for Jev (TypeSafe System One)",
       "file": "reports/jev/notebooklm/Catalog of Edge Cases and Traps for Jev (TypeSafe System One).md",
-      "type": "MD",
-      "note": "From NotebookLM NEXUS export folder."
+      "type": "HTML",
+      "note": "From NotebookLM NEXUS export folder.",
+      "html": "reports\\jev\\notebooklm\\Catalog of Edge Cases and Traps for Jev (TypeSafe System One).html",
+      "source_md": "reports/jev/notebooklm/Catalog of Edge Cases and Traps for Jev (TypeSafe System One).md"
     },
     {
       "title": "NEXUS — Executive Decision Packet_ Jev (TypeSafe System One) Implementation",
       "file": "reports/jev/notebooklm/Executive Decision Packet_ Jev (TypeSafe System One) Implementation.md",
-      "type": "MD",
-      "note": "From NotebookLM NEXUS export folder."
+      "type": "HTML",
+      "note": "From NotebookLM NEXUS export folder.",
+      "html": "reports\\jev\\notebooklm\\Executive Decision Packet_ Jev (TypeSafe System One) Implementation.html",
+      "source_md": "reports/jev/notebooklm/Executive Decision Packet_ Jev (TypeSafe System One) Implementation.md"
     },
     {
       "title": "NEXUS — Jev (TypeSafe System One) Authoring and Practice Playbook",
       "file": "reports/jev/notebooklm/Jev (TypeSafe System One) Authoring and Practice Playbook.md",
-      "type": "MD",
-      "note": "From NotebookLM NEXUS export folder."
+      "type": "HTML",
+      "note": "From NotebookLM NEXUS export folder.",
+      "html": "reports\\jev\\notebooklm\\Jev (TypeSafe System One) Authoring and Practice Playbook.html",
+      "source_md": "reports/jev/notebooklm/Jev (TypeSafe System One) Authoring and Practice Playbook.md"
     },
     {
       "title": "NEXUS — Jev (TypeSafe System One)_ A Technical Briefing",
       "file": "reports/jev/notebooklm/Jev (TypeSafe System One)_ A Technical Briefing.md",
-      "type": "MD",
-      "note": "From NotebookLM NEXUS export folder."
+      "type": "HTML",
+      "note": "From NotebookLM NEXUS export folder.",
+      "html": "reports\\jev\\notebooklm\\Jev (TypeSafe System One)_ A Technical Briefing.html",
+      "source_md": "reports/jev/notebooklm/Jev (TypeSafe System One)_ A Technical Briefing.md"
     },
     {
       "title": "NEXUS — Jev (TypeSafe System One)_ Mental Models and Technical Distinctions",
       "file": "reports/jev/notebooklm/Jev (TypeSafe System One)_ Mental Models and Technical Distinctions.md",
-      "type": "MD",
-      "note": "From NotebookLM NEXUS export folder."
+      "type": "HTML",
+      "note": "From NotebookLM NEXUS export folder.",
+      "html": "reports\\jev\\notebooklm\\Jev (TypeSafe System One)_ Mental Models and Technical Distinctions.html",
+      "source_md": "reports/jev/notebooklm/Jev (TypeSafe System One)_ Mental Models and Technical Distinctions.md"
     },
     {
       "title": "NEXUS — Major Claims and Practice Implications for Jev (TypeSafe System One)",
@@ -202,14 +230,18 @@
     {
       "title": "NEXUS — Study Guide_ Jev (TypeSafe System One)",
       "file": "reports/jev/notebooklm/Study Guide_ Jev (TypeSafe System One).md",
-      "type": "MD",
-      "note": "From NotebookLM NEXUS export folder."
+      "type": "HTML",
+      "note": "From NotebookLM NEXUS export folder.",
+      "html": "reports\\jev\\notebooklm\\Study Guide_ Jev (TypeSafe System One).html",
+      "source_md": "reports/jev/notebooklm/Study Guide_ Jev (TypeSafe System One).md"
     },
     {
       "title": "NEXUS — Technical Briefing_ Implementing Jev (TypeSafe System One) for Programmatic Deci",
       "file": "reports/jev/notebooklm/Technical Briefing_ Implementing Jev (TypeSafe System One) for Programmatic Deci.md",
-      "type": "MD",
-      "note": "From NotebookLM NEXUS export folder."
+      "type": "HTML",
+      "note": "From NotebookLM NEXUS export folder.",
+      "html": "reports\\jev\\notebooklm\\Technical Briefing_ Implementing Jev (TypeSafe System One) for Programmatic Deci.html",
+      "source_md": "reports/jev/notebooklm/Technical Briefing_ Implementing Jev (TypeSafe System One) for Programmatic Deci.md"
     },
     {
       "title": "NEXUS — TypeSafe System One",
@@ -220,32 +252,42 @@
     {
       "title": "Deep note — Core concepts",
       "file": "notes/jev/blocks/01-core-concepts.md",
-      "type": "MD",
-      "note": "Untimed study-pack section."
+      "type": "HTML",
+      "note": "Untimed study-pack section.",
+      "html": "notes\\jev\\blocks\\01-core-concepts.html",
+      "source_md": "notes/jev/blocks/01-core-concepts.md"
     },
     {
       "title": "Deep note — Mental models",
       "file": "notes/jev/blocks/02-mental-models.md",
-      "type": "MD",
-      "note": "Untimed study-pack section."
+      "type": "HTML",
+      "note": "Untimed study-pack section.",
+      "html": "notes\\jev\\blocks\\02-mental-models.html",
+      "source_md": "notes/jev/blocks/02-mental-models.md"
     },
     {
       "title": "Deep note — Edge cases",
       "file": "notes/jev/blocks/05-edge-cases.md",
-      "type": "MD",
-      "note": "Untimed study-pack section."
+      "type": "HTML",
+      "note": "Untimed study-pack section.",
+      "html": "notes\\jev\\blocks\\05-edge-cases.html",
+      "source_md": "notes/jev/blocks/05-edge-cases.md"
     },
     {
       "title": "Deep note — Application sketch",
       "file": "notes/jev/blocks/07-application.md",
-      "type": "MD",
-      "note": "Untimed study-pack section."
+      "type": "HTML",
+      "note": "Untimed study-pack section.",
+      "html": "notes\\jev\\blocks\\07-application.html",
+      "source_md": "notes/jev/blocks/07-application.md"
     },
     {
       "title": "Almeida — Practitioner working briefing",
       "file": "reports/almeida/AI Assistance vs. Automation_ A Practitioners Working Briefing (Almeida_RLHF).md",
-      "type": "MD",
-      "note": "Related context."
+      "type": "HTML",
+      "note": "Related context.",
+      "html": "reports\\almeida\\AI Assistance vs. Automation_ A Practitioners Working Briefing (Almeida_RLHF).html",
+      "source_md": "reports/almeida/AI Assistance vs. Automation_ A Practitioners Working Briefing (Almeida_RLHF).md"
     },
     {
       "title": "Almeida deck (PowerPoint)",

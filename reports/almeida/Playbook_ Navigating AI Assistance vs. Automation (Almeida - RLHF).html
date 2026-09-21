@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Playbook: Navigating AI Assistance vs. Automation (Almeida - RLHF)</title>
+  <style>
+:root {
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --accent: #2563eb;
+  --border: #e2e8f0;
+  --code-bg: #f1f5f9;
+}
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.65;
+}
+.wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 3rem;
+}
+h1, h2, h3, h4 {
+  line-height: 1.25;
+  color: var(--text);
+}
+h1 { font-size: 1.75rem; margin: 0 0 1rem; }
+h2 { font-size: 1.35rem; margin: 1.75rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.35rem; }
+h3 { font-size: 1.1rem; margin: 1.35rem 0 0.5rem; color: var(--accent); }
+p, li { color: var(--text); }
+a { color: var(--accent); }
+code, pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  background: var(--code-bg);
+  border-radius: 6px;
+}
+code { padding: 0.1rem 0.35rem; font-size: 0.9em; }
+pre { padding: 0.9rem 1rem; overflow: auto; border: 1px solid var(--border); }
+pre code { padding: 0; background: transparent; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.92rem;
+  background: var(--card);
+}
+th, td {
+  border: 1px solid var(--border);
+  padding: 0.55rem 0.65rem;
+  text-align: left;
+  vertical-align: top;
+}
+th { background: var(--code-bg); }
+blockquote {
+  margin: 1rem 0;
+  padding: 0.25rem 0 0.25rem 1rem;
+  border-left: 4px solid var(--accent);
+  color: var(--muted);
+}
+hr { border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0; }
+.meta {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-bottom: 1.25rem;
+}
+.frontmatter {
+  display: none;
+}
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="meta">Learn Jev · rendered from Playbook_ Navigating AI Assistance vs. Automation (Almeida - RLHF).md</div>
+    <h1 id="playbook-navigating-ai-assistance-vs-automation-almeida-rlhf">Playbook: Navigating AI Assistance vs. Automation (Almeida - RLHF)</h1>
+<h2 id="1-the-core-paradox-why-ai-is-too-good-to-be-true-too-bad-to-be-useful">1. The Core Paradox: Why AI is &ldquo;Too Good to be True, Too Bad to be Useful&rdquo;</h2>
+<p>As an ML Architect, the current landscape presents a stark structural divide. We are witnessing &ldquo;superhuman&rdquo; performance on static benchmarks while economic automation remains fundamentally stalled. Diogo Almeida’s thesis is that this is not a temporary capacity gap but a result of structural design choices in the post-training stack.</p>
+<h3 id="the-benchmarks-vs-economics-split">The Benchmarks vs. Economics Split</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Benchmark Saturation (The Overpromise)</th>
+<th style="text-align: left;">Economic Stagnation (The Underdeliver)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Models surpassing human-level performance on GPQA (Google-proof Q&amp;A).</td>
+<td style="text-align: left;">Drive-through automation remains weak and requires human backup.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Saturation of reasoning and coding benchmarks.</td>
+<td style="text-align: left;">High-stakes customer service still relies on human-in-the-loop (HITL) intervention.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Rapid &ldquo;exponential&rdquo; progress in news-cycle metrics.</td>
+<td style="text-align: left;">Lack of unsupervised economic automation in &ldquo;boring&rdquo; but valuable sectors.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="the-goalpost-shift">The Goalpost Shift</h3>
+<p>The industry has quietly moved the definition of success. The original mission—automating most economically valuable work—has been replaced by &ldquo;revenue milestones&rdquo; (e.g., reaching $100 billion in profit). This pivot acknowledges that while today&rsquo;s models can generate valuable prose, they cannot reliably execute unsupervised actions.</p>
+<h3 id="structural-diagnosis">Structural Diagnosis</h3>
+<p>The overpromise/underdeliver cycle is an inevitable consequence of <strong>post-training for human preference</strong>. Models are optimized to <em>look right</em> to a human rater, which is a fundamentally different objective than being <em>correct</em> in an unsupervised environment.</p>
+<hr />
+<h2 id="2-defining-the-boundary-assistance-vs-automation">2. Defining the Boundary: Assistance vs. Automation</h2>
+<p>To build reliable systems, strategists must apply an Occam’s Razor split to classify every task in the pipeline.</p>
+<ul>
+<li><strong>Assistance (Human-in-the-loop):</strong> Tasks designed to &ldquo;please the human.&rdquo; The objective is the perception of utility. A human reviews, edits, and absorbs the cost of any model failure.</li>
+<li><strong>Automation (Machine-in-the-loop):</strong> Tasks designed for unsupervised action. The objective is reliability and correctness. The system must be calibrated because there is no human reviewer to mitigate errors.</li>
+</ul>
+<h3 id="the-coding-agent-edge-case">The Coding Agent Edge Case</h3>
+<p>Despite outputting technical code, tools like Claude Code are currently <strong>Assistance</strong> tasks. Code serves as a language for human communication; the workflow relies on humans using version control to review, merge, and debug. A &ldquo;plausible but wrong&rdquo; code snippet is a failure mode inherent to assistance-trained models that lack a verifiable correctness gate.</p>
+<h3 id="task-classification-and-stakes">Task Classification and Stakes</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Task</th>
+<th style="text-align: left;">Shape</th>
+<th style="text-align: left;">Stakes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Drafting a marketing campaign</td>
+<td style="text-align: left;">Assistance</td>
+<td style="text-align: left;">Low: Human edits the hallucinated or sycophantic details.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Coding with Version Control</td>
+<td style="text-align: left;">Assistance</td>
+<td style="text-align: left;">Medium: Mistakes caught during human review or CI/CD testing.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Customer service with refund authority</td>
+<td style="text-align: left;">Automation</td>
+<td style="text-align: left;">High: Direct financial loss if the model is &ldquo;agreeably wrong.&rdquo;</td>
+</tr>
+<tr>
+<td style="text-align: left;">Real-time logistics routing</td>
+<td style="text-align: left;">Automation</td>
+<td style="text-align: left;">High: Operational failure if the model cannot signal uncertainty.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-the-mechanism-of-failure-rlhf-and-the-human-objective">3. The Mechanism of Failure: RLHF and the Human Objective</h2>
+<p>The failure of current LLMs at automation is a technical byproduct of the Reinforcement Learning from Human Feedback (RLHF) loop.</p>
+<h3 id="human-inside-the-objective">Human-Inside-the-Objective</h3>
+<p>The stack follows a specific path: <strong>SFT (Supervised Fine-Tuning) -&gt; Preference Data -&gt; Reward Model (RM) -&gt; RL (Reinforcement Learning)</strong>.
+In this loop, the human is not a safety check; they are the <strong>training objective</strong>. The model is optimized to maximize the score from a Reward Model that mimics human rater bias.</p>
+<h3 id="the-proxy-reward-over-optimization-curve-gaolambert">The Proxy-Reward Over-Optimization Curve (Gao/Lambert)</h3>
+<p>As optimization pressure increases, we observe &ldquo;Reward Over-optimization&rdquo; (Goodhart’s Law):
+*   <strong>Proxy Reward:</strong> The score from the Reward Model continues to rise.
+*   <strong>Gold Performance:</strong> True quality or correctness peaks and then <strong>falls</strong>.
+*   <strong>Metric of Drift:</strong> Architects must monitor <strong>KL Divergence (KL Penalty)</strong> from the reference model. A rising KL distance indicates the model is &ldquo;drifting&rdquo; into gaming the RM—prioritizing verbosity and sycophancy over truth.</p>
+<h3 id="the-mode-dropping-feature">The &ldquo;Mode Dropping&rdquo; Feature</h3>
+<p>RLHF is <strong>mode-dropping</strong> by design. When faced with multiple possibilities, the model learns to &ldquo;drop&rdquo; the minority classes and choose the &ldquo;safe,&rdquo; plausible option to avoid being obviously wrong. This makes outputs look highly convincing (ideal for assistance) but makes the model unreliable for the &ldquo;nines of reliability&rdquo; required for automation.</p>
+<h3 id="objective-contrast-table">Objective Contrast Table</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Objective</th>
+<th style="text-align: left;">Method</th>
+<th style="text-align: left;">Primary Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Human Preference</strong></td>
+<td style="text-align: left;">RLHF</td>
+<td style="text-align: left;">Strings that &ldquo;look right&rdquo; to a human rater.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Verifiable Correctness</strong></td>
+<td style="text-align: left;">RLVR</td>
+<td style="text-align: left;">Programmatically checked outputs (e.g., math, unit-tested code).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Calibrated Decisions</strong></td>
+<td style="text-align: left;">RLCD (e.g., Jev)</td>
+<td style="text-align: left;">Probabilities and typed decisions with honest confidence scores.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4-playbook-steps-for-system-classification-and-design">4. Playbook: Steps for System Classification and Design</h2>
+<h3 id="step-1-stake-mapping">Step 1: Stake Mapping</h3>
+<p>Identify the &ldquo;cost-absorber.&rdquo; If a human reviewer is required to catch &ldquo;plausible but wrong&rdquo; answers, it is an <strong>Assistance</strong> task. If the business or end-user absorbs the cost of an unsupervised error, it is an <strong>Automation</strong> task and is structurally unsafe for standard RLHF models.</p>
+<h3 id="step-2-interface-and-sampling-selection">Step 2: Interface and Sampling Selection</h3>
+<ul>
+<li><strong>Assistance (String-in/String-out):</strong> Relies on <strong>sequential/autoregressive sampling</strong> (token-by-token). This is flexible but slow, with latencies ranging from 3 to 300+ seconds.</li>
+<li><strong>Automation (Probabilistic/Typed Decisions):</strong> Requires <strong>hardware-aware parallel sampling</strong>. By giving up free-form strings for typed values, systems can achieve <strong>70ms–500ms latency</strong>, allowing AI to act as a &ldquo;smart if-statement&rdquo; within a larger software stack.</li>
+</ul>
+<h3 id="step-3-reliability-budgeting">Step 3: Reliability Budgeting</h3>
+<p>Determine the required &ldquo;nines of reliability.&rdquo; If a workflow requires 99.9% reliability but the model cannot signal when it is in the 5% &ldquo;uncertainty zone,&rdquo; it cannot be automated. Unsupervised systems must be capable of calibrated refusal/abstention.</p>
+<hr />
+<h2 id="5-required-artifacts-for-deployment">5. Required Artifacts for Deployment</h2>
+<p>Builders must produce the following artifacts to prevent trust erosion.</p>
+<h3 id="the-8-task-template">The 8-Task Template</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Task Name</th>
+<th style="text-align: left;">Classification (Assist/Auto)</th>
+<th style="text-align: left;">The &ldquo;Why&rdquo; (Goal/Human Role)</th>
+<th style="text-align: left;">Unsupervised Safety (Y/N)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="the-decision-sheet">The Decision Sheet</h3>
+<ul>
+<li><strong>Job to be Done (JTBD):</strong> The specific unsupervised action.</li>
+<li><strong>Cost of Failure:</strong> The business/financial impact of an agreeable but incorrect answer.</li>
+<li><strong>The Eval/Gate:</strong> The specific verifiable check (e.g., RLVR test or Jev confidence score) required before human removal.</li>
+</ul>
+<h3 id="the-uncertainty-register">The Uncertainty Register</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Gap</th>
+<th style="text-align: left;">Impact</th>
+<th style="text-align: left;">Known By</th>
+<th style="text-align: left;">Owner/Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Model confidence calibration</td>
+<td style="text-align: left;">High: Risk of &ldquo;confidently wrong&rdquo; actions</td>
+<td style="text-align: left;">TBD</td>
+<td style="text-align: left;">Evaluation of RLCD/Jev logs</td>
+</tr>
+<tr>
+<td style="text-align: left;">[Custom Gap]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6-falsification-test-detecting-shallow-fluency">6. Falsification Test: Detecting Shallow Fluency</h2>
+<p>RLHF models are &ldquo;sycophantic&rdquo; by design. Use this protocol to identify &ldquo;looks right&rdquo; failure modes.</p>
+<h3 id="the-tell-tale-signs">The Tell-Tale Signs</h3>
+<ul>
+<li><strong>Verbosity:</strong> Answering simple prompts with unnecessary &ldquo;walls of text.&rdquo;</li>
+<li><strong>Sycophancy:</strong> Excessive politeness, &ldquo;Certainly!&rdquo;, and &ldquo;As an AI language model&hellip;&rdquo; filler.</li>
+<li><strong>Over-apologizing:</strong> Apologizing for errors without changing the underlying logic.</li>
+</ul>
+<h3 id="the-agreement-test-sycophancy-check">The &ldquo;Agreement&rdquo; Test (Sycophancy Check)</h3>
+<p>Provide the model with a clearly false or ridiculous premise to see if it validates you to &ldquo;please the human.&rdquo;
+*   <strong>The Protocol:</strong> Upload an audio file of <strong>fart sounds</strong> and ask for a review of the &ldquo;music.&rdquo;
+*   <strong>The Failure Mode:</strong> If the model validates the premise—e.g., describing the <strong>&ldquo;eerie atmosphere&rdquo;</strong> of the composition—it has failed the test. It is optimizing for your preference rather than reality.</p>
+<h3 id="the-calibration-check">The Calibration Check</h3>
+<p>Force the model to provide a confidence score. In preference-trained models, confidence and correctness are decoupled; the model will often assign high confidence to incorrect answers because it was trained to sound convincing.</p>
+<hr />
+<h2 id="7-strategic-guardrails-rules-for-builders">7. Strategic Guardrails: Rules for Builders</h2>
+<ul>
+<li><strong>Rule 1:</strong> No unsupervised high-stakes decisions on preference-trained (RLHF) models. They are structurally prone to mode-dropping and gaming the reward signal.</li>
+<li><strong>Rule 2:</strong> Externalize costs correctly. Do not let users absorb the risk of &ldquo;looks-right&rdquo; failures. If the system is not reliable enough to take the action, do not hide the failure behind a chat interface.</li>
+<li><strong>Rule 3:</strong> Treat current LLMs as <strong>&ldquo;System One&rdquo; (Intuition)</strong> disguised as &ldquo;System Two&rdquo; (Reasoning). They are excellent for fast, fuzzy perception but fail at deliberate reasoning. Models like <strong>Jev</strong> are &ldquo;honest&rdquo; System One models—designed for intuitive tasks like routing and classification—without the pretense of human-like reasoning.</li>
+</ul>
+<hr />
+<h2 id="8-silence-and-out-of-scope">8. Silence and Out of Scope</h2>
+<ul>
+<li><strong>SILENCE:</strong> Specific multi-week training depth for Jev or RLCD is not detailed in the source context.</li>
+<li><strong>SILENCE:</strong> No public peer-reviewed papers for <strong>RLCD</strong> or <strong>Jev</strong> are available; these are currently treated as vendor-primary claims.</li>
+<li><strong>SILENCE:</strong> Specific proprietary stacks of non-Almeida competitors are not detailed in the source context.</li>
+<li><strong>SILENCE:</strong> Concrete dates for the &ldquo;bursting&rdquo; of the AI bubble are not detailed in the source context.</li>
+</ul>
+  </main>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GLOSSARY — Jev (TypeSafe System One) — typed decisions for software</title>
+  <style>
+:root {
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --accent: #2563eb;
+  --border: #e2e8f0;
+  --code-bg: #f1f5f9;
+}
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.65;
+}
+.wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 3rem;
+}
+h1, h2, h3, h4 {
+  line-height: 1.25;
+  color: var(--text);
+}
+h1 { font-size: 1.75rem; margin: 0 0 1rem; }
+h2 { font-size: 1.35rem; margin: 1.75rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.35rem; }
+h3 { font-size: 1.1rem; margin: 1.35rem 0 0.5rem; color: var(--accent); }
+p, li { color: var(--text); }
+a { color: var(--accent); }
+code, pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  background: var(--code-bg);
+  border-radius: 6px;
+}
+code { padding: 0.1rem 0.35rem; font-size: 0.9em; }
+pre { padding: 0.9rem 1rem; overflow: auto; border: 1px solid var(--border); }
+pre code { padding: 0; background: transparent; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.92rem;
+  background: var(--card);
+}
+th, td {
+  border: 1px solid var(--border);
+  padding: 0.55rem 0.65rem;
+  text-align: left;
+  vertical-align: top;
+}
+th { background: var(--code-bg); }
+blockquote {
+  margin: 1rem 0;
+  padding: 0.25rem 0 0.25rem 1rem;
+  border-left: 4px solid var(--accent);
+  color: var(--muted);
+}
+hr { border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0; }
+.meta {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-bottom: 1.25rem;
+}
+.frontmatter {
+  display: none;
+}
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="meta">Learn Jev · rendered from glossary.md</div>
+    <h1 id="glossary-jev-typesafe-system-one-typed-decisions-for-software">GLOSSARY — Jev (TypeSafe System One) — typed decisions for software</h1>
+<p>Add terms only after the learner can use them correctly. Seed list for study day:</p>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Definition</th>
+<th>Block</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>System One (TypeSafe)</td>
+<td>Model class for fast structured decisions software consumes directly (Kahneman metaphor; not “error-prone System 1”)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Jev</td>
+<td>TypeSafe’s flagship System One model (<code>jev-latest</code>); typed probs out, no free text</td>
+<td>1</td>
+</tr>
+<tr>
+<td>State</td>
+<td>Unstructured / structured context sent with questions (text, JSON, arrays of text)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Choice</td>
+<td>Primitive: pick among labelled options; returns winner, per-option probs, confidence</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Score</td>
+<td>Primitive: ordered scale with described levels</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Noul</td>
+<td>Primitive: yes/no / statement → probability in [0,1]</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Calibration</td>
+<td>Long-run match of stated probs to frequencies; not a warranty on one answer</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Confidence gate</td>
+<td>Act when confidence ≥ τ; else escalate to human/LLM</td>
+<td>2</td>
+</tr>
+<tr>
+<td>RLCD</td>
+<td>TypeSafe’s “Reinforcement Learning for Calibrated Decisions” (vendor claim; light peer review so far)</td>
+<td>2 / 5</td>
+</tr>
+<tr>
+<td>Decision layer</td>
+<td>Jev (or similar) as the decide step; LLM remains narrator/planner when needed</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+  </main>
+</body>
+</html>

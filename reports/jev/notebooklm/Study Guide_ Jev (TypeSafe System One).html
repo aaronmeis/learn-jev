@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Study Guide: Jev (TypeSafe System One)</title>
+  <style>
+:root {
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --accent: #2563eb;
+  --border: #e2e8f0;
+  --code-bg: #f1f5f9;
+}
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.65;
+}
+.wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 3rem;
+}
+h1, h2, h3, h4 {
+  line-height: 1.25;
+  color: var(--text);
+}
+h1 { font-size: 1.75rem; margin: 0 0 1rem; }
+h2 { font-size: 1.35rem; margin: 1.75rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.35rem; }
+h3 { font-size: 1.1rem; margin: 1.35rem 0 0.5rem; color: var(--accent); }
+p, li { color: var(--text); }
+a { color: var(--accent); }
+code, pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  background: var(--code-bg);
+  border-radius: 6px;
+}
+code { padding: 0.1rem 0.35rem; font-size: 0.9em; }
+pre { padding: 0.9rem 1rem; overflow: auto; border: 1px solid var(--border); }
+pre code { padding: 0; background: transparent; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.92rem;
+  background: var(--card);
+}
+th, td {
+  border: 1px solid var(--border);
+  padding: 0.55rem 0.65rem;
+  text-align: left;
+  vertical-align: top;
+}
+th { background: var(--code-bg); }
+blockquote {
+  margin: 1rem 0;
+  padding: 0.25rem 0 0.25rem 1rem;
+  border-left: 4px solid var(--accent);
+  color: var(--muted);
+}
+hr { border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0; }
+.meta {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-bottom: 1.25rem;
+}
+.frontmatter {
+  display: none;
+}
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="meta">Learn Jev · rendered from Study Guide_ Jev (TypeSafe System One).md</div>
+    <h1 id="study-guide-jev-typesafe-system-one">Study Guide: Jev (TypeSafe System One)</h1>
+<p>This study guide provides a comprehensive overview of <strong>Jev</strong>, the flagship <strong>System One</strong> model developed by <strong>TypeSafe AI</strong>. It is designed to move learners from foundational vocabulary to architectural application, focusing on the transition from text-generating LLMs to typed, probabilistic decision-making software.</p>
+<hr />
+<h2 id="core-concepts-and-architecture">Core Concepts and Architecture</h2>
+<h3 id="what-is-jev">What is Jev?</h3>
+<p>Jev is a &ldquo;System One&rdquo; model—a class of frontier AI designed for fast, structured decisions rather than chat. It functions as a frontier-intelligence <strong>function call</strong>: it takes unstructured program state as input and returns typed probabilistic decisions that software can branch on directly.</p>
+<h3 id="the-system-one-metaphor">The System One Metaphor</h3>
+<p>Named after Daniel Kahneman’s work in <em>Thinking, Fast and Slow</em>, System One refers to fast, intuitive, and reflexive judgments. In the context of TypeSafe AI, it contrasts with &ldquo;System Two&rdquo; reasoning (handled by traditional LLMs), which is slower and more deliberate. Jev provides a &ldquo;reflex layer&rdquo; for software.</p>
+<h3 id="the-three-primitives">The Three Primitives</h3>
+<p>Jev evaluates information through three core question types, or primitives:</p>
+<ol>
+<li><strong>Choice</strong>: Selecting one option from a defined set (up to 255 options). It returns the selected choice, a probability distribution for all options, and a confidence score.</li>
+<li><strong>Score</strong>: Placing an input on an ordered scale with described levels (e.g., severity 0-4).</li>
+<li><strong>Noul</strong>: A &ldquo;Yes/No&rdquo; or statement truth evaluation that returns a probability in the range of [0, 1].</li>
+</ol>
+<hr />
+<h2 id="system-one-vs-large-language-models-llms">System One vs. Large Language Models (LLMs)</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Feature</th>
+<th style="text-align: left;">LLM (System Two-ish)</th>
+<th style="text-align: left;">System One (Jev)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Output Type</strong></td>
+<td style="text-align: left;">Autoregressive text (strings)</td>
+<td style="text-align: left;">Parallel typed answers/probabilities</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Logic Mode</strong></td>
+<td style="text-align: left;">Open-ended reasoning/narration</td>
+<td style="text-align: left;">Bounded, structured decisions</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Speed</strong></td>
+<td style="text-align: left;">Seconds to minutes</td>
+<td style="text-align: left;">70ms – 500ms</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Cost</strong></td>
+<td style="text-align: left;">High (Input + Output tokens)</td>
+<td style="text-align: left;">Low ($42/B input tokens; Output is FREE)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Hallucination</strong></td>
+<td style="text-align: left;">Risk of &ldquo;free-text&rdquo; invention</td>
+<td style="text-align: left;">Schema-bound (cannot invent new types)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Architecture</strong></td>
+<td style="text-align: left;">Sequential token generation</td>
+<td style="text-align: left;">Parallel question evaluation</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="mental-models-for-implementation">Mental Models for Implementation</h2>
+<ul>
+<li><strong>Decision Layer, Not Narrator</strong>: Jev should not be used to write emails or code. It is used to decide <em>which</em> email to send or <em>whether</em> code is safe to run.</li>
+<li><strong>Confidence Gating</strong>: Implementation follows a specific logic: <code>State → Jev → Probability → Threshold Check</code>. If confidence is high, automate; if low, escalate to a human or a System Two LLM.</li>
+<li><strong>Schema is the Product</strong>: Because Jev is bound by the schema, the quality of decisions depends on the clarity of option labels and descriptions.</li>
+<li><strong>Calibration ≠ Correctness</strong>: A 0.9 probability means the model is epistemically honest across many trials (90% of such cases should be true), not that the individual answer is guaranteed to be correct.</li>
+</ul>
+<hr />
+<h2 id="short-answer-practice-quiz">Short-Answer Practice Quiz</h2>
+<p><strong>1. What is the primary difference between how an LLM generates an answer and how Jev generates an answer?</strong>
+LLMs are autoregressive, generating one token at a time conditioned on the previous one. Jev uses a parallel sampler to generate all typed outputs in a single, hardware-aware query, returning a full probability distribution across defined options.</p>
+<p><strong>2. Define the &ldquo;Noul&rdquo; primitive and explain what it returns.</strong>
+A Noul is a primitive used for Yes/No questions or determining the truth of a statement. It returns a probability between 0 and 1, representing the likelihood that the statement is true based on the provided state.</p>
+<p><strong>3. Why is Jev described as &ldquo;hallucination-free&rdquo; in the context of type safety?</strong>
+Jev is &ldquo;schema-safe&rdquo; by construction. Because possible outputs are defined in advance as part of the question&rsquo;s criteria, it is mathematically impossible for the model to return a type error or an option that does not exist within the defined schema.</p>
+<p><strong>4. What are the three specific data types Jev can currently evaluate as input &ldquo;state&rdquo;?</strong>
+Jev currently accepts text-only inputs, specifically strings, JSON objects, and arrays of text. It does not yet support multimodal inputs like images, audio, or video.</p>
+<p><strong>5. How does the &ldquo;Confidence Gate&rdquo; mental model affect software workflow design?</strong>
+The confidence gate allows developers to set a threshold (e.g., 0.85). If Jev&rsquo;s confidence in a decision meets that threshold, the software executes the action automatically. If it falls below, the software &ldquo;escalates,&rdquo; routing the task to a human reviewer or a more expensive reasoning model.</p>
+<p><strong>6. Describe the cost structure of Jev compared to traditional frontier LLMs.</strong>
+Jev is significantly cheaper, priced at approximately $42 per billion input tokens. Unlike LLMs, which charge a premium for output tokens, Jev&rsquo;s output tokens are provided for free (&ldquo;too cheap to meter&rdquo;).</p>
+<p><strong>7. In a support ticket routing scenario, why is it considered &ldquo;good practice&rdquo; to ask multiple questions in one call?</strong>
+Questions are evaluated in parallel and adding extra questions barely changes response time. Asking for the department, severity, and urgency in one round trip is more efficient and cost-effective than making three serial requests.</p>
+<p><strong>8. What does &ldquo;Calibration&rdquo; mean in the context of Reinforcement Learning for Calibrated Decisions (RLCD)?</strong>
+Calibration means the model’s predicted probabilities align with observed frequencies over time. For example, across all instances where the model claims 90% confidence, it should be correct approximately 90% of the time. It is a measure of epistemic honesty, not a guarantee of single-call truth.</p>
+<p><strong>9. When should a developer use a &ldquo;Score&rdquo; primitive instead of a &ldquo;Choice&rdquo; primitive?</strong>
+A developer should use a Score when the answer represents a position on a continuous or ordered spectrum (e.g., a scale of 0 to 4 for frustration). Choice is used for selecting one distinct, non-ordered label from a set (e.g., routing to &ldquo;Billing&rdquo; vs. &ldquo;Technical Support&rdquo;).</p>
+<p><strong>10. Name one specific scenario where Jev should NOT be used.</strong>
+Jev should not be used for any task requiring the generation of free-form text, such as writing a customer reply, producing a project plan, or explaining the reasoning behind a decision. It is a decision layer, not a narrator.</p>
+<hr />
+<h2 id="essay-prompts-for-deeper-exploration">Essay Prompts for Deeper Exploration</h2>
+<ol>
+<li><strong>The Automation Gap</strong>: Discuss Diogo Almeida’s thesis regarding the &ldquo;automation gap&rdquo; in current AI. How does the transition from &ldquo;human-preference&rdquo; training (RLHF) to &ldquo;calibrated decision&rdquo; training (RLCD) address the requirements of autonomous software systems?</li>
+<li><strong>Architectural Decomposition</strong>: Explain the principle of &ldquo;Decomposing the Questions.&rdquo; Why is it architecturally superior to ask ten narrow, atomic questions rather than one broad, &ldquo;reasoning&rdquo; question? Use a spam-detection or security-filtering example to illustrate your points.</li>
+<li><strong>The Reflex Layer in Agentic Systems</strong>: Analyze Jev’s role as a &ldquo;reflex layer&rdquo; in computer-use agents (e.g., the Doom or Browser Use demos). How does offloading low-level tactical decisions to a System One model improve the performance and reliability of high-level System Two planners?</li>
+<li><strong>Economic Impacts of Jevons Paradox</strong>: TypeSafe AI named their model after William Stanley Jevons. Explore the economic argument that making intelligence &ldquo;too cheap to meter&rdquo; will lead to a massive increase in demand for AI-powered &ldquo;smart if-statements&rdquo; within traditional software.</li>
+<li><strong>Schema-Driven Engineering</strong>: Traditional software relies on deterministic rules. System One introduces &ldquo;programmable common sense.&rdquo; Argue for or against the idea that the primary job of a future software engineer will be &ldquo;schema design&rdquo; rather than &ldquo;logic branching.&rdquo;</li>
+</ol>
+<hr />
+<h2 id="glossary-of-important-terms">Glossary of Important Terms</h2>
+<ul>
+<li><strong>Calibration</strong>: The alignment between a model&rsquo;s predicted probability and the actual frequency of correct outcomes.</li>
+<li><strong>Choice</strong>: A primitive used to select one option from a fixed set of labeled categories.</li>
+<li><strong>Confidence</strong>: A value from 0 to 1 derived from the spread of the probability distribution; high confidence indicates a single clear peak in probability.</li>
+<li><strong>Jev</strong>: TypeSafe AI’s flagship System One model, optimized for speed, cost, and structured output.</li>
+<li><strong>Noul</strong>: A primitive for Boolean (Yes/No) or truth-statement questions; returns a probability of truth.</li>
+<li><strong>Parallel Sampling</strong>: A hardware-aware methodology that generates all outputs for multiple questions in a single query rather than one token at a time.</li>
+<li><strong>RLCD (Reinforcement Learning for Calibrated Decisions)</strong>: A training method that optimizes models to provide epistemically honest probabilities rather than just human-preferred text.</li>
+<li><strong>Score</strong>: A primitive used to evaluate an input against an ordered scale with defined levels.</li>
+<li><strong>State</strong>: The unstructured input (text or JSON) provided to the model for evaluation.</li>
+<li><strong>System One</strong>: A class of AI models built for fast, intuitive, and structured decision-making, as opposed to slow, generative reasoning.</li>
+<li><strong>TypeSafe AI</strong>: The company (typesafe.ai) founded by Diogo Almeida that developed the System One model architecture.</li>
+<li><strong>Zero Hallucination</strong>: A marketing and technical claim referring specifically to the fact that System One models cannot return an output that violates the provided schema or type definition.</li>
+</ul>
+  </main>
+</body>
+</html>

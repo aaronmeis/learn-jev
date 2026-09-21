@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>05-edge-cases</title>
+  <style>
+:root {
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --accent: #2563eb;
+  --border: #e2e8f0;
+  --code-bg: #f1f5f9;
+}
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.65;
+}
+.wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 3rem;
+}
+h1, h2, h3, h4 {
+  line-height: 1.25;
+  color: var(--text);
+}
+h1 { font-size: 1.75rem; margin: 0 0 1rem; }
+h2 { font-size: 1.35rem; margin: 1.75rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.35rem; }
+h3 { font-size: 1.1rem; margin: 1.35rem 0 0.5rem; color: var(--accent); }
+p, li { color: var(--text); }
+a { color: var(--accent); }
+code, pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  background: var(--code-bg);
+  border-radius: 6px;
+}
+code { padding: 0.1rem 0.35rem; font-size: 0.9em; }
+pre { padding: 0.9rem 1rem; overflow: auto; border: 1px solid var(--border); }
+pre code { padding: 0; background: transparent; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.92rem;
+  background: var(--card);
+}
+th, td {
+  border: 1px solid var(--border);
+  padding: 0.55rem 0.65rem;
+  text-align: left;
+  vertical-align: top;
+}
+th { background: var(--code-bg); }
+blockquote {
+  margin: 1rem 0;
+  padding: 0.25rem 0 0.25rem 1rem;
+  border-left: 4px solid var(--accent);
+  color: var(--muted);
+}
+hr { border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0; }
+.meta {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-bottom: 1.25rem;
+}
+.frontmatter {
+  display: none;
+}
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="meta">Learn Jev · rendered from 05-edge-cases.md</div>
+    <p>﻿# Block 5: Edge cases</p>
+<p><strong>Context:</strong> Untimed reference section (from study pack; ignore any minute targets).
+<strong>Goal:</strong> Trap sheet â€” where Jev (and your reading of it) fails.<br />
+<strong>Hub:</strong> Learn Jev reference</p>
+<h2 id="focus-from-mind-map">Focus from mind map</h2>
+<ul>
+<li>Jev as sole agent brain / chatbot</li>
+<li>Kahneman System 1 confusion vs TypeSafe â€œSystem Oneâ€</li>
+<li>Over-trusting one high probability</li>
+<li>Tiny Choice sets for open-ended work</li>
+<li>Vendor speed/cost multiples unmeasured</li>
+<li>Text-only state; multimodal limits</li>
+<li>TypeSafe â‰  Typeface</li>
+</ul>
+<h2 id="sources">Sources</h2>
+<ul>
+<li>Launch FAQ / docs caveats via <a href="https://docs.typesafe.ai/concepts/system-one">System One concepts</a></li>
+<li>Skeptical explainer tone: <a href="https://www.youtube.com/watch?v=BGDd26FiOm4">Schema-safe / caveats videos</a> or <a href="https://www.youtube.com/watch?v=NIlQsncfVYs">Fully explained caveats</a></li>
+<li>../reference/elicit-light-research</li>
+</ul>
+<h2 id="actions">Actions</h2>
+<ol>
+<li>Build a trap sheet (symptom â†’ cause â†’ fix) for at least <strong>eight</strong> traps from the focus list + your practice errors.</li>
+<li>Add three <strong>product-claim</strong> traps: 193Ã— faster, 0% type error, â€œcannot hallucinateâ€ â€” rewrite each as a precise engineering statement.</li>
+<li>Write the falsifier aloud: contrast System One vs LLM agent with examples; name when <strong>not</strong> to use Jev.</li>
+<li>Add top three traps to a cheatsheet in NOTES.md.</li>
+</ol>
+<h2 id="retrieval-check">Retrieval check</h2>
+<blockquote>
+<p><strong>question</strong>
+What edge case breaks a naive â€œreplace every LLM call with Jevâ€ plan?</p>
+</blockquote>
+<p>%% fold answer after attempt %%</p>
+<blockquote>
+<p><strong>success</strong>
+Any step that must produce language (plan, tool call prose, user reply) or an unbounded answer space. Also low-confidence decisions treated as auto-approve.</p>
+</blockquote>
+<h2 id="exit-criteria">Exit criteria</h2>
+<ul>
+<li>[ ] Trap sheet â‰¥8 rows</li>
+<li>[ ] Three claim rewrites</li>
+<li>[ ] Top traps on cheatsheet</li>
+</ul>
+  </main>
+</body>
+</html>

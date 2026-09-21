@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Catalog of Edge Cases and Traps for Jev (TypeSafe System One)</title>
+  <style>
+:root {
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --accent: #2563eb;
+  --border: #e2e8f0;
+  --code-bg: #f1f5f9;
+}
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.65;
+}
+.wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 3rem;
+}
+h1, h2, h3, h4 {
+  line-height: 1.25;
+  color: var(--text);
+}
+h1 { font-size: 1.75rem; margin: 0 0 1rem; }
+h2 { font-size: 1.35rem; margin: 1.75rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.35rem; }
+h3 { font-size: 1.1rem; margin: 1.35rem 0 0.5rem; color: var(--accent); }
+p, li { color: var(--text); }
+a { color: var(--accent); }
+code, pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  background: var(--code-bg);
+  border-radius: 6px;
+}
+code { padding: 0.1rem 0.35rem; font-size: 0.9em; }
+pre { padding: 0.9rem 1rem; overflow: auto; border: 1px solid var(--border); }
+pre code { padding: 0; background: transparent; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.92rem;
+  background: var(--card);
+}
+th, td {
+  border: 1px solid var(--border);
+  padding: 0.55rem 0.65rem;
+  text-align: left;
+  vertical-align: top;
+}
+th { background: var(--code-bg); }
+blockquote {
+  margin: 1rem 0;
+  padding: 0.25rem 0 0.25rem 1rem;
+  border-left: 4px solid var(--accent);
+  color: var(--muted);
+}
+hr { border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0; }
+.meta {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-bottom: 1.25rem;
+}
+.frontmatter {
+  display: none;
+}
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="meta">Learn Jev · rendered from Catalog of Edge Cases and Traps for Jev (TypeSafe System One).md</div>
+    <h1 id="catalog-of-edge-cases-and-traps-for-jev-typesafe-system-one">Catalog of Edge Cases and Traps for Jev (TypeSafe System One)</h1>
+<p>This catalog identifies critical architectural, operational, and design pitfalls encountered when integrating Jev (TypeSafe System One). As a System One model, Jev operates on a fundamentally different technical profile than LLMs—optimized for speed and typed reliability rather than prose.</p>
+<h2 id="1-structural-architectural-traps">1. Structural &amp; Architectural Traps</h2>
+<p>A fundamental misunderstanding of Jev’s role as a &ldquo;System One&rdquo; model can lead to system-wide failures. Unlike generative models, Jev is optimized for fast, structured judgments and sits &ldquo;off the Pareto curve&rdquo; by abandoning string generation entirely.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Trap</th>
+<th style="text-align: left;">Symptom</th>
+<th style="text-align: left;">Likely Root Cause</th>
+<th style="text-align: left;">Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>The &ldquo;Chatbot&rdquo; Fallacy</strong></td>
+<td style="text-align: left;">System fails to generate email replies, code snippets, or reasoning prose.</td>
+<td style="text-align: left;">Treating Jev as a generative model; Jev is &ldquo;off the Pareto curve,&rdquo; giving up string generation for massive speed/cost efficiency.</td>
+<td style="text-align: left;"><strong>Split Brain Architecture:</strong> Use Jev exclusively for the branching/decision logic. Use a traditional LLM only for the &ldquo;narrator&rdquo; or generation layer.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Sole Agent Brain Error</strong></td>
+<td style="text-align: left;">Agent fails to form complex multi-step plans or &ldquo;goes off the rails&rdquo; in long-term tasks.</td>
+<td style="text-align: left;">Using System One as a primary planner; it is a &ldquo;reflex layer&rdquo; for fast judgments, not a System Two deliberate reasoning model.</td>
+<td style="text-align: left;"><strong>Agent Co-pilot Pattern:</strong> Use Jev&rsquo;s primitives (<strong>Choice, Score, Noul</strong>) to answer bounded reflex questions (e.g., &ldquo;is it safe to run?&rdquo;) while an LLM handles high-level planning.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Kahneman Branding Confusion</strong></td>
+<td style="text-align: left;">Engineering teams assume Jev is inherently &ldquo;error-prone&rdquo; because of the psychological System 1 definition.</td>
+<td style="text-align: left;">Misinterpreting the metaphor; TypeSafe claims System One models can be more reliable than LLMs through RLCD and schema constraints.</td>
+<td style="text-align: left;"><strong>Education:</strong> Clarify &ldquo;System One&rdquo; (product class) vs. &ldquo;System 1&rdquo; (psychology). Focus on &ldquo;Fast Structured Decisions&rdquo; and type-safety by construction.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-schema-design-instruction-traps">2. Schema Design &amp; Instruction Traps</h2>
+<p>The effectiveness of a System One model is strictly tied to the quality of the schema. Poorly defined answer spaces or bloated context can degrade performance significantly.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Trap</th>
+<th style="text-align: left;">Symptom</th>
+<th style="text-align: left;">Likely Root Cause</th>
+<th style="text-align: left;">Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>The Garbage Schema</strong></td>
+<td style="text-align: left;">Model returns low-confidence or nonsensical selections.</td>
+<td style="text-align: left;">Forcing open-ended tasks into small, overlapping, or missing <code>Choice</code> sets.</td>
+<td style="text-align: left;"><strong>Answer Space Coverage:</strong> Include &ldquo;other&rdquo; or &ldquo;none of the above&rdquo;; use <strong>Hierarchical Classification</strong> (beam search) for deep taxonomies.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Context Rot (State Bloat)</strong></td>
+<td style="text-align: left;">Model accuracy degrades or &ldquo;distractions&rdquo; lead to incorrect choices.</td>
+<td style="text-align: left;">Sending irrelevant background knowledge or entire program states in the <code>state</code> field.</td>
+<td style="text-align: left;"><strong>State Decomposition:</strong> Use <strong>backticked dot-and-index paths</strong> (e.g., <code>`support.tickets[0].message`</code>) to point questions at specific nested values in the state.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Vague Option Labels</strong></td>
+<td style="text-align: left;">The model confuses two or more similar <code>Choice</code> options.</td>
+<td style="text-align: left;">Using simple string descriptions for overlapping categories (e.g., &ldquo;Return Policy&rdquo; vs. &ldquo;Return Status&rdquo;).</td>
+<td style="text-align: left;"><strong>Structured Criteria:</strong> Use objects instead of strings with custom fields like <code>what</code>, <code>not_for</code>, and <code>examples</code>. These field names are <strong>not reserved</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Broad Question Ambiguity</strong></td>
+<td style="text-align: left;">A single judgment fails to capture nuanced business logic.</td>
+<td style="text-align: left;">Asking one broad question (e.g., &ldquo;Is this spam?&rdquo;) which hides multiple internal judgments.</td>
+<td style="text-align: left;"><strong>Atomic Decomposition:</strong> Break questions into atomic properties (e.g., &ldquo;requests credentials&rdquo;, &ldquo;creates time pressure&rdquo;) and combine signals in code.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-probabilistic-calibration-traps">3. Probabilistic &amp; Calibration Traps</h2>
+<p>Jev provides calibrated probabilities, but misinterpreting these as absolute guarantees on individual trials is a major integration risk.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Trap</th>
+<th style="text-align: left;">Symptom</th>
+<th style="text-align: left;">Likely Root Cause</th>
+<th style="text-align: left;">Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Calibration-is-Warranty Fallacy</strong></td>
+<td style="text-align: left;">System automates high-risk actions based on a 0.9 probability that is wrong.</td>
+<td style="text-align: left;">Confusing calibration (aggregate frequency matching) with &ldquo;correctness&rdquo; on a single trial.</td>
+<td style="text-align: left;"><strong>Confidence Gates:</strong> Implement <code>if p ≥ τ then act else escalate</code>. Reference <strong>Fisch et al. (2022)</strong> regarding calibrated selective classification.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Over-trusting High-Probability Peaks</strong></td>
+<td style="text-align: left;">Failure to account for &ldquo;calibrated uncertainty&rdquo; in critical paths.</td>
+<td style="text-align: left;">Treating a single high probability as &ldquo;truth&rdquo; rather than a calibrated frequency claim.</td>
+<td style="text-align: left;"><strong>Epistemic Honesty:</strong> Use RLCD-trained probabilities to cross-reference signals; use <code>Noul</code> questions to verify truths alongside <code>Choice</code> selections.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-operational-performance-traps">4. Operational &amp; Performance Traps</h2>
+<p>While Jev offers significant speed and cost advantages, naive implementation can negate these benefits.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Trap</th>
+<th style="text-align: left;">Symptom</th>
+<th style="text-align: left;">Likely Root Cause</th>
+<th style="text-align: left;">Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Unmeasured Speed/Cost Betting</strong></td>
+<td style="text-align: left;">Production ROI fails to meet the &ldquo;193x faster / 444x cheaper&rdquo; marketing figures.</td>
+<td style="text-align: left;">Relying on vendor-reported multiples without independent measurement.</td>
+<td style="text-align: left;"><strong>Direct ROI Calculation:</strong> Note that <strong>Output tokens are FREE</strong> ($42/billion input tokens). Measure specific workflow latency before full deployment.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Sequential Query Bottleneck</strong></td>
+<td style="text-align: left;">Latency remains high despite using a &ldquo;fast&rdquo; model.</td>
+<td style="text-align: left;">Making one API request per question instead of utilizing the parallel sampler.</td>
+<td style="text-align: left;"><strong>Parallel Sampling:</strong> Jev’s sampler is hardware-aware; adding questions costs &ldquo;a few tokens&rdquo; but effectively zero latency. &ldquo;Ask a lot of questions&rdquo; in one call.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-boundary-limitation-traps">5. Boundary &amp; Limitation Traps</h2>
+<p>Jev has strict input and environmental boundaries that must be respected.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Trap</th>
+<th style="text-align: left;">Symptom</th>
+<th style="text-align: left;">Likely Root Cause</th>
+<th style="text-align: left;">Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Multimodal Blindness</strong></td>
+<td style="text-align: left;">System fails to process images, audio, or video files.</td>
+<td style="text-align: left;">Jev currently only supports text, JSON objects, and arrays of text.</td>
+<td style="text-align: left;"><strong>Preprocessing:</strong> Use a separate multimodal model to convert non-text assets into structured text before passing to Jev.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>The &ldquo;Typeface&rdquo; Confusion</strong></td>
+<td style="text-align: left;">Search or documentation errors lead to incorrect resources.</td>
+<td style="text-align: left;">Mixing up TypeSafe AI with &ldquo;Typeface&rdquo; or &ldquo;typescript.ai.&rdquo;</td>
+<td style="text-align: left;"><strong>Standardization:</strong> Ensure all internal documentation standardizes on <code>typesafe.ai</code>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-synthesis-of-mitigation-patterns">6. Synthesis of Mitigation Patterns</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Pattern Name</th>
+<th style="text-align: left;">Function</th>
+<th style="text-align: left;">Source Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Confidence-Gated Routing</strong></td>
+<td style="text-align: left;">Implements &ldquo;Act vs. Escalate&rdquo; logic based on a threshold (τ).</td>
+<td style="text-align: left;">TypeSafe docs — Confidence</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Atomic Decomposition</strong></td>
+<td style="text-align: left;">Breaks down complex states and questions into specific, narrow elements.</td>
+<td style="text-align: left;">TypeSafe docs — How to build with System One</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Structured Instructions</strong></td>
+<td style="text-align: left;">Uses JSON objects (user-defined fields) to define distinct criteria.</td>
+<td style="text-align: left;">TypeSafe docs — Choice primitive</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Hierarchical Classification</strong></td>
+<td style="text-align: left;">Chaining <code>Choice</code> questions to run a beam search over deep taxonomies.</td>
+<td style="text-align: left;">TypeSafe docs — Choice primitive</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Weighted Scoring</strong></td>
+<td style="text-align: left;">Combines multiple independent signals into a single score using deterministic code.</td>
+<td style="text-align: left;">TypeSafe docs — How to build with System One</td>
+</tr>
+</tbody>
+</table>
+<h2 id="7-silence-unknowns">7. Silence &amp; Unknowns</h2>
+<p>Based on the current source context, the following areas remain unverified:</p>
+<ul>
+<li><strong>RLCD Peer Review:</strong> The Reinforcement Learning for Calibrated Decisions (RLCD) architecture is vendor-proprietary and lacks peer-reviewed academic documentation.</li>
+<li><strong>Independent Benchmarks:</strong> There is a lack of independent, large-scale benchmark replication for the 193x speed/444x cost claims.</li>
+<li><strong>Multimodal Roadmap:</strong> No official release dates exist for image, audio, or video support.</li>
+<li><strong>Sustainability:</strong> Long-term sustainability of the $42 per billion input tokens pricing (with free output tokens) has not been demonstrated.</li>
+</ul>
+  </main>
+</body>
+</html>

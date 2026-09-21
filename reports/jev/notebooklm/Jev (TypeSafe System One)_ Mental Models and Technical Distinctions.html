@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jev (TypeSafe System One): Mental Models and Technical Distinctions</title>
+  <style>
+:root {
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --accent: #2563eb;
+  --border: #e2e8f0;
+  --code-bg: #f1f5f9;
+}
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.65;
+}
+.wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 3rem;
+}
+h1, h2, h3, h4 {
+  line-height: 1.25;
+  color: var(--text);
+}
+h1 { font-size: 1.75rem; margin: 0 0 1rem; }
+h2 { font-size: 1.35rem; margin: 1.75rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.35rem; }
+h3 { font-size: 1.1rem; margin: 1.35rem 0 0.5rem; color: var(--accent); }
+p, li { color: var(--text); }
+a { color: var(--accent); }
+code, pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  background: var(--code-bg);
+  border-radius: 6px;
+}
+code { padding: 0.1rem 0.35rem; font-size: 0.9em; }
+pre { padding: 0.9rem 1rem; overflow: auto; border: 1px solid var(--border); }
+pre code { padding: 0; background: transparent; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.92rem;
+  background: var(--card);
+}
+th, td {
+  border: 1px solid var(--border);
+  padding: 0.55rem 0.65rem;
+  text-align: left;
+  vertical-align: top;
+}
+th { background: var(--code-bg); }
+blockquote {
+  margin: 1rem 0;
+  padding: 0.25rem 0 0.25rem 1rem;
+  border-left: 4px solid var(--accent);
+  color: var(--muted);
+}
+hr { border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0; }
+.meta {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-bottom: 1.25rem;
+}
+.frontmatter {
+  display: none;
+}
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="meta">Learn Jev · rendered from Jev (TypeSafe System One)_ Mental Models and Technical Distinctions.md</div>
+    <h1 id="jev-typesafe-system-one-mental-models-and-technical-distinctions">Jev (TypeSafe System One): Mental Models and Technical Distinctions</h1>
+<h3 id="1-defining-the-system-one-paradigm">1. Defining the System One Paradigm</h3>
+<p><strong>The Core Definition</strong>
+Jev represents a shift from generative text to a &ldquo;frontier-intelligence function call.&rdquo; Developed by TypeSafe AI, it is the flagship model in the <strong>System One</strong> class—an architectural departure designed to bridge the &ldquo;automation gap.&rdquo; While traditional Large Language Models (LLMs) optimize for human-centric dialogue, Jev is built for the machine-to-machine boundary, transforming &ldquo;unstructured state in&rdquo; to &ldquo;typed probabilistic decisions out.&rdquo;</p>
+<p><strong>The Decision Layer vs. Narrator Model</strong>
+Architecturally, Jev is a <strong>reflex layer</strong>, not a narrator. It lacks the mechanism to write emails, generate code, or provide prose reasoning. It is the &ldquo;smart if-statement&rdquo; of the agentic stack. By &ldquo;giving up&rdquo; string generation, Jev achieves a Pareto frontier of intelligence-per-dollar that allows it to act as a dependency-chain guard, protecting downstream software from the hallucinations inherent in tool-calling LLMs.</p>
+<p><strong>Naming and Lineage</strong>
+The nomenclature reflects both cognitive science and economic theory:
+*   <strong>System One:</strong> A class of models inspired by Daniel Kahneman’s &ldquo;System 1&rdquo; (fast, intuitive, non-deliberative).
+*   <strong>Jev:</strong> The flagship implementation (currently <code>jev-latest</code>).
+*   <strong>The Jevons Paradox:</strong> The name is a nod to William Stanley Jevons; the underlying thesis is that making intelligence two orders of magnitude cheaper will drive a massive increase in total demand for automated decisions.
+*   <strong>Lineage:</strong> Founded by Diogo Almeida (formerly OpenAI RLHF lead), the system is built on the premise that RLHF optimizes for &ldquo;looking good&rdquo; to humans, whereas automation requires models optimized for being right.</p>
+<hr />
+<h3 id="2-the-three-primitives-bounded-answer-spaces">2. The Three Primitives: Bounded Answer Spaces</h3>
+<p>Jev restricts output to three type-safe primitives, ensuring the model never returns a value that violates the developer&rsquo;s schema.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Primitive</th>
+<th style="text-align: left;">Question Type</th>
+<th style="text-align: left;">Output Shape</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Choice</strong></td>
+<td style="text-align: left;">Categorical selection from a defined set.</td>
+<td style="text-align: left;"><code>choice</code> (string), <code>probabilities</code> (distribution), <code>confidence</code> (float).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Score</strong></td>
+<td style="text-align: left;">Ordered positioning on a described spectrum.</td>
+<td style="text-align: left;"><code>score</code> (float), <code>confidence</code> (float).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Noul</strong></td>
+<td style="text-align: left;">Probabilistic truth of a yes/no statement.</td>
+<td style="text-align: left;"><code>noul</code> (float [0,1]), representing P(True).</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Choice Model (Parallel Selection)</strong>
+Choice handles selection from sets of up to 255 options. Because Jev cannot invent options, a &ldquo;None of the Above&rdquo; or &ldquo;Other&rdquo; label is required in the schema to prevent &ldquo;garbage in, garbage out&rdquo; results where the model is forced into a false categorization.</p>
+<p><strong>Score Model (Ordered Scales)</strong>
+Score maps input to a numerical spectrum (e.g., 0.0 to 2.0). It is optimized for subjective qualities like severity or frustration, where position is more important than category.</p>
+<p><strong>Noul Model (Probabilistic Truth)</strong>
+A unique boolean-adjacent type, Noul returns the probability that a statement is true. It is the fundamental building block for intent routing and safety gating.</p>
+<hr />
+<h3 id="3-key-mental-models-for-implementation">3. Key Mental Models for Implementation</h3>
+<p><strong>The Confidence Gate (Act vs. Escalate)</strong>
+To maintain system reliability, architects should implement the <strong>Selective Classification</strong> pattern. Logic must branch based on the probability ($p$) and the developer-defined threshold ($\tau$):
+*   $p \ge \tau \implies \text{Act}$ (Automate the decision)
+*   $p &lt; \tau \implies \text{Escalate}$ (Human-in-the-loop or high-reasoning LLM review)</p>
+<p><strong>Calibration ≠ Correctness</strong>
+A confidence score of 0.90 is not a &ldquo;warranty&rdquo; for a single call; it is a claim of <strong>long-run frequency matching</strong>. In a calibrated system, across 100 cases where the model reports 0.90 confidence, it should be correct exactly 90 times. This distinction is vital for setting risk-aware thresholds.</p>
+<p><strong>Schema-as-Product</strong>
+The schema is the primary architectural lever. If option labels are fuzzy or overlapping, the model will split its probability mass, lowering confidence and triggering unnecessary escalations. Precision in the <code>criteria</code> field is the &ldquo;prompt engineering&rdquo; of System One.</p>
+<p><strong>Hardware-Aware Parallelism</strong>
+Unlike LLMs that generate tokens sequentially (autoregressive), Jev utilizes a <strong>Hardware-aware Parallel Sampler</strong>. This allows developers to evaluate dozens of independent, <strong>atomic questions</strong>—such as &ldquo;Is this spam?&rdquo;, &ldquo;What is the sentiment?&rdquo;, and &ldquo;Which department?&rdquo;—in a single round trip (~100ms) for the same cost as a single question. Decomposing broad judgments into atomic questions is the primary path to efficiency.</p>
+<hr />
+<h3 id="4-technical-distinctions-system-one-vs-llm-agents">4. Technical Distinctions: System One vs. LLM Agents</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Dimension</th>
+<th style="text-align: left;">LLM (System Two-style)</th>
+<th style="text-align: left;">System One (Jev)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Optimization Goal</strong></td>
+<td style="text-align: left;">Human Preference (RLHF)</td>
+<td style="text-align: left;">Calibrated Decisions (RLCD)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Output Type</strong></td>
+<td style="text-align: left;">Unstructured Strings / Text</td>
+<td style="text-align: left;">Type-safe Structured Values</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Sampling Method</strong></td>
+<td style="text-align: left;">Sequential (Token-by-token)</td>
+<td style="text-align: left;"><strong>Hardware-aware Parallel Sampler</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Latency</strong></td>
+<td style="text-align: left;">Seconds to Minutes</td>
+<td style="text-align: left;">70ms – 500ms</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Cost</strong></td>
+<td style="text-align: left;">High (per I/O token)</td>
+<td style="text-align: left;"><strong>$42/B input; Output is FREE</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>The &ldquo;Automation Gap&rdquo; Thesis</strong>
+Diogo Almeida’s thesis posits that LLMs are ill-suited for automation because RLHF optimizes for &ldquo;preference&rdquo; (looking good to a human), which encourages overconfidence. System One uses <strong>Reinforcement Learning for Calibrated Decisions (RLCD)</strong> to optimize for &ldquo;epistemic honesty,&rdquo; providing the reliable, sortable, and composable data needed for autonomous software loops.</p>
+<hr />
+<h3 id="5-common-failure-modes-and-traps">5. Common Failure Modes and Traps</h3>
+<ul>
+<li><strong>The Chatbot Fallacy:</strong> Attempting to force Jev to generate replies or plans. Jev is a decision engine; if your agent needs to &ldquo;write,&rdquo; it must hand off the task to a traditional LLM.</li>
+<li><strong>The &ldquo;Zero Hallucination&rdquo; Misinterpretation:</strong> While Jev provides <strong>Type Safety and Schema Adherence</strong> (it will never return an undefined category), it does not provide <strong>Logical Infallibility</strong>. It can still make the &ldquo;wrong&rdquo; choice within the permitted schema.</li>
+<li><strong>Schema Overlap:</strong> Defining categories that are not mutually exclusive (e.g., &ldquo;Billing&rdquo; and &ldquo;Refunds&rdquo;). This leads to split confidence and breaks the automation loop.</li>
+<li><strong>Naming Confusion:</strong> Developers frequently confuse <strong>TypeSafe AI</strong> (typesafe.ai) with &ldquo;Typeface&rdquo; or the &ldquo;typescript.ai&rdquo; domain. Ensure your SDK configurations point to the correct endpoint.</li>
+<li><strong>Economic Fallacies:</strong> Vendor claims of 193x speed gains are workload-dependent. Architects must measure speed/cost multiples independently before moving to production.</li>
+</ul>
+<hr />
+<h3 id="6-limitations-and-sourced-silences">6. Limitations and Sourced Silences</h3>
+<p><strong>Current Constraints</strong>
+*   <strong>Text-only state:</strong> No current support for multi-modal (images/audio/video) inputs.
+*   <strong>Cardinality Limits:</strong> Choice primitives are capped at 255 options.
+*   <strong>Hosted Service:</strong> No local weights or open-source versions; available only via TypeSafe API or OpenRouter.</p>
+<p><strong>Marked Silences</strong>
+*   <strong>Peer Review:</strong> There are currently no peer-reviewed papers regarding the internal RLCD architecture or specific System One weights.
+*   <strong>Independent Benchmarks:</strong> Large-scale, third-party replications of the &ldquo;444x cheaper&rdquo; and &ldquo;193x faster&rdquo; claims are absent from the current source context.
+*   <strong>Neuro-scholarship:</strong> Beyond the naming metaphor, sources are silent on the specific academic relationship to Kahneman’s work.</p>
+  </main>
+</body>
+</html>

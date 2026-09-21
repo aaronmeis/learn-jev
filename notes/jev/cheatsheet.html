@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jev cheatsheet — typed decisions for software</title>
+  <style>
+:root {
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --accent: #2563eb;
+  --border: #e2e8f0;
+  --code-bg: #f1f5f9;
+}
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.65;
+}
+.wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 3rem;
+}
+h1, h2, h3, h4 {
+  line-height: 1.25;
+  color: var(--text);
+}
+h1 { font-size: 1.75rem; margin: 0 0 1rem; }
+h2 { font-size: 1.35rem; margin: 1.75rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.35rem; }
+h3 { font-size: 1.1rem; margin: 1.35rem 0 0.5rem; color: var(--accent); }
+p, li { color: var(--text); }
+a { color: var(--accent); }
+code, pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  background: var(--code-bg);
+  border-radius: 6px;
+}
+code { padding: 0.1rem 0.35rem; font-size: 0.9em; }
+pre { padding: 0.9rem 1rem; overflow: auto; border: 1px solid var(--border); }
+pre code { padding: 0; background: transparent; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.92rem;
+  background: var(--card);
+}
+th, td {
+  border: 1px solid var(--border);
+  padding: 0.55rem 0.65rem;
+  text-align: left;
+  vertical-align: top;
+}
+th { background: var(--code-bg); }
+blockquote {
+  margin: 1rem 0;
+  padding: 0.25rem 0 0.25rem 1rem;
+  border-left: 4px solid var(--accent);
+  color: var(--muted);
+}
+hr { border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0; }
+.meta {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-bottom: 1.25rem;
+}
+.frontmatter {
+  display: none;
+}
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="meta">Learn Jev · rendered from cheatsheet.md</div>
+    <h1 id="jev-cheatsheet-typed-decisions-for-software">Jev cheatsheet — typed decisions for software</h1>
+<p>Quick reference. No timed study plan — use as a standing map.</p>
+<h2 id="one-liner">One-liner</h2>
+<p><strong>Jev</strong> (TypeSafe <strong>System One</strong>) takes program <strong>state</strong> + typed <strong>questions</strong> and returns <strong>Choice / Score / Noul</strong> answers with probabilities. It does <strong>not</strong> chat, write code, or explain itself. Your code branches on the numbers.</p>
+<h2 id="three-primitives">Three primitives</h2>
+<table>
+<thead>
+<tr>
+<th>Primitive</th>
+<th>Ask</th>
+<th>Get back</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Choice</strong></td>
+<td>Which labelled option?</td>
+<td>Winner + per-option probs + confidence</td>
+</tr>
+<tr>
+<td><strong>Score</strong></td>
+<td>Where on an ordered scale?</td>
+<td>Level / weighted score</td>
+</tr>
+<tr>
+<td><strong>Noul</strong></td>
+<td>Is this true / yes?</td>
+<td>Probability in [0, 1]</td>
+</tr>
+</tbody>
+</table>
+<p>Many questions can share one state in <strong>one round trip</strong>.</p>
+<h2 id="mental-models">Mental models</h2>
+<ol>
+<li><strong>Decision layer, not narrator</strong> — LLM (or humans) still write plans and replies.</li>
+<li><strong>Confidence gate</strong> — act if confidence ≥ τ; else escalate to human or LLM.</li>
+<li><strong>Schema is the product</strong> — bad option labels → bad decisions.</li>
+<li><strong>Calibration ≠ correctness</strong> — a 0.9 is a long-run frequency claim, not a warranty on this ticket.</li>
+<li><strong>Agent co-pilot</strong> — LLM plans/writes; Jev answers “which queue / safe / done?”</li>
+</ol>
+<h2 id="act-vs-escalate-default-pattern">Act vs escalate (default pattern)</h2>
+<pre><code>state → Jev(questions) → {answer, p}
+if p &gt;= τ and schema is closed → act in code
+else → human review or LLM handoff
+</code></pre>
+<h2 id="when-to-use-jev">When to use Jev</h2>
+<ul>
+<li>Closed answer spaces you can label</li>
+<li>Routing, severity, yes/no gates, tool-guard checks</li>
+<li>High volume / low latency decisions where prose is waste</li>
+</ul>
+<h2 id="when-not-to-use-jev">When <strong>not</strong> to use Jev</h2>
+<ul>
+<li>Open-ended writing, plans, tool-call prose, user-facing explanations</li>
+<li>Forcing a tiny Choice set onto an unbounded problem</li>
+<li>Treating Jev as the sole agent brain</li>
+<li>Trusting vendor 193× / “zero hallucination” claims without measuring your workload<br />
+  (“Zero hallucination” ≈ <strong>no free-text outside the schema</strong>, not perfect truth)</li>
+</ul>
+<h2 id="common-traps">Common traps</h2>
+<table>
+<thead>
+<tr>
+<th>Trap</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jev as chatbot</td>
+<td>Keep generation on an LLM</td>
+</tr>
+<tr>
+<td>Confusing Kahneman “System 1” with TypeSafe <strong>System One</strong></td>
+<td>Product class = fast structured decisions for software</td>
+</tr>
+<tr>
+<td>Auto-approving a single high p</td>
+<td>Threshold + escalate path; calibration is aggregate</td>
+</tr>
+<tr>
+<td>Vague Choice labels / missing “other”</td>
+<td>Rewrite schema before blaming the model</td>
+</tr>
+<tr>
+<td>TypeSafe vs Typeface</td>
+<td>Company is <strong>typesafe.ai</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="falsifier-you-get-it-when">Falsifier (you “get” it when…)</h2>
+<p>You can contrast System One (Jev) vs an LLM agent with examples, and name when <strong>not</strong> to use Jev.</p>
+<h2 id="primary-docs">Primary docs</h2>
+<ul>
+<li>https://docs.typesafe.ai/concepts/system-one</li>
+<li>https://typesafe.ai/blog/introducing-system-one-models-and-jev</li>
+<li>https://docs.typesafe.ai/introduction/quickstart</li>
+</ul>
+  </main>
+</body>
+</html>

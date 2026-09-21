@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mind map — Jev (TypeSafe System One)</title>
+  <style>
+:root {
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --accent: #2563eb;
+  --border: #e2e8f0;
+  --code-bg: #f1f5f9;
+}
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.65;
+}
+.wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 3rem;
+}
+h1, h2, h3, h4 {
+  line-height: 1.25;
+  color: var(--text);
+}
+h1 { font-size: 1.75rem; margin: 0 0 1rem; }
+h2 { font-size: 1.35rem; margin: 1.75rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.35rem; }
+h3 { font-size: 1.1rem; margin: 1.35rem 0 0.5rem; color: var(--accent); }
+p, li { color: var(--text); }
+a { color: var(--accent); }
+code, pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  background: var(--code-bg);
+  border-radius: 6px;
+}
+code { padding: 0.1rem 0.35rem; font-size: 0.9em; }
+pre { padding: 0.9rem 1rem; overflow: auto; border: 1px solid var(--border); }
+pre code { padding: 0; background: transparent; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.92rem;
+  background: var(--card);
+}
+th, td {
+  border: 1px solid var(--border);
+  padding: 0.55rem 0.65rem;
+  text-align: left;
+  vertical-align: top;
+}
+th { background: var(--code-bg); }
+blockquote {
+  margin: 1rem 0;
+  padding: 0.25rem 0 0.25rem 1rem;
+  border-left: 4px solid var(--accent);
+  color: var(--muted);
+}
+hr { border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0; }
+.meta {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-bottom: 1.25rem;
+}
+.frontmatter {
+  display: none;
+}
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="meta">Learn Jev · rendered from mindmap.md</div>
+    <h1 id="mind-map-jev-typesafe-system-one">Mind map — Jev (TypeSafe System One)</h1>
+<blockquote>
+<p><strong>warning</strong></p>
+<p>Drafted from Mode B interview + public TypeSafe / explainer sources (Sep 2026). Edit freely, then check Progress Log.</p>
+</blockquote>
+<p><strong>Slug:</strong> <code>jev-system-one</code> · <strong>Sibling:</strong> ai-assistance-vs-automation (Almeida talk → assistance vs automation; Jev/RLCD as the “beyond RLHF” branch)</p>
+<h2 id="day-outcome">Day outcome</h2>
+<p>Explain and teach Jev: System One = fast typed decisions for software; contrast vs LLM / System Two agents; three primitives; act-vs-escalate on confidence.</p>
+<h2 id="central-claim">Central claim</h2>
+<p>LLMs generate text (and often overconfident prose). <strong>Jev</strong> is TypeSafe’s first <strong>System One</strong> model: unstructured state in → <strong>typed probabilistic decisions</strong> out — no chat, no code, no explanations. Software branches on the numbers.</p>
+<h2 id="branch-a-product-naming">Branch A — Product &amp; naming</h2>
+<ul>
+<li><strong>TypeSafe AI</strong> (typesafe.ai) — not “typescript.ai”</li>
+<li><strong>System One</strong> model class (Kahneman metaphor: fast structured decisions)</li>
+<li><strong>Jev</strong> = flagship model (<code>jev-latest</code>); name nod to Jevons (cheaper intelligence → more demand)</li>
+<li>Founder lineage: Diogo Almeida / RLHF history → automation gap thesis (sibling pack)</li>
+<li>Launch ~2026-09-15 early access; hosted API</li>
+</ul>
+<h2 id="branch-b-how-it-differs-from-an-llm">Branch B — How it differs from an LLM</h2>
+<table>
+<thead>
+<tr>
+<th>LLM (System Two-ish in product use)</th>
+<th>System One / Jev</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Autoregressive text generation</td>
+<td>Parallel typed answers</td>
+</tr>
+<tr>
+<td>Open-ended replies, plans, tool prose</td>
+<td>Closed answer spaces you define</td>
+</tr>
+<tr>
+<td>Parse/JSON-mode / structured-output hacks</td>
+<td>Native Choice / Score / Noul</td>
+</tr>
+<tr>
+<td>Hallucinate free text</td>
+<td>Cannot invent options outside the schema</td>
+</tr>
+<tr>
+<td>Seconds + output tokens</td>
+<td>~70–500 ms; input-priced; output free (vendor claim)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="branch-c-three-primitives-core-vocab">Branch C — Three primitives (core vocab)</h2>
+<ul>
+<li><strong>Choice</strong> — pick among labelled options (up to ~255); per-option probs + confidence</li>
+<li><strong>Score</strong> — ordered scale with described levels</li>
+<li><strong>Noul</strong> — yes/no / statement truth → probability in [0,1]</li>
+<li>One request: state + many questions → all answers in one round trip</li>
+</ul>
+<h2 id="branch-d-mental-models">Branch D — Mental models</h2>
+<ol>
+<li><strong>Decision layer, not narrator</strong> — Jev never writes the email; code does</li>
+<li><strong>Confidence gate</strong> — high confidence → automate; low → human / LLM escalate</li>
+<li><strong>Schema is the product</strong> — bad option labels = bad decisions</li>
+<li><strong>Calibration ≠ correctness</strong> — 0.9 means calibrated uncertainty across many trials, not “this one is true”</li>
+<li><strong>Agent co-pilot</strong> — LLM plans/writes; Jev answers “which queue / safe to run / done?”</li>
+</ol>
+<h2 id="branch-e-active-practice-targets">Branch E — Active practice targets</h2>
+<ul>
+<li>Design 3 questions for a support ticket (dept Choice + severity Score + escalate Noul)</li>
+<li>Sketch confidence thresholds and fallback paths</li>
+<li>Map one agent loop step that today burns an LLM call onto a Jev question</li>
+<li>Read API shape: <code>POST …/v1/systemone</code>, state object, questions map</li>
+</ul>
+<h2 id="branch-f-teach-back-angle-30m">Branch F — Teach-back angle (30m)</h2>
+<p>“Jev is a frontier-intelligence <strong>function call</strong>: state in, typed probs out. Use it where you already know the answer space and need speed + a confidence number — not where you need a paragraph.”</p>
+<h2 id="branch-g-edge-cases-traps">Branch G — Edge cases / traps</h2>
+<ul>
+<li>Treating Jev as a chatbot or sole agent brain</li>
+<li>Confusing System One branding with Kahneman’s error-prone System 1</li>
+<li>Over-trusting a single high probability (calibration is aggregate)</li>
+<li>Open-ended tasks forced into tiny Choice sets (garbage schema)</li>
+<li>Vendor speed/cost multiples without independent measurement</li>
+<li>Ignoring multimodal limits (text/JSON state today; no images/audio yet)</li>
+<li>Mixing up TypeSafe vs Typeface; System One vs System 1 spelling in docs</li>
+</ul>
+<h2 id="branch-h-application-60m-sketch">Branch H — Application (60m sketch)</h2>
+<p>One-pager: <strong>ticket router or agent middleware</strong> — state fields, three primitives, thresholds, escalate path, what stays on the LLM. Optional: LangChain middleware story (model router / tool guard) as pattern only — no full platform build.</p>
+<h2 id="branch-i-falsifiers">Branch I — Falsifiers</h2>
+<ul>
+<li>Cannot contrast System One vs LLM agent with examples</li>
+<li>Cannot name when <strong>not</strong> to use Jev</li>
+<li>Cannot sketch perceive → typed decide → act/escalate without inventing prose output from Jev</li>
+</ul>
+<h2 id="pedagogy-coverage-hints">Pedagogy coverage hints</h2>
+<ul>
+<li>Core concepts → A–C</li>
+<li>Mental models → D</li>
+<li>Active practice → E</li>
+<li>Teach it → F</li>
+<li>Edge cases → G</li>
+<li>Spaced review → vocab + contrast table</li>
+<li>Application → H</li>
+</ul>
+  </main>
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jev (TypeSafe System One) Authoring &amp; Practice Playbook</title>
+  <style>
+:root {
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --accent: #2563eb;
+  --border: #e2e8f0;
+  --code-bg: #f1f5f9;
+}
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.65;
+}
+.wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 3rem;
+}
+h1, h2, h3, h4 {
+  line-height: 1.25;
+  color: var(--text);
+}
+h1 { font-size: 1.75rem; margin: 0 0 1rem; }
+h2 { font-size: 1.35rem; margin: 1.75rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.35rem; }
+h3 { font-size: 1.1rem; margin: 1.35rem 0 0.5rem; color: var(--accent); }
+p, li { color: var(--text); }
+a { color: var(--accent); }
+code, pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  background: var(--code-bg);
+  border-radius: 6px;
+}
+code { padding: 0.1rem 0.35rem; font-size: 0.9em; }
+pre { padding: 0.9rem 1rem; overflow: auto; border: 1px solid var(--border); }
+pre code { padding: 0; background: transparent; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.92rem;
+  background: var(--card);
+}
+th, td {
+  border: 1px solid var(--border);
+  padding: 0.55rem 0.65rem;
+  text-align: left;
+  vertical-align: top;
+}
+th { background: var(--code-bg); }
+blockquote {
+  margin: 1rem 0;
+  padding: 0.25rem 0 0.25rem 1rem;
+  border-left: 4px solid var(--accent);
+  color: var(--muted);
+}
+hr { border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0; }
+.meta {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-bottom: 1.25rem;
+}
+.frontmatter {
+  display: none;
+}
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="meta">Learn Jev · rendered from Jev (TypeSafe System One) Authoring and Practice Playbook.md</div>
+    <h1 id="jev-typesafe-system-one-authoring-practice-playbook">Jev (TypeSafe System One) Authoring &amp; Practice Playbook</h1>
+<h3 id="1-the-system-one-paradigm-core-concepts-and-contrast">1. The System One Paradigm: Core Concepts and Contrast</h3>
+<p><strong>The System One Model Class</strong>
+Jev is a &ldquo;System One&rdquo; model, a technical classification defined by frontier-intelligence functions optimized for fast, intuitive, and structured judgments. Drawing from the Kahneman metaphor, Jev handles &ldquo;Reflex&rdquo; labor—rapidly evaluating an unstructured state and returning typed probabilities rather than generating autoregressive tokens. It is not a chatbot; it is a frontier-intelligence function call: unstructured program state in, typed probabilistic decisions out.</p>
+<p><strong>LLM vs. System One Contrast Table</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Dimension</th>
+<th style="text-align: left;">LLM (System Two-ish)</th>
+<th style="text-align: left;">Jev (System One)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Optimization</strong></td>
+<td style="text-align: left;">RLHF / RLVR (Human Preference)</td>
+<td style="text-align: left;">RLCD (Calibrated Decisions)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Output Type</strong></td>
+<td style="text-align: left;">Sequential Prose / Tokens</td>
+<td style="text-align: left;">Parallel Typed Probabilities</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Latency</strong></td>
+<td style="text-align: left;">Seconds (3s – 329s)</td>
+<td style="text-align: left;">Milliseconds (70ms – 500ms)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Cost Structure</strong></td>
+<td style="text-align: left;">$0.20 – $10.00 / MTok</td>
+<td style="text-align: left;">$0.042 / MTok ($42 / Billion)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Schema Safety</strong></td>
+<td style="text-align: left;">Parsing/Validation hacks</td>
+<td style="text-align: left;">Type-safe by construction</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Output Cost</strong></td>
+<td style="text-align: left;">~5x higher than input</td>
+<td style="text-align: left;"><strong>FREE</strong> (Too cheap to meter)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The &ldquo;Decision Layer&rdquo; Philosophy</strong>
+Jev is a decision layer, not a narrator. It never writes code, generates emails, or provides reasoning explanations. Its architectural purpose is to provide &ldquo;programmable common sense&rdquo; over unstructured data that hand-written logic cannot parse. Jev returns structured numbers specifically for software to branch on. Code handles the side effects; Jev handles the &ldquo;fuzzy&rdquo; logic branching.</p>
+<hr />
+<h3 id="2-the-three-primitives-atomic-question-design">2. The Three Primitives: Atomic Question Design</h3>
+<p><strong>Choice Primitive</strong>
+Used to select a single option from a pre-defined set of up to 255 labeled options. 
+*   <strong>Request Structure:</strong> Requires <code>instructions</code> and a <code>criteria</code> map.
+*   <strong>Output Components:</strong> The selected <code>choice</code>, a full distribution of <code>probabilities</code>, and a <code>confidence</code> score.
+*   <strong>Example Response:</strong> <code>{"choice": "billing", "confidence": 0.92, "probabilities": {"billing": 0.92, "shipping": 0.08}}</code></p>
+<p><strong>Score Primitive</strong>
+An ordered scale with described levels used for assessing spectrums (e.g., customer frustration, bug severity). 
+*   <strong>Weighted Logic:</strong> Unlike a simple integer, Score returns a continuous number (e.g., 1.4) representing the weighted probability across all defined levels.</p>
+<p><strong>Noul Primitive</strong>
+A yes/no truth probability in the [0, 1] range. 
+*   <strong>Enforced Structure:</strong> Requests must explicitly define <code>true</code> and <code>false</code> keys within the <code>criteria</code> object to bound the decision space.
+*   <strong>Contrast:</strong> Unlike a binary Boolean, a Noul communicates epistemic uncertainty, allowing code to see <em>how</em> true a statement appears.</p>
+<p><strong>Mandatory Referencing Syntax</strong>
+Architects must use <strong>backticked dot-and-index paths</strong> (e.g., <code>`support.tickets[0].message`</code>) within question instructions to point the model at specific state values. This prevents ambiguity and ensures the model evaluates the correct nested variable within a complex state object.</p>
+<p><strong>Structured Instructions and Criteria</strong>
+For complex or similar options (e.g., &ldquo;Return Policy&rdquo; vs &ldquo;Return Status&rdquo;), utilize nested JSON objects instead of strings. Mandate the use of keys like <code>question</code>, <code>focus</code>, <code>what</code>, <code>not_for</code>, and <code>examples</code> to provide contrastive guidance and minimize confusion.</p>
+<hr />
+<h3 id="3-the-five-step-authoring-workflow">3. The Five-Step Authoring Workflow</h3>
+<p><strong>Step 1: Deterministic Filtering</strong>
+Mandate the use of standard code for all deterministic rules, control flow, and side effects. If an invoice check can be handled by <code>if days_overdue &gt; 30</code>, use code. Jev is reserved for unstructured judgments where code is too brittle.</p>
+<p><strong>Step 2: State Decomposition</strong>
+Mandate &ldquo;State Pruning&rdquo; to prevent context rot. Include only the fields absolutely necessary for the questions at hand. Stripping distracting tokens minimizes noise and optimizes token costs.</p>
+<p><strong>Step 3: Question Decomposition</strong>
+This is the <strong>most important concept</strong> in the workflow. Broad judgments (e.g., &ldquo;Is this spam?&rdquo;) must be broken into narrow, atomic, specific questions (e.g., &ldquo;Does the sender identity mismatch?&rdquo;). Decomposing the problem exposes underlying judgments, making the system inspectable and tunable via code.</p>
+<p><strong>Step 4: Parallelization Strategy (Speculative Fan-Out)</strong>
+Avoid serial requests. Send multiple independent questions (Choice, Score, Noul) in a single request. Jev’s parallel sampler evaluates these simultaneously, maintaining 100ms speeds regardless of question count.</p>
+<p><strong>Step 5: Confidence-Gated Routing</strong>
+Implement &ldquo;Act vs. Escalate&rdquo; logic. Use the calibrated <code>confidence</code> score to determine the path:</p>
+<pre><code class="language-python"># Confidence-Gated Pattern
+if response.answers[&quot;is_safe&quot;].confidence &lt; 0.85:
+    route_to_human_review(ticket) # Escalate
+else:
+    execute_action(response.answers[&quot;is_safe&quot;].choice) # Act
+</code></pre>
+<hr />
+<h3 id="4-mental-models-for-high-competence-practice">4. Mental Models for High-Competence Practice</h3>
+<ul>
+<li><strong>Calibration vs. Correctness:</strong> A 0.9 confidence score is a calibrated frequency claim—meaning that across many trials, the model will be accurate 90% of the time. It is an estimate of uncertainty, not a single-instance truth warranty.</li>
+<li><strong>Schema-as-Product:</strong> The output is only as good as the labels. Use the <strong>Error Pass</strong> technique: create a <strong>&ldquo;Garbage Schema&rdquo;</strong> with overlapping or vague options to identify where the model&rsquo;s calibration fails, then refine for mutual exclusivity.</li>
+<li><strong>Agent Co-pilot Split:</strong> Distinguish labor between System Two (LLM) and System One (Jev). The LLM handles planning and generation; Jev handles the &ldquo;Reflex&rdquo; checks: &ldquo;Is the page loaded?&rdquo;, &ldquo;Which queue?&rdquo;, &ldquo;Is this command dangerous?&rdquo;.</li>
+<li><strong>Selective Classification:</strong> Grounded in <strong>Fisch et al. (2022)</strong>, this model allows the system to abstain from a decision when uncertainty is too high, maintaining high reliability for automated actions by routing the &ldquo;I don&rsquo;t know&rdquo; cases to humans or reasoning models.</li>
+</ul>
+<hr />
+<h3 id="5-required-practitioner-artifacts">5. Required Practitioner Artifacts</h3>
+<p><strong>The Decision Layer One-Pager</strong>
+*   <strong>Problem Statement:</strong> The specific automated workflow.
+*   <strong>State Schema:</strong> The JSON structure being sent.
+*   <strong>Typed Questions:</strong> The Choice/Score/Noul questions with backticked paths and labels.
+*   <strong>Threshold Paths:</strong> Explicit <code>if confidence &gt; τ</code> logic for automation vs escalation.</p>
+<p><strong>The Trap Sheet</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Symptom</th>
+<th style="text-align: left;">Root Cause</th>
+<th style="text-align: left;">Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">404/Connection Error</td>
+<td style="text-align: left;">Using <code>typescript.ai</code></td>
+<td style="text-align: left;">Use <strong><code>typesafe.ai</code></strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">High Hallucination Rate</td>
+<td style="text-align: left;">Treating Jev as a Chatbot</td>
+<td style="text-align: left;">Enforce schema; Jev cannot generate text</td>
+</tr>
+<tr>
+<td style="text-align: left;">Over-confidence in single errors</td>
+<td style="text-align: left;">Confusing Calibration with Correctness</td>
+<td style="text-align: left;">Use confidence gates; cite Fisch et al.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Inconsistent Decisions</td>
+<td style="text-align: left;">Vague or &ldquo;Garbage&rdquo; Schema labels</td>
+<td style="text-align: left;">Perform Error Pass; refine criteria</td>
+</tr>
+<tr>
+<td style="text-align: left;">Unmeasured Speed/Cost</td>
+<td style="text-align: left;">Trusting vendor-reported multiples</td>
+<td style="text-align: left;">Conduct independent measurement</td>
+</tr>
+<tr>
+<td style="text-align: left;">System Failure on Images</td>
+<td style="text-align: left;">Ignoring multi-modal limits</td>
+<td style="text-align: left;">Jev is <strong>Text/JSON only</strong> today</td>
+</tr>
+<tr>
+<td style="text-align: left;">Naming Confusion</td>
+<td style="text-align: left;">Mix-up with &ldquo;Typeface&rdquo;</td>
+<td style="text-align: left;">Verify vendor: TypeSafe AI</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The Agent Loop Map</strong>
+Mark all workflow steps. Categorize &ldquo;Reflex&rdquo; steps (routing, safety checks, state verification) for Jev and &ldquo;Brain&rdquo; steps (content generation, planning) for the LLM.</p>
+<hr />
+<h3 id="6-falsification-test-for-shallow-fluency">6. Falsification Test for Shallow Fluency</h3>
+<p><strong>The &ldquo;Contrast Test&rdquo;</strong>
+Replace hand-written logic with Jev for these three fuzzy decision rules without using prose:
+1.  <strong>Security:</strong> State (Shell Command) -&gt; Noul (Is this dangerous?).
+2.  <strong>Routing:</strong> State (Customer Email) -&gt; Choice (Identify department).
+3.  <strong>Triage:</strong> State (Server Logs) -&gt; Score (Severity levels 0-5).
+<em>Logic: No sentences. Just types and probabilities.</em></p>
+<p><strong>The &ldquo;When Not to Use&rdquo; Challenge</strong>
+Identify four scenarios where Jev is the incorrect tool:
+1.  Summarizing a transcript (Prose generation).
+2.  Writing a Python script (Code generation).
+3.  Analyzing a security camera feed (Multimodal).
+4.  Open-ended strategic planning (No bounded answer space).</p>
+<p><strong>The Engineering Statement Task</strong>
+<em>Marketing Claim:</em> &ldquo;Zero hallucinations.&rdquo;
+<em>Engineering Statement:</em> &ldquo;Jev enforces strict schema-safety and type-safety by construction; because it lacks an autoregressive string generator, it is mathematically impossible for the model to return a value or type outside the pre-defined answer space.&rdquo;</p>
+<hr />
+<h3 id="7-silence-and-out-of-scope">7. Silence and Out-of-Scope</h3>
+<p><strong>Categorical Silences</strong>
+Sources currently do <strong>not</strong> cover:
+*   Multi-modal inputs (Image/Video/Audio).
+*   Independent, third-party speed/cost audits.
+*   Deep academic scholarship on Kahneman’s neuroscience.</p>
+<p><strong>Uncertainty Register</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Gap</th>
+<th style="text-align: left;">Why it Matters</th>
+<th style="text-align: left;">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Peer-reviewed RLCD Paper</strong></td>
+<td style="text-align: left;">Validates training method over RLHF</td>
+<td style="text-align: left;"><strong>UNKNOWN</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Independent Benchmarks</strong></td>
+<td style="text-align: left;">Verifies 193x speed/444x cost claims</td>
+<td style="text-align: left;"><strong>VENDOR-REPORTED</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Multi-modal Release</strong></td>
+<td style="text-align: left;">Essential for visual computer-use agents</td>
+<td style="text-align: left;"><strong>UNKNOWN</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RLCD Validation Gap</strong></td>
+<td style="text-align: left;">Proves long-term decision reliability</td>
+<td style="text-align: left;"><strong>UNKNOWN</strong></td>
+</tr>
+</tbody>
+</table>
+  </main>
+</body>
+</html>

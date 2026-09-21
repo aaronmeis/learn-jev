@@ -184,29 +184,67 @@
       </div>`;
   }
 
+  function libraryViewerUrl(item) {
+    if (item.html) return item.html;
+    const file = item.file || "";
+    const lower = file.toLowerCase();
+    if (lower.endsWith(".html")) return file;
+    if (lower.endsWith(".md")) return file.replace(/\.md$/i, ".html");
+    if (lower.endsWith(".pdf")) return file;
+    return "";
+  }
+
   function renderLibrary(data) {
     const items = data.library || [];
     if (!items.length) {
       return `<p class="section-desc">Add PDFs/PPTX paths under <code>content.json → library</code>.</p>`;
     }
+    const firstView = items.map(libraryViewerUrl).find(Boolean) || "";
     return `
-      <p class="section-desc">Deep report first; slick pack for executives.</p>
-      <ul class="file-list">
-        ${items
-          .map(
-            (f) => `
-          <li class="file-item">
-            <div>
-              <a href="${escapeHtml(f.file)}" target="_blank" rel="noopener">${escapeHtml(
-                f.title
-              )}</a>
-              ${f.note ? `<div class="meta">${escapeHtml(f.note)}</div>` : ""}
-            </div>
-            <span class="badge">${escapeHtml(f.type || "FILE")}</span>
-          </li>`
-          )
-          .join("")}
-      </ul>`;
+      <p class="section-desc">Click a document to read it here. HTML notes open in the reader; PDFs embed when possible. Binary downloads stay one click away.</p>
+      <div class="library-layout">
+        <ul class="file-list library-list" id="library-list">
+          ${items
+            .map((f, i) => {
+              const view = libraryViewerUrl(f);
+              const canView = !!view;
+              const openHref = f.source_md || f.file;
+              return `
+            <li class="file-item${canView ? " is-readable" : ""}" data-library-index="${i}"${
+                canView ? ` data-view-url="${escapeHtml(view)}"` : ""
+              }>
+              <div>
+                <button type="button" class="library-open"${
+                  canView ? "" : " disabled"
+                }>${escapeHtml(f.title)}</button>
+                ${f.note ? `<div class="meta">${escapeHtml(f.note)}</div>` : ""}
+                <div class="library-actions">
+                  <a href="${escapeHtml(openHref)}" target="_blank" rel="noopener">Open file</a>
+                  ${
+                    f.html && f.source_md
+                      ? `<a href="${escapeHtml(f.source_md)}" target="_blank" rel="noopener">Markdown</a>`
+                      : ""
+                  }
+                </div>
+              </div>
+              <span class="badge">${escapeHtml(f.type || "FILE")}</span>
+            </li>`;
+            })
+            .join("")}
+        </ul>
+        <div class="library-reader">
+          <div class="library-reader-bar">
+            <span id="library-reader-title">Select a document</span>
+            <a id="library-reader-open" href="#" target="_blank" rel="noopener" hidden>Open in new tab</a>
+          </div>
+          <iframe id="library-frame" title="Research library reader" src="${escapeHtml(
+            firstView
+          )}"></iframe>
+          <div class="library-reader-empty" id="library-reader-empty"${
+            firstView ? " hidden" : ""
+          }>Choose an HTML or PDF item from the list to preview it here.</div>
+        </div>
+      </div>`;
   }
 
   function resolveSlides(deck) {
@@ -502,6 +540,28 @@
       n.classList.toggle("active", n.getAttribute("data-target") === id)
     );
 
+    if (id === "library") {
+      const active = $("#library-list .file-item.active.is-readable");
+      const first = $("#library-list .file-item.is-readable");
+      const target = active || first;
+      if (target) {
+        const frame = $("#library-frame");
+        const url = target.getAttribute("data-view-url");
+        if (frame && url && (!frame.getAttribute("src") || frame.getAttribute("src") === "#")) {
+          frame.src = url;
+        }
+        const titleEl = $("#library-reader-title");
+        const btn = target.querySelector(".library-open");
+        if (titleEl && btn) titleEl.textContent = btn.textContent.trim();
+        const open = $("#library-reader-open");
+        if (open && url) {
+          open.hidden = false;
+          open.href = url;
+        }
+        target.classList.add("active");
+      }
+    }
+
     const title =
       $(`.nav-item[data-target="${CSS.escape(id)}"]`)?.textContent?.trim() || "Overview";
     $("#topbar-title").textContent = title;
@@ -584,7 +644,43 @@
       showSection(item.getAttribute("data-target"));
     });
 
+    function openLibraryItem(itemEl) {
+      if (!itemEl) return;
+      const url = itemEl.getAttribute("data-view-url");
+      if (!url) return;
+      const frame = $("#library-frame");
+      const empty = $("#library-reader-empty");
+      const title = $("#library-reader-title");
+      const open = $("#library-reader-open");
+      if (frame) frame.src = url;
+      if (empty) empty.hidden = true;
+      if (title) {
+        const btn = itemEl.querySelector(".library-open");
+        title.textContent = btn ? btn.textContent.trim() : "Document";
+      }
+      if (open) {
+        open.hidden = false;
+        open.href = url;
+      }
+      $$("#library-list .file-item").forEach((el) =>
+        el.classList.toggle("active", el === itemEl)
+      );
+    }
+
+    // Auto-select first readable library item when opening library
+    const firstReadable = $("#library-list .file-item.is-readable");
+    if (firstReadable) openLibraryItem(firstReadable);
+
     document.addEventListener("click", (e) => {
+      const libItem = e.target.closest("#library-list .file-item.is-readable");
+      if (libItem && (e.target.closest(".library-open") || e.target === libItem || e.target.closest(".file-item > div"))) {
+        if (!e.target.closest(".library-actions a")) {
+          e.preventDefault();
+          openLibraryItem(libItem);
+          return;
+        }
+      }
+
       const jump = e.target.closest("[data-jump]");
       if (jump) {
         showSection(jump.getAttribute("data-jump"));
