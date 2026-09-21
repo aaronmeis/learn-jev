@@ -6,8 +6,6 @@ Personal **GitHub Pages** learning hub for **Jev** (TypeSafe AI’s System One m
 
 **Not** a one-day-mastery product site. Study-pack notes are reframed as an untimed study library (cheatsheet, topic guide, NEXUS reports).
 
-Pattern: research-insight-hub-shell / [learn-aero-IP-law](https://aaronmeis.github.io/learn-aero-IP-law/) split-scene SPA.
-
 ## What’s on the hub
 
 - **Jev overview** — PNG slideshow + PPTX download + full presentation **MP4**
