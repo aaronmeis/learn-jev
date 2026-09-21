@@ -15,6 +15,11 @@
     "hero_media": null,
     "cards": [
       {
+        "title": "Overview presentation video",
+        "body": "Full Jev deck walkthrough video (MP4) from the NotebookLM presentation export.",
+        "target": "media"
+      },
+      {
         "title": "Jev overview deck (PNG)",
         "body": "15-slide NotebookLM deck exported to PNG for a clean in-browser presentation. PPTX download in the library.",
         "target": "deck-jev-overview"
@@ -86,6 +91,18 @@
     }
   ],
   "library": [
+    {
+      "title": "Jev overview presentation (MP4)",
+      "file": "media/jev-overview-presentation.mp4",
+      "type": "MP4",
+      "note": "Video export of the NotebookLM presentation deck."
+    },
+    {
+      "title": "Sources & references ledger",
+      "file": "sources.md",
+      "type": "MD",
+      "note": "Canonical source list for this hub."
+    },
     {
       "title": "Jev — Cheatsheet",
       "file": "notes/jev/cheatsheet.md",
@@ -355,7 +372,12 @@
         "caption": "NotebookLM vertical short (~30s)."
       }
     ],
-    "video": null,
+    "video": {
+      "title": "Jev overview presentation",
+      "file": "media/jev-overview-presentation.mp4",
+      "download": "media/jev-overview-presentation.mp4",
+      "caption": "Full overview video exported alongside the NotebookLM slide deck (odm-jev-system-one-presentation). Pair with the PNG slideshow under Jev overview."
+    },
     "audio": {
       "title": "Benchmarking and Defending Jev System One",
       "file": "media/Benchmarking and Defending Jev System One.m4a",
@@ -367,6 +389,101 @@
     "zotero": "",
     "notebooklm": "https://notebooklm.google.com/notebook/9af23a0e-eaa4-4b85-81aa-b98a8a544347",
     "typesafe_docs": "https://docs.typesafe.ai/concepts/system-one",
-    "typesafe_launch": "https://typesafe.ai/blog/introducing-system-one-models-and-jev"
-  }
+    "typesafe_launch": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+    "sources_md": "sources.md"
+  },
+  "sources_intro": "Primary TypeSafe docs, named third-party explainers, and packaged NotebookLM artifacts this hub is built from. Prefer primary docs over vendor speed/cost marketing claims.",
+  "sources": [
+    {
+      "group": "TypeSafe / Jev (primary)",
+      "kind": "Docs",
+      "title": "System One concepts",
+      "url": "https://docs.typesafe.ai/concepts/system-one",
+      "note": "Product class definition: typed decisions for software."
+    },
+    {
+      "group": "TypeSafe / Jev (primary)",
+      "kind": "Blog",
+      "title": "Introducing System One Models & Jev",
+      "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+      "note": "Official launch framing."
+    },
+    {
+      "group": "TypeSafe / Jev (primary)",
+      "kind": "Docs",
+      "title": "How to build with System One",
+      "url": "https://docs.typesafe.ai/concepts/how-to-build-with-system-one",
+      "note": "State + question design guidance."
+    },
+    {
+      "group": "TypeSafe / Jev (primary)",
+      "kind": "Docs",
+      "title": "Quickstart",
+      "url": "https://docs.typesafe.ai/introduction/quickstart",
+      "note": "First API / SDK call."
+    },
+    {
+      "group": "TypeSafe / Jev (primary)",
+      "kind": "Docs",
+      "title": "Choice primitive",
+      "url": "https://docs.typesafe.ai/primitives/choice",
+      "note": "Also see Score and Noul primitive pages."
+    },
+    {
+      "group": "Named videos (third-party)",
+      "kind": "YouTube",
+      "title": "Jev System One live demos (OpenRouter)",
+      "url": "https://www.youtube.com/watch?v=QKafJHkYrRE",
+      "note": "Independent demo walkthrough."
+    },
+    {
+      "group": "Named videos (third-party)",
+      "kind": "YouTube",
+      "title": "I tried TypeSafe System One Model Jev",
+      "url": "https://www.youtube.com/watch?v=CcmqPS6q9Gw",
+      "note": "App / economics framing."
+    },
+    {
+      "group": "Named videos (third-party)",
+      "kind": "YouTube",
+      "title": "Jev Explained (agents / Browser Use)",
+      "url": "https://www.youtube.com/watch?v=We5igFMqZe8",
+      "note": "Agent co-pilot angle."
+    },
+    {
+      "group": "Packaged on this hub",
+      "kind": "NotebookLM",
+      "title": "Jev overview presentation video",
+      "url": "media/jev-overview-presentation.mp4",
+      "note": "Exported from the NotebookLM slide deck (PPTX companion video)."
+    },
+    {
+      "group": "Packaged on this hub",
+      "kind": "NotebookLM",
+      "title": "Jev overview PPTX + PNG deck",
+      "url": "reports/jev-overview.pptx",
+      "note": "Slide images under decks/jev-overview/."
+    },
+    {
+      "group": "Packaged on this hub",
+      "kind": "NotebookLM",
+      "title": "NEXUS export (reports, shorts, audio)",
+      "url": "reports/jev/notebooklm/",
+      "note": "Mirrored from C:\\output\\obsidian\\notebooklm\\odm-jev-system-one\\NEXUS …"
+    },
+    {
+      "group": "Related context",
+      "kind": "Related",
+      "title": "AI assistance vs automation (Almeida / RLHF)",
+      "url": "#deck-almeida-rlhf",
+      "note": "Conceptual bridge; not a Jev API tutorial. See also sources.md."
+    },
+    {
+      "group": "Related context",
+      "kind": "Notebook",
+      "title": "NotebookLM — odm-jev-system-one",
+      "url": "https://notebooklm.google.com/notebook/9af23a0e-eaa4-4b85-81aa-b98a8a544347",
+      "note": "Studio notebook used to generate deck/shorts/reports."
+    }
+  ]
 }

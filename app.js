@@ -75,6 +75,9 @@
     if (data.media?.video || data.media?.audio) {
       items.push({ id: "media", label: "Media" });
     }
+    if (Array.isArray(data.sources) && data.sources.length) {
+      items.push({ id: "sources", label: "Sources" });
+    }
 
     nav.innerHTML = items
       .map(
@@ -325,6 +328,13 @@
           <h3>${escapeHtml(v.title || "Video")}</h3>
           <p class="section-desc" style="margin:0.4rem 0 0">${escapeHtml(v.caption || "")}</p>
           <video src="${escapeHtml(v.file)}" controls playsinline></video>
+          ${
+            v.download
+              ? `<p style="margin-top:0.75rem"><a class="deck-download" href="${escapeHtml(
+                  v.download
+                )}" download>Download video</a></p>`
+              : ""
+          }
         </div>`);
     }
     if (data.media?.audio) {
@@ -342,6 +352,57 @@
     return parts.join("");
   }
 
+  function renderSources(data) {
+    const groups = {};
+    (data.sources || []).forEach((s) => {
+      const g = s.group || "Sources";
+      if (!groups[g]) groups[g] = [];
+      groups[g].push(s);
+    });
+    const sections = Object.keys(groups)
+      .map((g) => {
+        const rows = groups[g]
+          .map((s) => {
+            let link;
+            if (s.url && String(s.url).startsWith("#")) {
+              const target = String(s.url).slice(1);
+              link = `<a href="#" data-jump="${escapeHtml(target)}">${escapeHtml(
+                s.title || target
+              )}</a>`;
+            } else if (s.url) {
+              const external = /^https?:\/\//i.test(s.url);
+              link = `<a href="${escapeHtml(s.url)}"${
+                external ? ' target="_blank" rel="noopener"' : ""
+              }>${escapeHtml(s.title || s.url)}</a>`;
+            } else {
+              link = escapeHtml(s.title || "");
+            }
+            const note = s.note
+              ? `<div class="resource-note">${escapeHtml(s.note)}</div>`
+              : "";
+            const kind = s.kind
+              ? `<span class="badge">${escapeHtml(s.kind)}</span>`
+              : "";
+            return `<div class="resource-card"><div class="resource-title">${kind} ${link}</div>${note}</div>`;
+          })
+          .join("");
+        return `<h3 style="margin:1.25rem 0 0.75rem">${escapeHtml(g)}</h3><div class="resource-grid">${rows}</div>`;
+      })
+      .join("");
+    const more = data.links?.sources_md
+      ? `<p class="section-desc" style="margin-top:1.25rem">Full ledger: <a href="${escapeHtml(
+          data.links.sources_md
+        )}" target="_blank" rel="noopener">sources.md</a></p>`
+      : `<p class="section-desc" style="margin-top:1.25rem">Full ledger: <a href="sources.md" target="_blank" rel="noopener">sources.md</a></p>`;
+    return `
+      <p class="section-desc">${escapeHtml(
+        data.sources_intro ||
+          "Primary docs and named references this hub is built from. Prefer these over marketing claims."
+      )}</p>
+      ${sections || "<p class=\"section-desc\">Add sources[] in content.json.</p>"}
+      ${more}`;
+  }
+
   function renderFooter(data) {
     const links = [];
     if (data.links?.github) {
@@ -357,6 +418,7 @@
         `<a href="${escapeHtml(data.links.zotero)}" target="_blank" rel="noopener">Zotero</a>`
       );
     }
+    links.push(`<a href="sources.md" target="_blank" rel="noopener">Sources</a>`);
     return `
       <p>${escapeHtml(data.disclaimer || "")}</p>
       <p style="margin-top:0.5rem">Researched as of <strong>${escapeHtml(
@@ -412,6 +474,14 @@
         <section class="panel" id="media">
           <h2 class="section-title">Media</h2>
           ${renderMedia(data)}
+        </section>`);
+    }
+
+    if (Array.isArray(data.sources) && data.sources.length) {
+      blocks.push(`
+        <section class="panel" id="sources">
+          <h2 class="section-title">Sources &amp; references</h2>
+          ${renderSources(data)}
         </section>`);
     }
 
