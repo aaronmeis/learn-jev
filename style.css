@@ -289,6 +289,16 @@ h2.section-title {
   text-align: center;
 }
 
+.stat-card[data-jump] {
+  cursor: pointer;
+  transition: border-color var(--transition), transform var(--transition);
+}
+
+.stat-card[data-jump]:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
 .stat-card .n {
   font-size: 1.75rem;
   font-weight: 800;

@@ -38,18 +38,22 @@
 
   function countStats(data) {
     const decks = (data.decks || []).filter(
-      (d) => (d.slides && d.slides.length) || (d.slide_count && d.slide_count > 0)
+      (d) =>
+        (Array.isArray(d.slides) && d.slides.length > 0) ||
+        (Number(d.slide_count) || 0) > 0
     ).length;
-    const deckConfigured = (data.decks || []).length;
+    const shorts = Array.isArray(data.media?.shorts) ? data.media.shorts.length : 0;
+    const longformMedia =
+      (data.media?.video ? 1 : 0) +
+      (data.media?.audio ? 1 : 0) +
+      (data.overview?.hero_media ? 1 : 0);
     return {
-      decks: decks || deckConfigured,
+      decks,
+      shorts,
       visuals: (data.visuals || []).length,
       reports: (data.library || []).length,
-      media:
-        (data.media?.video ? 1 : 0) +
-        (Array.isArray(data.media?.shorts) ? data.media.shorts.length : 0) +
-        (data.media?.audio ? 1 : 0) +
-        (data.overview?.hero_media ? 1 : 0),
+      media: longformMedia,
+      sources: Array.isArray(data.sources) ? data.sources.length : 0,
     };
   }
 
@@ -144,10 +148,12 @@
         ${heroMedia}
       </div>
       <div class="stats-row">
-        <div class="stat-card"><div class="n">${stats.decks}</div><div class="l">Presentations</div></div>
-        <div class="stat-card"><div class="n">${stats.visuals}</div><div class="l">Visuals</div></div>
-        <div class="stat-card"><div class="n">${stats.reports}</div><div class="l">Library items</div></div>
-        <div class="stat-card"><div class="n">${stats.media}</div><div class="l">Media files</div></div>
+        <div class="stat-card" data-jump="deck-jev-overview"><div class="n">${stats.decks}</div><div class="l">Presentations</div></div>
+        <div class="stat-card" data-jump="shorts"><div class="n">${stats.shorts}</div><div class="l">Shorts (~30s)</div></div>
+        <div class="stat-card" data-jump="visuals"><div class="n">${stats.visuals}</div><div class="l">Visuals</div></div>
+        <div class="stat-card" data-jump="library"><div class="n">${stats.reports}</div><div class="l">Library items</div></div>
+        <div class="stat-card" data-jump="media"><div class="n">${stats.media}</div><div class="l">Long-form media</div></div>
+        <div class="stat-card" data-jump="sources"><div class="n">${stats.sources}</div><div class="l">Sources</div></div>
       </div>
       ${topics ? `<h3 style="margin:0 0 0.75rem;font-size:1.05rem">Focus areas</h3><div class="grid">${topics}</div>` : ""}
       <h3 style="margin:0 0 0.75rem;font-size:1.05rem">Explore</h3>

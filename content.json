@@ -11,7 +11,7 @@
   "disclaimer": "Personal learning and research packaging only. Unofficial; not affiliated with, endorsed by, or sponsored by TypeSafe AI or any organization named here. Not legal, financial, or professional advice. Vendor speed/cost claims are reported as published — verify on your workload. See DISCLAIMER.md.",
   "audience": "Practitioners and architects who want a clean map of Jev / System One: concepts, sources, decks, and related Almeida (RLHF → automation) context.",
   "overview": {
-    "blurb": "Jev is TypeSafe AI's flagship System One model: program state in, typed probabilistic decisions out (Choice, Score, Noul). This hub packages the NotebookLM suite — PNG slide deck, PPTX/PDF, ~30s shorts, audio, reports — plus reframed study notes without a day timer.",
+    "blurb": "Jev is TypeSafe AI's flagship System One model: program state in, typed probabilistic decisions out (Choice, Score, Noul). This hub packages two presentation decks, six ~30s shorts, long-form video/audio, visuals, a full NotebookLM NEXUS library, and a Sources ledger — plus reframed study notes without a day timer.",
     "hero_media": null,
     "cards": [
       {
