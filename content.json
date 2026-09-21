@@ -1,0 +1,202 @@
+{
+  "mode": "learn",
+  "tier": "D",
+  "slug": "jev",
+  "display_name": "Jev (TypeSafe System One)",
+  "hub_title": "Learn Jev — typed decisions for software",
+  "tagline": "A general reference hub for TypeSafe AI's Jev: System One models, primitives, confidence gates, and how they sit beside LLM agents — not a one-day course site.",
+  "brand_short": "LEARN JEV",
+  "theme": "light",
+  "researched_as_of": "2026-09-21",
+  "disclaimer": "Personal learning and research packaging only. Unofficial; not affiliated with, endorsed by, or sponsored by TypeSafe AI or any organization named here. Not legal, financial, or professional advice. Vendor speed/cost claims are reported as published — verify on your workload. See DISCLAIMER.md.",
+  "audience": "Practitioners and architects who want a clean map of Jev / System One: concepts, sources, decks, and related Almeida (RLHF → automation) context.",
+  "overview": {
+    "blurb": "Jev is TypeSafe AI's flagship System One model: program state in, typed probabilistic decisions out (Choice, Score, Noul) — no chat, no code, no explanations. This hub packages study notes, primary links, a related RLHF/automation deck, and media so you can navigate the topic quickly. Study-day pedagogy files are included as reference material only; the site itself is a lasting learning library, not a timed one-day mastery product.",
+    "hero_media": null,
+    "cards": [
+      {
+        "title": "Concept visuals",
+        "body": "Typed decisions, System One vs LLM, and the confidence gate — scannable diagrams for orientation.",
+        "target": "visuals"
+      },
+      {
+        "title": "Reference library",
+        "body": "Jev notes (glossary, mind map, source ledger, blocks) plus Almeida briefing/playbook markdown and the Calibration Blueprint PDF.",
+        "target": "library"
+      },
+      {
+        "title": "Related deck — assistance vs automation",
+        "body": "Diogo Almeida / RLHF paradox deck: why preference-trained LLMs fit assistance better than unsupervised automation — the bridge to System One / Jev.",
+        "target": "deck-almeida-rlhf"
+      },
+      {
+        "title": "Audio",
+        "body": "NotebookLM audio overview from the assistance-vs-automation pack (related context).",
+        "target": "media"
+      }
+    ],
+    "topics": [
+      {
+        "title": "What Jev is",
+        "body": "System One model class: fast structured decisions for software. Flagship model jev-latest. Named after Jevons (cheaper intelligence → more demand), not a chatbot."
+      },
+      {
+        "title": "Three primitives",
+        "body": "Choice (labelled options), Score (ordered levels), Noul (yes/no probability). Many questions, one state, one round trip."
+      },
+      {
+        "title": "When not to use it",
+        "body": "Open-ended writing, planning prose, tool-call narration, or tiny Choice sets forced onto unbounded problems. Keep an LLM (or human) for language; escalate on low confidence."
+      },
+      {
+        "title": "Related thesis",
+        "body": "Almeida's assistance vs automation framing (RLHF optimizes for human preference) motivates automation-native decision models — Jev / RLCD is the product bet, still early-access."
+      }
+    ]
+  },
+  "visuals": [
+    {
+      "id": "typed-decisions",
+      "title": "Jev = typed decisions, not chat",
+      "file": "visuals/jev-typed-decisions.jpg",
+      "caption": "State in → System One evaluation → Choice / Score / Noul with probabilities. Code branches; Jev does not write prose."
+    },
+    {
+      "id": "vs-llm",
+      "title": "System One (Jev) vs LLM agent",
+      "file": "visuals/system-one-vs-llm.jpg",
+      "caption": "LLMs generate plans and replies. Jev answers closed questions your schema defines. Most agent loops need both."
+    },
+    {
+      "id": "confidence-gate",
+      "title": "Confidence gate",
+      "file": "visuals/confidence-gate.jpg",
+      "caption": "Act when probability clears a threshold; otherwise escalate to a human or an LLM. Calibration is aggregate, not a warranty on one call."
+    }
+  ],
+  "library": [
+    {
+      "title": "Jev — Mission / framing",
+      "file": "notes/jev/mission.md",
+      "type": "MD",
+      "note": "Why this topic; success criteria; out of scope."
+    },
+    {
+      "title": "Jev — Glossary",
+      "file": "notes/jev/glossary.md",
+      "type": "MD",
+      "note": "System One, Jev, Choice / Score / Noul, calibration, RLCD."
+    },
+    {
+      "title": "Jev — Mind map",
+      "file": "notes/jev/mindmap.md",
+      "type": "MD",
+      "note": "Topic map used to organize the reference pack."
+    },
+    {
+      "title": "Jev — Source ledger",
+      "file": "notes/jev/source-ledger.md",
+      "type": "MD",
+      "note": "Primary docs + named YouTube explainers."
+    },
+    {
+      "title": "Jev — Resources",
+      "file": "notes/jev/resources.md",
+      "type": "MD",
+      "note": "High-trust URL table and gaps."
+    },
+    {
+      "title": "Jev — Cheatsheet",
+      "file": "notes/jev/cheatsheet.md",
+      "type": "MD",
+      "note": "Quick reference."
+    },
+    {
+      "title": "Jev — Elicit light research",
+      "file": "notes/jev/elicit-light-research.md",
+      "type": "MD",
+      "note": "Calibration / selective classification literature (grounds confidence gates; does not validate RLCD)."
+    },
+    {
+      "title": "Jev — Study day plan (reference)",
+      "file": "notes/jev/study-day-plan.md",
+      "type": "MD",
+      "note": "Optional timed study path. Included for completeness; this hub is not an ODM product site."
+    },
+    {
+      "title": "Jev — Staged NotebookLM sources (zip folder)",
+      "file": "reports/jev/00-mission.md",
+      "type": "MD",
+      "note": "Entry into reports/jev/ staged source set (mission, blocks, ledger, prompts)."
+    },
+    {
+      "title": "Almeida — Practitioner working briefing",
+      "file": "reports/almeida/AI Assistance vs. Automation_ A Practitioner's Working Briefing (Almeida_RLHF).md",
+      "type": "MD",
+      "note": "Related context: assistance vs automation."
+    },
+    {
+      "title": "Almeida — Playbook",
+      "file": "reports/almeida/Playbook_ Navigating AI Assistance vs. Automation (Almeida - RLHF).md",
+      "type": "MD",
+      "note": "Practice-oriented companion."
+    },
+    {
+      "title": "Almeida — Edge cases catalog",
+      "file": "reports/almeida/Catalog of Edge Cases and Traps_ AI Assistance vs. Automation (Almeida_RLHF).md",
+      "type": "MD",
+      "note": "Trap sheet from the related pack."
+    },
+    {
+      "title": "The Calibration Blueprint (PDF)",
+      "file": "reports/almeida/The Calibration Blueprint.pdf",
+      "type": "PDF",
+      "note": "NotebookLM slide/PDF artifact from the related pack (~16MB)."
+    },
+    {
+      "title": "Almeida deck (PowerPoint)",
+      "file": "reports/almeida-rlhf.pptx",
+      "type": "PPTX",
+      "note": "Full related presentation download."
+    }
+  ],
+  "decks": [
+    {
+      "id": "almeida-rlhf",
+      "nav_label": "Assistance vs automation",
+      "title": "AI assistance vs automation (Almeida / RLHF)",
+      "description": "Related TypeSafe founder thesis: RLHF-era models excel at human-in-the-loop assistance and struggle at unsupervised automation — the conceptual bridge to System One / Jev. Not a Jev product deck (Jev W8 slides pending full NotebookLM run).",
+      "folder": "decks/almeida-rlhf",
+      "slide_pattern": "Slide{n}.JPG",
+      "slide_count": 15,
+      "slides": [],
+      "download": "reports/almeida-rlhf.pptx"
+    },
+    {
+      "id": "jev-overview",
+      "nav_label": "Jev deck (pending)",
+      "title": "Jev overview deck",
+      "description": "Placeholder until odm-jev-system-one NotebookLM slides are generated and synced (run W8 resume, then scripts/sync-from-output.ps1).",
+      "folder": "decks/jev-overview",
+      "slide_pattern": "Slide{n}.JPG",
+      "slide_count": 0,
+      "slides": [],
+      "download": null
+    }
+  ],
+  "media": {
+    "video": null,
+    "audio": {
+      "title": "Why RLHF Limits True AI Automation",
+      "file": "media/Why RLHF Limits True AI Automation.m4a",
+      "caption": "Audio overview from the related assistance-vs-automation NotebookLM pack. Complements the Almeida deck; not a Jev product walkthrough."
+    }
+  },
+  "links": {
+    "github": "https://github.com/aaronmeis/learn-jev",
+    "zotero": "",
+    "notebooklm": "https://notebooklm.google.com/notebook/9af23a0e-eaa4-4b85-81aa-b98a8a544347",
+    "typesafe_docs": "https://docs.typesafe.ai/concepts/system-one",
+    "typesafe_launch": "https://typesafe.ai/blog/introducing-system-one-models-and-jev"
+  }
+}

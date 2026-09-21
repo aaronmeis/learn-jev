@@ -1,0 +1,110 @@
+{
+  "name": "AI Assistance vs Automation",
+  "children": [
+    {
+      "name": "The Paradox",
+      "children": [
+        {
+          "name": "Benchmarks vs Economy"
+        },
+        {
+          "name": "Saturated GPQA scores"
+        },
+        {
+          "name": "Stagnant economic automation"
+        },
+        {
+          "name": "Shifted goalposts"
+        }
+      ]
+    },
+    {
+      "name": "RLHF Mechanics",
+      "children": [
+        {
+          "name": "Human Preference Optimization"
+        },
+        {
+          "name": "Human in the objective loop"
+        },
+        {
+          "name": "Mode dropping for safety"
+        },
+        {
+          "name": "Plausible but wrong answers"
+        }
+      ]
+    },
+    {
+      "name": "Over-optimization (Goodhart's Law)",
+      "children": [
+        {
+          "name": "Proxy Reward vs True Quality"
+        },
+        {
+          "name": "Proxy reward keeps rising"
+        },
+        {
+          "name": "Gold quality peaks then falls"
+        },
+        {
+          "name": "Artifacts: verbosity and sycophancy"
+        }
+      ]
+    },
+    {
+      "name": "Assistance Era",
+      "children": [
+        {
+          "name": "Human-in-the-Loop"
+        },
+        {
+          "name": "ChatGPT and Claude Code"
+        },
+        {
+          "name": "Human absorbs error cost"
+        },
+        {
+          "name": "Optimized for pleasing users"
+        }
+      ]
+    },
+    {
+      "name": "Automation Frontier",
+      "children": [
+        {
+          "name": "Machine-in-the-Loop"
+        },
+        {
+          "name": "Calibrated Decisions (RLCD)"
+        },
+        {
+          "name": "System One Models (Jev)"
+        },
+        {
+          "name": "Reliability and high stakes"
+        },
+        {
+          "name": "Verifiable Rewards (RLVR)"
+        }
+      ]
+    },
+    {
+      "name": "Practical Rules",
+      "children": [
+        {
+          "name": "No unsupervised stakes"
+        },
+        {
+          "name": "Prefer HITL products"
+        },
+        {
+          "name": "Fragility of LLM layering"
+        },
+        {
+          "name": "Reject skill issue narrative"
+        }
+      ]
+    }
+  ]
+}

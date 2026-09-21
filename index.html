@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn Jev — TypeSafe System One typed decisions for software. Personal learning hub." />
+  <title>Learn Jev — typed decisions for software</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="overlay" id="overlay" aria-hidden="true"></div>
+
+  <aside class="sidebar" id="sidebar" aria-label="Hub navigation">
+    <div class="sidebar-header">
+      <div class="brand" id="brand-short">INSIGHT HUB</div>
+      <div class="sub" id="brand-sub">Research insight hub</div>
+    </div>
+    <ul class="nav-links" id="nav-links" role="navigation"></ul>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <button type="button" class="hamburger" id="hamburger" aria-label="Open menu">☰</button>
+      <h1 id="topbar-title">Overview</h1>
+      <span style="width:2rem"></span>
+    </header>
+    <nav class="breadcrumb" id="breadcrumb" aria-label="Breadcrumb"></nav>
+    <main class="content">
+      <div id="panels">
+        <section class="panel active">
+          <h2 class="section-title">Loading…</h2>
+          <p class="section-desc">Reading content.json</p>
+        </section>
+      </div>
+      <footer class="site-footer" id="site-footer"></footer>
+    </main>
+  </div>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visual asset">
+    <div class="lightbox-panel">
+      <button type="button" class="close-lightbox" id="close-lightbox" aria-label="Close">×</button>
+      <div class="lightbox-img-wrap">
+        <img id="lightbox-img" alt="" />
+      </div>
+      <div class="lightbox-copy">
+        <h3 id="lightbox-title"></h3>
+        <p id="lightbox-desc"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
